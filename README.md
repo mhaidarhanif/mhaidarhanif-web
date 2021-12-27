@@ -2,6 +2,16 @@
 
 M Haidar Hanif's personal website with React+Remix. Deployed to Vercel.
 
+Current repo is at [mhaidarhanif-web](https://github.com/mhaidarhanif/mhaidarhanif-web) on GitHub.
+
+## Variants
+
+The website has been rebuilt a lot of times. Some of them are still in here:
+
+- [mhaidarhanif-web-remix-fly](https://github.com/mhaidarhanif/mhaidarhanif-web-remix-fly)
+- [mhaidarhanif-web-nx-monorepo](https://github.com/mhaidarhanif/mhaidarhanif-web-nx-monorepo)
+- [mhaidarhanif-web-gatsby](https://github.com/mhaidarhanif/mhaidarhanif-web-gatsby)
+
 ## Development
 
 Read [Remix Docs](https://remix.run/docs).
