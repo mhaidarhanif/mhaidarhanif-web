@@ -7,13 +7,11 @@ interface ContainerProps {
 }
 
 const ContainerStyled = styled('div', {
-  width: '1024px',
+  width: '720px',
   marginRight: 'auto',
   marginLeft: 'auto',
   maxWidth: 'calc(100% - 1rem * 2)',
-  '@desktop': {
-    maxWidth: 'calc(100% - 2rem * 2)',
-  },
+  '@desktop': { maxWidth: 'calc(100% - 2rem * 2)' },
   variants: {
     size: {
       adaptive: {

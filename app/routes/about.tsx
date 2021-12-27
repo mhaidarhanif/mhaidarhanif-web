@@ -1,11 +1,11 @@
 import { Link } from 'remix'
 
+import { Container, Heading } from '~/components'
+
 export default function About() {
   return (
-    <div>
-      <h1>About me</h1>
-
-      <Link to="/">Home</Link>
-    </div>
+    <Container>
+      <Heading as="h1">About me</Heading>
+    </Container>
   )
 }

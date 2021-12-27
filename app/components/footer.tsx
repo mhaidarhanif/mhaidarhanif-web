@@ -8,21 +8,9 @@ const FooterStyled = styled('footer', {
   mt: '$28',
 })
 
-const Copyright = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: '0.5rem',
-  p: {
-    margin: 0,
-  },
-  '@tablet': {
-    alignItems: 'flex-start',
-  },
-  '@desktop': {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
+const FooterText = styled('p', {
+  letterSpacing: '$widest',
+  textTransform: 'uppercase',
 })
 
 /**
@@ -32,11 +20,7 @@ export const Footer = () => {
   return (
     <FooterStyled>
       <Container>
-        <Copyright>
-          <p>
-            Copyright &copy; <Link to="/">M Haidar Hanif</Link>
-          </p>
-        </Copyright>
+        <FooterText>Hello world</FooterText>
       </Container>
     </FooterStyled>
   )

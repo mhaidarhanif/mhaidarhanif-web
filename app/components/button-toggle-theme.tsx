@@ -9,7 +9,7 @@ const ButtonToggleThemeStyled = styled('button', {
   fontWeight: '$bold',
   cursor: 'pointer',
   border: '$none',
-  borderRadius: '$1',
+  borderRadius: '$pill',
   color: '$buttonText',
   backgroundColor: '$buttonNormal',
   '&:hover': { backgroundColor: '$buttonHover' },
@@ -27,7 +27,7 @@ export const ButtonToggleTheme: FunctionComponent = () => {
 
   return (
     <ButtonToggleThemeStyled type="button" onClick={handleChangeTheme}>
-      Toggle {nameFrom} to {nameTo}
+      {nameFrom} → {nameTo}
     </ButtonToggleThemeStyled>
   )
 }
