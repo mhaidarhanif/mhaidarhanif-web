@@ -1,0 +1,29 @@
+{
+  "name": "mhaidarhanif-web",
+  "private": true,
+  "description": "M Haidar Hanif's personal website with React+Remix",
+  "license": "",
+  "scripts": {
+    "postinstall": "remix setup node",
+    "build": "remix build",
+    "dev": "remix dev"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.1.1",
+    "@remix-run/serve": "^1.1.1",
+    "@remix-run/vercel": "^1.1.1",
+    "react-dom": "^17.0.2",
+    "react": "^17.0.2",
+    "remix": "^1.1.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.1.1",
+    "@types/react-dom": "^17.0.9",
+    "@types/react": "^17.0.24",
+    "typescript": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}

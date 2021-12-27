@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Remix
+.cache
+.output
+api/_build
+public/build
+
+# Vercel
+.vercel
