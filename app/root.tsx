@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   json,
+  useLocation,
   useLoaderData,
   ScrollRestoration,
   useCatch,
@@ -30,8 +31,17 @@ import { lightTheme, darkTheme } from '~/stitches'
 import { Layout } from '~/components'
 
 /**
+ * Headers
+ */
+
+export const headers: HeadersFunction = () => ({
+  'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
+})
+
+/**
  * Loader
  */
+
 export type LoaderData = {
   theme: Theme | null
   ENV: ReturnType<typeof getEnv>
@@ -48,8 +58,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 }
 
 /**
- * Meta
+ * Metadata
  */
+
 export const meta: MetaFunction = () => {
   const name = 'M Haidar Hanif'
   const title = 'M Haidar Hanif'
@@ -58,7 +69,7 @@ export const meta: MetaFunction = () => {
 
   const ogImageAlt = 'Website of M Haidar Hanif'
   const ogImageUrl = url + 'images/mhaidarhanif-og.png?v=1'
-  const twiterImageUrl = url + '/images/mhaidarhanif-twitter.png?v=1'
+  const twiterImageUrl = url + 'images/mhaidarhanif-twitter.png?v=1'
 
   return {
     title: title,
@@ -82,10 +93,6 @@ export const meta: MetaFunction = () => {
   }
 }
 
-export const headers: HeadersFunction = () => ({
-  'Accept-CH': 'Sec-CH-Prefers-Color-Scheme',
-})
-
 /**
  * App
  *
@@ -93,7 +100,17 @@ export const headers: HeadersFunction = () => ({
  * https://remix.run/api/conventions#route-filenames
  */
 
-export default function App() {
+export default function AppWithProviders() {
+  const data = useLoaderData<LoaderData>()
+
+  return (
+    <ThemeProvider specifiedTheme={data.theme}>
+      <App />
+    </ThemeProvider>
+  )
+}
+
+function App() {
   return (
     <Document>
       <Layout>
@@ -104,12 +121,72 @@ export default function App() {
 }
 
 /**
+ * Document is separated so multiple components can use it:
+ * - App
+ * - ErrorBoundary
+ * - CatchBoundary
+ */
+function Document({
+  title,
+  children,
+}: {
+  title?: string
+  children: React.ReactNode
+}) {
+  const data = useLoaderData<LoaderData>()
+
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        {title ? <title>{title}</title> : null}
+        <Meta />
+        <Links />
+        <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
+      </head>
+
+      <DocumentBody>
+        {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)};`,
+          }}
+        />
+      </DocumentBody>
+    </html>
+  )
+}
+
+/**
+ * DocumentBody is required because
+ * useTheme can only be used inside ThemeProvider
+ */
+const DocumentBody = ({ children }: { children: React.ReactNode }) => {
+  const [theme] = useTheme()
+
+  return (
+    <body className={theme === 'dark' ? darkTheme : lightTheme}>
+      {children}
+      <ScrollRestoration />
+      <Scripts />
+      {process.env.NODE_ENV === 'development' && <LiveReload />}
+    </body>
+  )
+}
+
+/**
  * Error Boundary
  *
+ * Best effort, last ditch error boundary. This should only catch root errors
+ * all other errors should be caught by the index route which will include
+ * the footer and stuff, which is much better.
  * https://remix.run/docs/en/v1/api/conventions#errorboundary
  */
+
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error)
+  const location = useLocation()
 
   return (
     <Document title="Error!">
@@ -118,6 +195,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
           <h1>There was an error</h1>
           <p>{error.message}</p>
           <hr />
+          <p>${location.pathname} is currently not working.</p>
           <p>Sorry, there is an error. Please try again or refresh the page.</p>
         </div>
       </Layout>
@@ -131,24 +209,28 @@ export function ErrorBoundary({ error }: { error: Error }) {
  * https://remix.run/docs/en/v1/api/conventions#catchboundary
  */
 export function CatchBoundary() {
-  let caught = useCatch()
+  const caught = useCatch()
+  const location = useLocation()
   let message
+
+  console.error('CatchBoundary', caught)
 
   switch (caught.status) {
     case 401:
       message = (
-        <p>
-          Sorry, looks like you tried to visit a page that you don't have access
-          to.
-        </p>
+        <div>
+          <p>Sorry, you don't have access to this page</p>
+        </div>
       )
       break
     case 404:
       message = (
-        <p> Sorry, looks like you tried to visit a page that doesn't exist.</p>
+        <div>
+          <p>Sorry, this page doesn't exist.</p>
+          <p>${location.pathname} is not available.</p>
+        </div>
       )
       break
-
     default:
       throw new Error(caught.data || caught.statusText)
   }
@@ -162,55 +244,5 @@ export function CatchBoundary() {
         {message}
       </Layout>
     </Document>
-  )
-}
-
-/**
- * Document
- */
-function Document({
-  title,
-  children,
-}: {
-  title?: string
-  children: React.ReactNode
-}) {
-  const data = useLoaderData<LoaderData>()
-
-  return (
-    <ThemeProvider specifiedTheme={data.theme}>
-      <html lang="en">
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width,initial-scale=1" />
-          {title ? <title>{title}</title> : null}
-          <Meta />
-          <Links />
-          <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
-        </head>
-
-        <DocumentBody>
-          {children}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.ENV = ${JSON.stringify(data.ENV)};`,
-            }}
-          />
-        </DocumentBody>
-      </html>
-    </ThemeProvider>
-  )
-}
-
-const DocumentBody = ({ children }: { children: React.ReactNode }) => {
-  const [theme] = useTheme()
-
-  return (
-    <body className={theme === 'dark' ? darkTheme : lightTheme}>
-      {children}
-      <ScrollRestoration />
-      <Scripts />
-      {process.env.NODE_ENV === 'development' && <LiveReload />}
-    </body>
   )
 }

@@ -106,11 +106,11 @@ function ThemeProvider({
 
 /**
  * clientThemeCode
+ * Avoid a flash of the wrong theme.
+ * If you select a theme, the app know what you want in the future.
+ * Then you'll not see this script anymore.
  */
 const clientThemeCode = `
-// Avoid a flash of the wrong theme.
-// If you select a theme, the app know what you want in the future.
-// Then you'll not see this script anymore.
 ;(() => {
   const theme = window.matchMedia(${JSON.stringify(prefersLightMQ)}).matches
     ? 'light'
@@ -120,10 +120,7 @@ const clientThemeCode = `
   
   const themeAlreadyApplied = cl.contains('light') || cl.contains('dark');
   if (themeAlreadyApplied) {
-    // this script shouldn't exist if the theme is already applied!
-    console.warn(
-      "Hey, let us know if you found this warningmessage. Thanks!",
-    );
+    console.warn("This is a warning message.");
   } else {
     cl.add(theme);
   }
@@ -178,9 +175,11 @@ function PreventFlashOnWrongTheme({ ssrTheme }: { ssrTheme: boolean }) {
  */
 function useTheme() {
   const context = React.useContext(ThemeContext)
+
   if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider')
   }
+
   return context
 }
 

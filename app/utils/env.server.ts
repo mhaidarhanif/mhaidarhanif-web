@@ -2,16 +2,19 @@
  * This will expose all variables within global ENV
  * Only for client-side env
  */
+
+const processEnv = {
+  NODE_ENV: process.env.NODE_ENV /* development | production */,
+  APP_ENV: process.env.APP_ENV /* local | development | staging | production */,
+  API_URL: process.env.API_URL /* localhost | api.domain.com */,
+  VERCEL: process.env.VERCEL,
+  BUTTONDOWN_API_KEY: process.env.BUTTONDOWN_API_KEY,
+  SPLITBEE_ID: process.env.SPLITBEE_ID,
+  GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+}
+
 function getEnv() {
-  return {
-    NODE_ENV: process.env.NODE_ENV, // development | production
-    APP_ENV: process.env.APP_ENV, // local | development | staging | production
-    API_URL: process.env.API_URL, // localhost | api.domain.com
-    VERCEL: process.env.VERCEL,
-    BUTTONDOWN_API_KEY: process.env.BUTTONDOWN_API_KEY,
-    SPLITBEE_ID: process.env.SPLITBEE_ID,
-    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
-  }
+  return processEnv
 }
 
 /**
@@ -38,9 +41,7 @@ function getEnvRequired(
 
 type ENV = ReturnType<typeof getEnv>
 
-// App puts these on
 declare global {
-  // eslint-disable-next-line
   var ENV: ENV
   interface Window {
     ENV: ENV

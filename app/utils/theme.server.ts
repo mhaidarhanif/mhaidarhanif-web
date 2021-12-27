@@ -9,12 +9,16 @@ const themeStorage = createCookieSessionStorage({
     secrets: [getEnvServer('SESSION_SECRET')],
     sameSite: 'lax',
     path: '/',
-    expires: new Date('2100-10-18'),
+    expires: new Date('2100-12-12'),
     httpOnly: true,
   },
 })
 
-async function getThemeSession(request: Request) {
+/**
+ * Abstract out the themeStorage cookie
+ * into multiple themeSession helper functions
+ */
+export async function getThemeSession(request: Request) {
   const session = await themeStorage.getSession(request.headers.get('Cookie'))
 
   return {
@@ -26,5 +30,3 @@ async function getThemeSession(request: Request) {
     commit: () => themeStorage.commitSession(session),
   }
 }
-
-export { getThemeSession }
