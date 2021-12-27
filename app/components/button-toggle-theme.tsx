@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+import { Theme, useTheme } from 'remix-themes'
 
 import { styled } from '~/stitches'
 
@@ -16,8 +17,15 @@ const ButtonToggleThemeStyled = styled('button', {
 })
 
 export const ButtonToggleTheme: FunctionComponent = () => {
+  const [, setTheme] = useTheme()
+
   return (
-    <ButtonToggleThemeStyled type="button">
+    <ButtonToggleThemeStyled
+      type="button"
+      onClick={() =>
+        setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))
+      }
+    >
       Toggle Theme
     </ButtonToggleThemeStyled>
   )
