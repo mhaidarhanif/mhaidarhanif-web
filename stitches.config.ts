@@ -491,7 +491,7 @@ export const darkTheme = createTheme('dark', {
   },
 })
 
-export const globalStyles = globalCss({
+globalCss({
   '::selection': { backgroundColor: '$brand4' },
   ':-moz-focusring': { outline: 'auto' },
   ':focus': { outline: '$focusOutline solid 2px', outlineOffset: '1px' },
@@ -531,4 +531,6 @@ export const globalStyles = globalCss({
     margin: 0,
     fontFamily: '$mono',
   },
-})
+})()
+
+// Run directly instead of using globalStyles()

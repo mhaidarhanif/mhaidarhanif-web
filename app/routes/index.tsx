@@ -1,7 +1,13 @@
+import { Link } from 'remix'
+
+import { Container } from '~/components'
+
 export default function Index() {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <Container>
+      <h1>This is the homepage</h1>
+
+      <Link to="/about">About</Link>
+    </Container>
   )
 }
