@@ -1,5 +1,5 @@
 import { styled } from '~/stitches'
-import { AnchorIcon, Icon } from '~/components'
+import { TooltipProvider, Tooltip, AnchorIcon, Icon } from '~/components'
 
 const socialMediaLinksOriginal = [
   { name: 'Twitter', url: 'https://twitter.com/mhaidarhanif' },
@@ -33,13 +33,17 @@ const SocialContainer = styled('div', {
 export const SocialMediaLinks = () => {
   return (
     <SocialContainer>
-      {socialMediaLinks.map((link, index) => {
-        return (
-          <AnchorIcon key={link.name} href={link.url}>
-            <Icon name={link.name.toLowerCase()} />
-          </AnchorIcon>
-        )
-      })}
+      <TooltipProvider delayDuration={200} skipDelayDuration={500}>
+        {socialMediaLinks.map((link, index) => {
+          return (
+            <Tooltip key={link.name} text={link.name}>
+              <AnchorIcon key={link.name} href={link.url}>
+                <Icon name={link.name.toLowerCase()} />
+              </AnchorIcon>
+            </Tooltip>
+          )
+        })}
+      </TooltipProvider>
     </SocialContainer>
   )
 }

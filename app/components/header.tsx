@@ -1,7 +1,13 @@
 import { Link } from 'remix'
 
 import { styled } from '~/stitches'
-import { Container, Logo, ButtonToggleTheme } from '~/components'
+import {
+  Container,
+  Logo,
+  ButtonToggleTheme,
+  TooltipProvider,
+  Tooltip,
+} from '~/components'
 
 const HeaderStyled = styled('header', {
   userSelect: 'none',

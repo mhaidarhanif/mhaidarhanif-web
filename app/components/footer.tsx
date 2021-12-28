@@ -27,8 +27,7 @@ export const Footer = () => {
       <Container>
         <Center>
           <FooterText>
-            <P>© M Haidar Hanif 2077</P>
-            {/* <P>🌏 World 🌍 Wide 🌎 Web</P> */}
+            <P>© M Haidar Hanif 2077 </P>
             <P lang="ja">🌏 ワールド 🌍 ワイド 🌎 ウェブ</P>
           </FooterText>
         </Center>
