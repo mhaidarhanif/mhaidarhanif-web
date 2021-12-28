@@ -1,7 +1,7 @@
 import { Link } from 'remix'
 
 import { styled } from '~/stitches'
-import { Container, ButtonToggleTheme } from '~/components'
+import { Container, Logo, ButtonToggleTheme } from '~/components'
 
 const HeaderStyled = styled('header', {
   backgroundColor: '$background',
@@ -12,15 +12,21 @@ const HeaderStyled = styled('header', {
   '@tablet': { py: '$5' },
 })
 
-const LogoNavigation = styled('div', {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-})
-
 const Navigation = styled('nav', {
   display: 'flex',
   justifyContent: 'space-between',
+  a: {
+    borderRadius: '$1',
+  },
+})
+
+const NavigationLogo = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  a: {
+    borderRadius: '$2',
+  },
 })
 
 const NavigationLinks = styled('div', {
@@ -41,11 +47,11 @@ export const Header = () => {
     <HeaderStyled>
       <Container>
         <Navigation>
-          <LogoNavigation>
+          <NavigationLogo>
             <Link to="/" title="M Haidar Hanif">
-              ICON
+              <Logo />
             </Link>
-          </LogoNavigation>
+          </NavigationLogo>
 
           <NavigationLinks>
             <ButtonToggleTheme />
