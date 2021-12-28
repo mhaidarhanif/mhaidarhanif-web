@@ -1,11 +1,11 @@
 import { Link } from 'remix'
 
-import { Container, Heading } from '~/components'
+import { Container, H } from '~/components'
 
 export default function About() {
   return (
     <Container>
-      <Heading as="h1">About me</Heading>
+      <H as="h1">About me</H>
     </Container>
   )
 }

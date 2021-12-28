@@ -43,7 +43,7 @@ const H6 = styled('h6', {
   fontSize: '1rem',
 })
 
-export const Heading = (props: HeadingProps) => {
+export const H = (props: HeadingProps) => {
   switch (props.as) {
     case 'h1':
       return <H1 {...props}>{props.children}</H1>

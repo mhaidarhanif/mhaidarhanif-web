@@ -1,9 +1,9 @@
-import { Container, Heading } from '~/components'
+import { Container, H } from '~/components'
 
 export default function Index() {
   return (
     <Container>
-      <Heading as="h1">M Haidar Hanif</Heading>
+      <H as="h1">M Haidar Hanif</H>
     </Container>
   )
 }
