@@ -122,8 +122,8 @@ const colorsTokensLightTheme = {
 }
 
 const colorsTokensDarkTheme = {
-  anchor: '$brand11',
-  anchorHover: '$brand12',
+  anchor: '$brand10',
+  anchorHover: '$brand11',
   background: '$background12',
   focusOutline: '$cyanA10',
 }

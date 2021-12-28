@@ -148,10 +148,7 @@ function App() {
 }
 
 /**
- * Document is separated so multiple components can use it:
- * - App
- * - ErrorBoundary
- * - CatchBoundary
+ * Document is used for App component only, not Boundary components
  */
 function Document({
   title,
