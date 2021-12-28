@@ -1,11 +1,9 @@
-import { Link } from 'remix'
-
 import { styled } from '~/stitches'
-import { Container } from '~/components'
+import { Container, Center } from '~/components'
 
 const FooterStyled = styled('footer', {
-  padding: '2rem 0',
-  mt: '$28',
+  py: '$1',
+  mt: '20rem',
 })
 
 const FooterText = styled('p', {
@@ -20,7 +18,9 @@ export const Footer = () => {
   return (
     <FooterStyled>
       <Container>
-        <FooterText>Hello world</FooterText>
+        <Center>
+          <FooterText>🌏 World 🌍 Wide 🌎 Web</FooterText>
+        </Center>
       </Container>
     </FooterStyled>
   )

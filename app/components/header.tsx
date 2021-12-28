@@ -9,7 +9,7 @@ const HeaderStyled = styled('header', {
   left: '0',
   width: '100%',
   py: '$5',
-  '@tablet': { py: '$5' },
+  '@tablet': { py: '$7' },
 })
 
 const Navigation = styled('nav', {

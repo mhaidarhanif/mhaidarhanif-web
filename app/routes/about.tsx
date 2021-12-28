@@ -1,11 +1,13 @@
-import { Link } from 'remix'
-
-import { Container, H } from '~/components'
+import { Hero, Avatar, AvatarImage, H } from '~/components'
 
 export default function About() {
   return (
-    <Container>
-      <H as="h1">About me</H>
-    </Container>
+    <>
+      <Hero>
+        <div>
+          <H as="h1">About Haidar</H>
+        </div>
+      </Hero>
+    </>
   )
 }
