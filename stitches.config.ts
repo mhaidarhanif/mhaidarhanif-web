@@ -539,6 +539,7 @@ globalCss({
     marginTop: '2rem',
     marginBottom: '2rem',
   },
+  button: { border: '$none' },
   img: { userSelect: 'none' },
   svg: { display: 'block' },
   'pre, code': {

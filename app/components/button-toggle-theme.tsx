@@ -2,16 +2,15 @@ import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
 import { Theme, useTheme } from '~/utils/theme'
+import { Icon } from '~/components'
 
 const ButtonToggleThemeStyled = styled('button', {
   fontSize: '$0',
   fontWeight: '$bold',
-  px: '$3',
-  py: '$2',
+  pd: '$3',
   cursor: 'pointer',
-  border: '$none',
-  borderRadius: '$pill',
   color: '$buttonText',
+  borderRadius: '$round',
   backgroundColor: '$buttonNormal',
   '&:hover': { backgroundColor: '$buttonHover' },
   '&:focus': { backgroundColor: '$buttonFocus' },
@@ -28,7 +27,7 @@ export const ButtonToggleTheme: FunctionComponent = () => {
 
   return (
     <ButtonToggleThemeStyled type="button" onClick={handleChangeTheme}>
-      Theme
+      <Icon name={nameFrom} />
     </ButtonToggleThemeStyled>
   )
 }
