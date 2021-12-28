@@ -12,6 +12,9 @@ import {
   FaLinkedin as LinkedInIcon,
   FaTwitter as TwitterIcon,
   FaYoutube as YouTubeIcon,
+  FaTh as PolyworkIcon,
+  // Misc
+  FaFileAlt as CVIcon,
 } from 'react-icons/fa'
 
 interface IconProps {
@@ -49,6 +52,13 @@ export function Icon(props: IconProps) {
       return <FacebookIcon />
     case 'youtube':
       return <YouTubeIcon />
+    case 'polywork':
+      return <PolyworkIcon />
+    /**
+     * Misc
+     */
+    case 'cv':
+      return <CVIcon />
     /**
      * When nothing found
      */
