@@ -103,8 +103,8 @@ export const meta: MetaFunction = () => {
   const color = '#05a2c2'
 
   const ogImageAlt = 'Website of M Haidar Hanif'
-  const ogImageUrl = url + 'images/mhaidarhanif-og.png?v=1'
-  const twiterImageUrl = url + 'images/mhaidarhanif-twitter.png?v=1'
+  const ogImageUrl = url + 'images/mhaidarhanif-og.jpg?v=1'
+  const twiterImageUrl = url + 'images/mhaidarhanif-twitter.jpg?v=1'
 
   return {
     title: title,
@@ -122,7 +122,12 @@ export const meta: MetaFunction = () => {
     'og:locale': 'en_US',
     'og:image': ogImageUrl,
     'og:image:alt': ogImageAlt,
-    'og:type': 'website',
+    'og:image:type': 'image/jpeg',
+    'og:type': 'profile',
+    'profile:first_name': 'John',
+    'profile:last_name': 'Doe',
+    'profile:gender': 'male',
+    'profile:username': 'johndoe',
 
     'twitter:card': 'summary_large_image',
     'twitter:site': '@mhaidarhanif',
