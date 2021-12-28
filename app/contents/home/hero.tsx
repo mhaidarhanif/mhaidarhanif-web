@@ -48,6 +48,11 @@ export const HomeHero: FunctionComponent = () => {
           </span>
           <span> • </span>
           <span>
+            Content Creator at{' '}
+            <Anchor href="https://codepolitan.com">CodePolitan</Anchor>
+          </span>
+          <span> • </span>
+          <span>
             Community Lead of{' '}
             <Anchor href="https://github.com/highskillmasters">
               High Skill Masters

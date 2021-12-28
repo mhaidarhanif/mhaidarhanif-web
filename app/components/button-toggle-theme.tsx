@@ -9,7 +9,7 @@ const ButtonToggleThemeStyled = styled('button', {
   fontWeight: '$bold',
   pd: '$3',
   cursor: 'pointer',
-  color: '$buttonText',
+  color: '$yellow11',
   borderRadius: '$round',
   backgroundColor: '$buttonNormal',
   '&:hover': { backgroundColor: '$buttonHover' },

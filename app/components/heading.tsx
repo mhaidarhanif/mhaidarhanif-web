@@ -7,8 +7,23 @@ interface HeadingProps {
   children: React.ReactNode
 }
 
-const H1 = styled('h1', {
+const headingGradient = {
+  width: '100%',
   fontFamily: '$fontHeading',
+  color: '$heading',
+  backgroundColor: '$heading',
+  backgroundImage: 'linear-gradient(to right, $brand10, $brand8)',
+  backgroundSize: '100%',
+  backgroundClip: 'text',
+  textFillColor: 'transparent',
+  WebkitBackgroundClip: 'text',
+  MozBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  MozTextFillColor: 'transparent',
+}
+
+const H1 = styled('h1', {
+  ...headingGradient,
   mt: '$5',
   mb: '$12',
   fontSize: '2.5rem',
@@ -17,14 +32,14 @@ const H1 = styled('h1', {
 })
 
 const H2 = styled('h2', {
-  fontFamily: '$fontHeading',
+  ...headingGradient,
   fontSize: '2rem',
   '@tablet': { fontSize: '2.5rem' },
   '@desktop': { fontSize: '3rem' },
 })
 
 const H3 = styled('h3', {
-  fontFamily: '$fontHeading',
+  ...headingGradient,
   fontSize: '1.75rem',
   '@tablet': { fontSize: '2.25rem' },
   '@desktop': { fontSize: '2.5rem' },

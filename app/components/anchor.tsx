@@ -3,12 +3,13 @@ import { FunctionComponent } from 'react'
 import { styled } from '~/stitches'
 
 interface AnchorProps {
+  css?: any
   href: string
   display?: 'block' | undefined
   children: React.ReactNode
 }
 
-const AnchorContainer = styled('a', {
+const AnchorStyled = styled('a', {
   variants: {
     display: {
       block: {
@@ -20,14 +21,14 @@ const AnchorContainer = styled('a', {
 
 export const Anchor: FunctionComponent<AnchorProps> = (props) => {
   return (
-    <AnchorContainer
+    <AnchorStyled
       display={props.display}
       target="_blank"
       rel="noopener noreferrer"
       {...props}
     >
       {props.children}
-    </AnchorContainer>
+    </AnchorStyled>
   )
 }
 

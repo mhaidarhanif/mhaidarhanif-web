@@ -1,5 +1,5 @@
 import { styled } from '~/stitches'
-import { Container, Center, P } from '~/components'
+import { Container, Center, P, Anchor } from '~/components'
 
 const FooterStyled = styled('footer', {
   py: '$1',
@@ -29,6 +29,19 @@ export const Footer = () => {
           <FooterText>
             <P>© M Haidar Hanif 2077 </P>
             <P lang="ja">🌏 ワールド 🌍 ワイド 🌎 ウェブ</P>
+            <P>
+              <Anchor css={{ color: '$text' }} href="https://beta.reactjs.org">
+                ⚛️ React
+              </Anchor>
+              <span> &amp; </span>
+              <Anchor css={{ color: '$text' }} href="https://remix.run">
+                💿 Remix
+              </Anchor>
+              <span> on </span>
+              <Anchor css={{ color: '$text' }} href="https://vercel.com">
+                ▲ Vercel
+              </Anchor>
+            </P>
           </FooterText>
         </Center>
       </Container>

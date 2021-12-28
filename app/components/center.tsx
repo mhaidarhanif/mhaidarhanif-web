@@ -15,6 +15,7 @@ interface CenterProps {
 
 const CenterStyled = styled('div', {
   display: 'flex',
+  width: '100%',
   variants: {
     layout: {
       horizontal: {

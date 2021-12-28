@@ -34,7 +34,8 @@ export default function About() {
             <P>In daily basis goes by working as an...</P>
             <P>
               Educator. Mentor. Software Engineer. Full Stack Web Developer.
-              Experience Designer. Product Manager. Business Runner.
+              Technical Lead. Experience Designer. Product Manager. Business
+              Runner.
             </P>
             <P lang="ja">熱心なアニメとマンガの愛好家。</P>
           </ArticleSection>
@@ -57,11 +58,19 @@ export default function About() {
           </ArticleSection>
 
           <ArticleSection>
-            <P>Also do some other stuff.</P>
+            <P>
+              Also do these other stuff that collaborate with Catamyst such
+              as...
+            </P>
             <P>
               Developer Relations Lead of{' '}
               <Anchor href="https://kontenbase.com">Kontenbase</Anchor>, a
               backend as a service platform.
+            </P>
+            <P>
+              Content Creator at{' '}
+              <Anchor href="https://codepolitan.com">CodePolitan</Anchor>, an
+              Indonesian programming community.
             </P>
             <P>
               Community Lead of{' '}
@@ -70,11 +79,23 @@ export default function About() {
               </Anchor>
               , a gathering of highly skilled professionals.
             </P>
+          </ArticleSection>
+
+          <ArticleSection>
+            <P>Previously...</P>
             <P>
-              Previously co-founding <b>Impact Byte</b>, teaching at{' '}
-              <b>Hacktiv8</b>, teaching at <b>Agnium</b>, coding at{' '}
-              <b>AMPlified</b>, working as freelancer in several places.
+              Co-founding <b>Impact Byte</b>, a flexible coding bootcamp.
             </P>
+            <P>
+              Teaching at <b>Hacktiv8</b>, an intensive coding bootcamp.
+            </P>
+            <P>
+              Teaching at <b>Agnium</b>, a software training agency.
+            </P>
+            <P>
+              Coding at <b>AMPlified</b>, a startup incubator.
+            </P>
+            <P>And working as freelancer in several places.</P>
           </ArticleSection>
 
           <ArticleSection>
