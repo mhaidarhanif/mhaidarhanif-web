@@ -19,7 +19,6 @@ import type {
   MetaFunction,
 } from 'remix'
 
-import { getEnv } from '~/utils'
 import {
   PreventFlashOnWrongTheme,
   Theme,
@@ -27,6 +26,8 @@ import {
   useTheme,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
+import { createMeta, getEnv } from '~/utils'
+import metaData from './meta.json'
 
 import { lightTheme, darkTheme } from '~/stitches'
 import { H, Layout, LayoutBoundary, P } from '~/components'
@@ -97,46 +98,7 @@ export let links: LinksFunction = () => {
  */
 
 export const meta: MetaFunction = () => {
-  const name = 'M Haidar Hanif'
-  const title = 'M Haidar Hanif'
-  const description = 'Personal website of Haidar. Educator + Engineer'
-  const url = 'https://mhaidarhanif.com/'
-  const color = '#05a2c2'
-
-  const ogImageAlt = 'Website of M Haidar Hanif'
-  const ogImageUrl = url + 'images/mhaidarhanif-og.jpg?v=1'
-  const twiterImageUrl = url + 'images/mhaidarhanif-twitter.jpg?v=1'
-
-  return {
-    title: title,
-    description: description,
-    'application-name': name,
-    'apple-mobile-web-app-title': title,
-    'msapplication-config': '/icons/browserconfig.xml?v=1',
-    'msapplication-TileColor': color,
-    'theme-color': color,
-
-    'og:site_name': name,
-    'og:title': title,
-    'og:description': description,
-    'og:url': url,
-    'og:locale': 'en_US',
-    'og:image': ogImageUrl,
-    'og:image:alt': ogImageAlt,
-    'og:image:type': 'image/jpeg',
-    'og:type': 'profile',
-    'profile:first_name': 'John',
-    'profile:last_name': 'Doe',
-    'profile:gender': 'male',
-    'profile:username': 'johndoe',
-
-    'twitter:card': 'summary_large_image',
-    'twitter:site': '@mhaidarhanif',
-    'twitter:creator': '@mhaidarhanif',
-    'twitter:title': title,
-    'twitter:description': description,
-    'twitter:image': twiterImageUrl,
-  }
+  return createMeta(metaData)
 }
 
 /**
@@ -199,7 +161,6 @@ function Document({
   children: React.ReactNode
 }) {
   const data = useLoaderData<LoaderData>()
-  console.log({ data })
 
   return (
     <html lang="en">
