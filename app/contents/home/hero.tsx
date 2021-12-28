@@ -22,6 +22,8 @@ export const HomeHero: FunctionComponent = () => {
           />
         </Avatar>
         <H as="h1">M Haidar Hanif</H>
+      </Center>
+      <Center layout="vertical-adaptive">
         <P>
           🧑🏻‍🏫 Educator / Mentor 🧑🏻‍💻 Software Engineer / Full Stack Web
           Developer

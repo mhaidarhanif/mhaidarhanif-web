@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import { styled } from '~/stitches'
 
 interface CenterProps {
-  layout?: 'horizontal' | 'vertical' | undefined
+  layout?: 'horizontal' | 'vertical' | 'vertical-adaptive' | undefined
   children: React.ReactNode
 }
 
@@ -18,6 +18,16 @@ const CenterStyled = styled('div', {
       horizontal: {
         justifyContent: 'center',
         textAlign: 'center',
+      },
+      'vertical-adaptive': {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        textAlign: 'left',
+        '@desktop': {
+          flexDirection: 'column',
+          alignItems: 'center',
+        },
       },
     },
   },

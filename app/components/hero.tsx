@@ -10,6 +10,10 @@ interface HeroProps {
 const HeroStyled = styled('div', {
   py: '$5',
   mb: '$28',
+  h1: {
+    fontFamily: 'Sarina, cursive',
+    fontWeight: '$normal',
+  },
 })
 
 export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
