@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+import { Link } from 'remix'
 
 import {
   Anchor,
@@ -58,6 +59,9 @@ export const HomeHero: FunctionComponent = () => {
               High Skill Masters
             </Anchor>
           </span>
+        </P>
+        <P>
+          <Link to="/about">❯ Read more about the story ❮</Link>
         </P>
       </Center>
     </Hero>

@@ -118,14 +118,14 @@ const colorsTokensLightTheme = {
   anchor: '$brand9',
   anchorHover: '$brand10',
   background: '$background10',
-  focusOutline: '$blackA10',
+  focusOutline: '$cyanA10',
 }
 
 const colorsTokensDarkTheme = {
   anchor: '$brand11',
   anchorHover: '$brand12',
   background: '$background12',
-  focusOutline: '$whiteA10',
+  focusOutline: '$cyanA10',
 }
 
 const spaceTokens = {

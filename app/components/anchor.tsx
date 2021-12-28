@@ -5,7 +5,7 @@ import { styled } from '~/stitches'
 interface AnchorProps {
   css?: any
   href: string
-  display?: 'block' | undefined
+  display?: 'block' | 'with-icon' | undefined
   children: React.ReactNode
 }
 
@@ -14,6 +14,12 @@ const AnchorStyled = styled('a', {
     display: {
       block: {
         display: 'block',
+      },
+      'with-icon': {
+        verticalAlign: 'bottom',
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '0.5rem',
       },
     },
   },

@@ -3,7 +3,7 @@ import { Container, Center, P, Anchor } from '~/components'
 
 const FooterStyled = styled('footer', {
   py: '$1',
-  mt: '20rem',
+  mt: '10rem',
 })
 
 const FooterText = styled('div', {

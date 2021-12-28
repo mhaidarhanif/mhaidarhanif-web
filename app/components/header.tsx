@@ -26,9 +26,6 @@ const Navigation = styled('nav', {
   '@tablet': {
     alignItems: 'center',
   },
-  a: {
-    borderRadius: '$1',
-  },
 })
 
 const NavigationLogo = styled('div', {
@@ -60,6 +57,16 @@ const NavigationLinks = styled('div', {
   },
 })
 
+const NavigationLink = styled(Link, {
+  borderRadius: '$pill',
+  '&:hover': {
+    background: '$brand4',
+  },
+  '&:focus': {
+    background: '$brand5',
+  },
+})
+
 /**
  * Header
  */
@@ -76,9 +83,9 @@ export const Header = () => {
 
           <NavigationLinks>
             <ButtonToggleTheme />
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/blog">Blog</Link>
+            <NavigationLink to="/">Home</NavigationLink>
+            <NavigationLink to="/about">About</NavigationLink>
+            <NavigationLink to="/blog">Blog</NavigationLink>
           </NavigationLinks>
         </Navigation>
       </Container>
