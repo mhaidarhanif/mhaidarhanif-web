@@ -9,6 +9,7 @@ import {
   useLoaderData,
   ScrollRestoration,
   useCatch,
+  Link,
 } from 'remix'
 import type {
   ActionFunction,
@@ -28,7 +29,7 @@ import {
 import { getThemeSession } from '~/utils/theme.server'
 
 import { lightTheme, darkTheme } from '~/stitches'
-import { Layout } from '~/components'
+import { H, Layout, LayoutBoundary, P } from '~/components'
 
 /**
  * Headers
@@ -198,6 +199,7 @@ function Document({
   children: React.ReactNode
 }) {
   const data = useLoaderData<LoaderData>()
+  console.log({ data })
 
   return (
     <html lang="en">
@@ -240,6 +242,31 @@ const DocumentBody = ({ children }: { children: React.ReactNode }) => {
 }
 
 /**
+ * DocumentBoundary
+ */
+function DocumentBoundary({
+  title,
+  children,
+}: {
+  title?: string
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        {title ? <title>{title}</title> : null}
+        <Meta />
+        <Links />
+      </head>
+
+      <body>{children}</body>
+    </html>
+  )
+}
+
+/**
  * Error Boundary
  *
  * Best effort, last ditch error boundary. This should only catch root errors
@@ -249,21 +276,26 @@ const DocumentBody = ({ children }: { children: React.ReactNode }) => {
  */
 
 export function ErrorBoundary({ error }: { error: Error }) {
-  console.error(error)
   const location = useLocation()
 
+  console.error(error)
+
   return (
-    <Document title="Error!">
-      <Layout>
+    <DocumentBoundary title="Error!">
+      <LayoutBoundary>
         <div>
-          <h1>There was an error</h1>
-          <p>{error.message}</p>
+          <H as="h3">What? There was an error</H>
+          <P>{error.message}</P>
           <hr />
-          <p>${location.pathname} is currently not working.</p>
-          <p>Sorry, there is an error. Please try again or refresh the page.</p>
+          <P>${location.pathname} is currently not working.</P>
+          <P>Sorry, there is an error. Please try again or refresh the page.</P>
+          <P lang="ja">何？ ごめんなさい〜</P>
+          <P>
+            <Link to="/">Let's go back to homepage</Link>
+          </P>
         </div>
-      </Layout>
-    </Document>
+      </LayoutBoundary>
+    </DocumentBoundary>
   )
 }
 
@@ -275,23 +307,26 @@ export function ErrorBoundary({ error }: { error: Error }) {
 export function CatchBoundary() {
   const caught = useCatch()
   const location = useLocation()
-  let message
 
   console.error('CatchBoundary', caught)
+
+  let message
 
   switch (caught.status) {
     case 401:
       message = (
         <div>
-          <p>Sorry, you don't have access to this page</p>
+          <P>Sorry, you don't have access to this page</P>
+          <P lang="ja">通ることならず！</P>
         </div>
       )
       break
     case 404:
       message = (
         <div>
-          <p>Sorry, this page doesn't exist.</p>
-          <p>${location.pathname} is not available.</p>
+          <P>Sorry, this page doesn't exist.</P>
+          <P>${location.pathname} is not available.</P>
+          <P lang="ja">ごめんなさい〜</P>
         </div>
       )
       break
@@ -300,13 +335,16 @@ export function CatchBoundary() {
   }
 
   return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
-      <Layout>
-        <h1>
+    <DocumentBoundary title={`${caught.status} ${caught.statusText}`}>
+      <LayoutBoundary>
+        <H as="h3">
           {caught.status}: {caught.statusText}
-        </h1>
+        </H>
         {message}
-      </Layout>
-    </Document>
+        <P>
+          <Link to="/">Let's go back to homepage</Link>
+        </P>
+      </LayoutBoundary>
+    </DocumentBoundary>
   )
 }

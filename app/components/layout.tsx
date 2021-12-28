@@ -1,6 +1,6 @@
 import { styled } from '~/stitches'
 
-import { Header, Footer } from '~/components'
+import { Header, Footer, Container } from '~/components'
 
 const LayoutContainer = styled('div', {
   display: 'flex',
@@ -16,12 +16,23 @@ const LayoutContent = styled('main', {
 /**
  * Layout
  */
+
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <LayoutContainer>
       <Header />
       <LayoutContent>{children}</LayoutContent>
       <Footer />
+    </LayoutContainer>
+  )
+}
+
+export const LayoutBoundary = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <LayoutContainer>
+      <LayoutContent>
+        <Container>{children}</Container>
+      </LayoutContent>
     </LayoutContainer>
   )
 }
