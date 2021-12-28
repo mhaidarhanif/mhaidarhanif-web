@@ -210,24 +210,26 @@ const zIndicesTokens = {
 }
 
 const fontsTokens = {
-  untitled: 'Untitled Sans, -apple-system, system-ui, sans-serif',
-  body: 'system-ui, sans-serif',
-  heading: 'Georgia, serif',
-  mono: 'Menlo, monospace',
+  fontDefault: `'Shippori Antique B1', Helvetica, Arial, -apple-system, system-ui, sans-serif`,
+  fontJapanese: `'Kosugi Maru', sans-serif`,
+  fontHeading: `Sarina, cursive`,
+  fontMono: `'Space Mono', monospace`,
 }
 
 const fontSizesTokens = {
-  0: '10px',
-  1: '12px',
-  2: '14px',
-  3: '16px',
-  4: '18px',
-  5: '1.2rem',
-  6: '20px',
-  7: '25px',
-  8: '35px',
-  9: '45px',
-  10: '55px',
+  '-2': '0.8rem',
+  '-1': '0.9rem',
+  '0': '1rem',
+  '1': '1.1rem',
+  '2': '1.2rem',
+  '3': '1.3rem',
+  '4': '1.4rem',
+  '5': '1.5rem',
+  '6': '1.6rem',
+  '7': '1.7rem',
+  '8': '1.8rem',
+  '9': '1.9rem',
+  '10': '2rem',
 }
 
 const fontWeightsTokens = {
@@ -497,8 +499,13 @@ export const darkTheme = createTheme('dark', {
  */
 globalCss({
   '::selection': { backgroundColor: '$brand4' },
-  ':-moz-focusring': { outline: 'auto' },
-  ':focus': { outline: '$focusOutline solid 2px', outlineOffset: '1px' },
+  ':-moz-focusring': {
+    outline: 'auto',
+  },
+  ':focus': {
+    outline: '$focusOutline solid 2px',
+    outlineOffset: '2px',
+  },
   body: {
     color: '$text',
     backgroundColor: '$background',
@@ -506,8 +513,8 @@ globalCss({
     margin: '0',
     overflowX: 'hidden',
     boxSizing: 'border-box',
-    fontFamily: `-apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto,
-    Arial, sans-serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji'`,
+    fontFamily: '$fontDefault',
+    border: '5px solid $brand',
   },
   h1: { color: '$heading' },
   h2: { color: '$heading' },
@@ -515,7 +522,10 @@ globalCss({
   h4: { color: '$heading' },
   h5: { color: '$heading' },
   h6: { color: '$heading' },
-  p: { color: '$text' },
+  p: {
+    fontFamily: '$fontText',
+    color: '$text',
+  },
   a: {
     color: '$anchor',
     textDecoration: 'none',
@@ -533,6 +543,6 @@ globalCss({
   svg: { display: 'block' },
   'pre, code': {
     margin: 0,
-    fontFamily: '$mono',
+    fontFamily: '$fontMono',
   },
 })()

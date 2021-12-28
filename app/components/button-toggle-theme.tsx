@@ -4,9 +4,10 @@ import { styled } from '~/stitches'
 import { Theme, useTheme } from '~/utils/theme'
 
 const ButtonToggleThemeStyled = styled('button', {
+  fontSize: '$0',
+  fontWeight: '$bold',
   px: '$3',
   py: '$2',
-  fontWeight: '$bold',
   cursor: 'pointer',
   border: '$none',
   borderRadius: '$pill',
@@ -27,7 +28,7 @@ export const ButtonToggleTheme: FunctionComponent = () => {
 
   return (
     <ButtonToggleThemeStyled type="button" onClick={handleChangeTheme}>
-      {nameFrom} → {nameTo}
+      Theme
     </ButtonToggleThemeStyled>
   )
 }

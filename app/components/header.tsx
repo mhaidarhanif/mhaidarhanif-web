@@ -15,6 +15,10 @@ const HeaderStyled = styled('header', {
 const Navigation = styled('nav', {
   display: 'flex',
   justifyContent: 'space-between',
+  alignItems: 'flex-start',
+  '@tablet': {
+    alignItems: 'center',
+  },
   a: {
     borderRadius: '$1',
   },
@@ -31,11 +35,21 @@ const NavigationLogo = styled('div', {
 
 const NavigationLinks = styled('div', {
   display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'flex-end',
   alignItems: 'center',
-  gap: '$3',
+  gap: '$1',
+  '@tablet': {
+    gap: '$3',
+  },
   a: {
     px: '$3',
     py: '$2',
+    fontWeight: '$bold',
+    fontSize: '$-1',
+    '@tablet': {
+      fontSize: '$1',
+    },
   },
 })
 

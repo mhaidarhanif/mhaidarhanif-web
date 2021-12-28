@@ -8,22 +8,26 @@ interface HeadingProps {
 }
 
 const H1 = styled('h1', {
-  fontSize: '2.25rem',
-  my: '$5',
-  '@tablet': { fontSize: '2.5rem' },
-  '@desktop': { fontSize: '2.75rem' },
+  fontFamily: '$fontHeading',
+  mt: '$5',
+  mb: '$10',
+  fontSize: '2.5rem',
+  '@tablet': { fontSize: '2.75rem' },
+  '@desktop': { fontSize: '3.5rem' },
 })
 
 const H2 = styled('h2', {
-  fontSize: '1.5rem',
-  '@tablet': { fontSize: '1.75rem' },
-  '@desktop': { fontSize: '2rem' },
+  fontFamily: '$fontHeading',
+  fontSize: '2rem',
+  '@tablet': { fontSize: '2.5rem' },
+  '@desktop': { fontSize: '3rem' },
 })
 
 const H3 = styled('h3', {
+  fontFamily: '$fontHeading',
   fontSize: '1.75rem',
-  '@tablet': { fontSize: '1.75rem' },
-  '@desktop': { fontSize: '1.75rem' },
+  '@tablet': { fontSize: '2.25rem' },
+  '@desktop': { fontSize: '2.5rem' },
 })
 
 const H4 = styled('h4', {

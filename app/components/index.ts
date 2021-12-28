@@ -1,4 +1,5 @@
 export * from './anchor'
+export * from './article'
 export * from './avatar'
 export * from './button-toggle-theme'
 export * from './button'

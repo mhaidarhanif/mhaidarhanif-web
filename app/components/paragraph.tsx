@@ -1,11 +1,20 @@
 import { styled } from '~/stitches'
 
 export const P = styled('p', {
+  fontSize: '$2',
+  lineHeight: '$8',
   mt: '$0',
   mb: '$5',
-  fontSize: '$4',
-  lineHeight: '$8',
+
   variants: {
+    lang: {
+      en: {
+        fontFamily: '$fontDefault',
+      },
+      ja: {
+        fontFamily: '$fontJapanese',
+      },
+    },
     size: {
       adaptive: {
         fontSize: '$1',

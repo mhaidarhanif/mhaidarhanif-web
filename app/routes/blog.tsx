@@ -1,4 +1,4 @@
-import { Hero, Center, H, P } from '~/components'
+import { Hero, H, P } from '~/components'
 
 export default function Blog() {
   return (

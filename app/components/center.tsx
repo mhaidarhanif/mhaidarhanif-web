@@ -14,6 +14,7 @@ const CenterStyled = styled('div', {
       vertical: {
         flexDirection: 'column',
         alignItems: 'center',
+        textAlign: 'center',
       },
       horizontal: {
         justifyContent: 'center',
@@ -27,6 +28,7 @@ const CenterStyled = styled('div', {
         '@desktop': {
           flexDirection: 'column',
           alignItems: 'center',
+          textAlign: 'center',
         },
       },
     },

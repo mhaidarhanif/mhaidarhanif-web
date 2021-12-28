@@ -8,11 +8,15 @@ interface HeroProps {
 }
 
 const HeroStyled = styled('div', {
-  py: '$5',
-  mb: '$28',
   h1: {
-    fontFamily: 'Sarina, cursive',
+    fontFamily: '$fontHeading',
     fontWeight: '$normal',
+  },
+  py: '$1',
+  mb: '$20',
+  '@tablet': {
+    py: '$5',
+    mb: '$28',
   },
 })
 
