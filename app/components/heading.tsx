@@ -10,7 +10,7 @@ interface HeadingProps {
 const H1 = styled('h1', {
   fontFamily: '$fontHeading',
   mt: '$5',
-  mb: '$10',
+  mb: '$12',
   fontSize: '2.5rem',
   '@tablet': { fontSize: '2.75rem' },
   '@desktop': { fontSize: '3.5rem' },

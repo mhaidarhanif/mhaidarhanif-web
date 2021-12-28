@@ -3,6 +3,7 @@ import { FunctionComponent } from 'react'
 import { styled } from '~/stitches'
 
 interface CenterProps {
+  css?: any
   layout?:
     | 'horizontal'
     | 'vertical'

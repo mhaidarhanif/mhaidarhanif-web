@@ -1,17 +1,22 @@
-import { Hero, H, P } from '~/components'
+import { Hero, H, P, Article, ArticleSection } from '~/components'
 
 export default function Blog() {
   return (
     <>
       <Hero>
-        <div>
+        <Article>
           <H as="h1">Blog</H>
-          <P>
-            Collection of ideas, stories, thoughts, learnings, and various
-            sharings. Usually around life, career, tech, software engineering,
-            web development, and multiple topics.
-          </P>
-        </div>
+          <ArticleSection>
+            <P>
+              Collection of ideas, stories, thoughts, learnings, and various
+              sharings. Usually around life, career, tech, software engineering,
+              web development, and multiple topics.
+            </P>
+          </ArticleSection>
+          <ArticleSection>
+            <P>Coming soon here.</P>
+          </ArticleSection>
+        </Article>
       </Hero>
     </>
   )

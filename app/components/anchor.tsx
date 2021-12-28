@@ -33,6 +33,6 @@ export const Anchor: FunctionComponent<AnchorProps> = (props) => {
 
 export const AnchorIcon = styled(Anchor, {
   svg: { height: '100%' },
-  color: '$gray11',
-  '&:hover': { color: '$gray12' },
+  // color: '$brand10',
+  // '&:hover': { color: '$brand11' },
 })

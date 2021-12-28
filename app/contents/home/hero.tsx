@@ -1,18 +1,30 @@
 import { FunctionComponent } from 'react'
 
-import { Hero, Center, Avatar, AvatarImage, Anchor, H, P } from '~/components'
+import {
+  Anchor,
+  Avatar,
+  AvatarImage,
+  Center,
+  Hero,
+  H,
+  P,
+  SocialMediaLinks,
+} from '~/components'
 
 export const HomeHero: FunctionComponent = () => {
   return (
     <Hero>
-      <Center layout="vertical-center">
+      <Center layout="vertical-center" css={{ mb: '$10' }}>
         <Avatar size="5">
           <AvatarImage
             src="/photos/mhaidarhanif-cyan.jpeg"
             alt="M Haidar Hanif"
           />
         </Avatar>
-        <H as="h1">M Haidar Hanif</H>
+        <H as="h1" css={{ mb: '$5' }}>
+          M Haidar Hanif
+        </H>
+        <SocialMediaLinks />
       </Center>
 
       <Center layout="vertical-adaptive">

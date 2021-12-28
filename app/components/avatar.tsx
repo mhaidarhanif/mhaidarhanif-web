@@ -4,13 +4,13 @@ import { styled } from '~/stitches'
 
 const AvatarStyled = styled(AvatarPrimitive.Root, {
   display: 'inline-flex',
-  alignItems: 'center',
   justifyContent: 'center',
-  verticalAlign: 'middle',
+  alignItems: 'center',
+  backgroundColor: '$brand',
+  borderRadius: '100%',
   overflow: 'hidden',
   userSelect: 'none',
-  borderRadius: '100%',
-  backgroundColor: '$brand',
+  verticalAlign: 'middle',
   variants: {
     size: {
       1: { width: 10, height: 10 },

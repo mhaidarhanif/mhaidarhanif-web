@@ -4,6 +4,7 @@ import { styled } from '~/stitches'
 import { Container, Logo, ButtonToggleTheme } from '~/components'
 
 const HeaderStyled = styled('header', {
+  userSelect: 'none',
   backgroundColor: '$background',
   top: '0',
   left: '0',

@@ -86,7 +86,6 @@ const colorsTokens = {
   brand: '#05a2c2',
   heading: '$brand11',
   text: '$slate12',
-  anchor: '$brand9',
 
   buttonText: '$brand11',
   buttonNormal: '$brand4',
@@ -116,11 +115,15 @@ const colorsTokens = {
 }
 
 const colorsTokensLightTheme = {
+  anchor: '$brand9',
+  anchorHover: '$brand10',
   background: '$background10',
   focusOutline: '$blackA10',
 }
 
 const colorsTokensDarkTheme = {
+  anchor: '$brand11',
+  anchorHover: '$brand12',
   background: '$background12',
   focusOutline: '$whiteA10',
 }
@@ -527,9 +530,9 @@ globalCss({
     color: '$text',
   },
   a: {
-    color: '$anchor',
     textDecoration: 'none',
-    '&:hover': { color: '$brand10' },
+    color: '$anchor',
+    '&:hover': { color: '$anchorHover' },
   },
   hr: {
     display: 'block',
