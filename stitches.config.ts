@@ -83,6 +83,7 @@ const colorsTokens = {
   text11: '$slate2',
   text12: '$slate1',
 
+  brand: '#05a2c2',
   heading: '$brand11',
   text: '$slate12',
   anchor: '$brand9',

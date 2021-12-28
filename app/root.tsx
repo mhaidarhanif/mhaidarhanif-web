@@ -39,22 +39,44 @@ export const headers: HeadersFunction = () => ({
 })
 
 /**
- * Loader
+ * Links
+ *
+ * https://remix.run/api/app#links
  */
 
-export type LoaderData = {
-  theme: Theme | null
-  ENV: ReturnType<typeof getEnv>
-}
-
-export const loader: LoaderFunction = async ({ request }) => {
-  const themeSession = await getThemeSession(request)
-  const data: LoaderData = {
-    theme: themeSession.getTheme(),
-    ENV: getEnv(),
-  }
-
-  return json(data)
+export let links: LinksFunction = () => {
+  return [
+    {
+      rel: 'shortcut icon',
+      href: '/icons/favicon.ico?v=1',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/icons/favicon-32x32.png?v=1',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/icons/favicon-16x16.png?v=1',
+    },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/icons/apple-touch-icon.png?v=1',
+    },
+    {
+      rel: 'mask-icon',
+      href: '/icons/safari-pinned-tab.svg?v=1',
+      color: '#05a2c2',
+    },
+    {
+      rel: 'manifest',
+      href: '/icons/site.webmanifest?v=1',
+    },
+  ]
 }
 
 /**
@@ -66,6 +88,7 @@ export const meta: MetaFunction = () => {
   const title = 'M Haidar Hanif'
   const description = 'Personal website of Haidar. Educator + Engineer'
   const url = 'https://mhaidarhanif.com/'
+  const color = '#05a2c2'
 
   const ogImageAlt = 'Website of M Haidar Hanif'
   const ogImageUrl = url + 'images/mhaidarhanif-og.png?v=1'
@@ -74,6 +97,11 @@ export const meta: MetaFunction = () => {
   return {
     title: title,
     description: description,
+    'application-name': name,
+    'apple-mobile-web-app-title': title,
+    'msapplication-config': '/icons/browserconfig.xml?v=1',
+    'msapplication-TileColor': color,
+    'theme-color': color,
 
     'og:site_name': name,
     'og:title': title,
@@ -91,6 +119,25 @@ export const meta: MetaFunction = () => {
     'twitter:description': description,
     'twitter:image': twiterImageUrl,
   }
+}
+
+/**
+ * Loader
+ */
+
+export type LoaderData = {
+  theme: Theme | null
+  ENV: ReturnType<typeof getEnv>
+}
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeSession = await getThemeSession(request)
+  const data: LoaderData = {
+    theme: themeSession.getTheme(),
+    ENV: getEnv(),
+  }
+
+  return json(data)
 }
 
 /**
