@@ -5,7 +5,7 @@ import { Hero, Center, Avatar, AvatarImage, Anchor, H, P } from '~/components'
 export const HomeHero: FunctionComponent = () => {
   return (
     <Hero>
-      <Center>
+      <Center layout="vertical-center">
         <Avatar size="5">
           <AvatarImage
             src="/photos/mhaidarhanif-cyan.jpeg"
