@@ -1,3 +1,4 @@
+export * from './avatar'
 export * from './button-toggle-theme'
 export * from './button'
 export * from './container'
