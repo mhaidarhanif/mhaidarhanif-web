@@ -25,6 +25,8 @@ const socialMediaLinks = [
 
 const SocialContainer = styled('div', {
   display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   flexWrap: 'wrap',
   gap: '1rem',
   fontSize: '1.5rem',
@@ -33,17 +35,15 @@ const SocialContainer = styled('div', {
 export const SocialMediaLinks = () => {
   return (
     <SocialContainer>
-      <TooltipProvider delayDuration={200} skipDelayDuration={500}>
-        {socialMediaLinks.map((link, index) => {
-          return (
-            <Tooltip key={link.name} text={link.name}>
-              <AnchorIcon key={link.name} href={link.url}>
-                <Icon name={link.name.toLowerCase()} />
-              </AnchorIcon>
-            </Tooltip>
-          )
-        })}
-      </TooltipProvider>
+      {socialMediaLinks.map((link, index) => {
+        return (
+          <Tooltip key={link.name} text={link.name}>
+            <AnchorIcon key={link.name} href={link.url}>
+              <Icon name={link.name.toLowerCase()} />
+            </AnchorIcon>
+          </Tooltip>
+        )
+      })}
     </SocialContainer>
   )
 }
