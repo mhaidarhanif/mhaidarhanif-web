@@ -12,11 +12,10 @@ const HeroStyled = styled('div', {
     fontFamily: '$fontHeading',
     fontWeight: '$normal',
   },
-  py: '$1',
-  mb: '$20',
+  py: '$5',
   '@tablet': {
     py: '$5',
-    mb: '$28',
+    mb: '$10',
   },
 })
 
