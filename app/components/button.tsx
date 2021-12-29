@@ -1,6 +1,6 @@
-import { styled, darkTheme } from '~/stitches'
+import { styled } from '~/stitches'
 
-export const Button = styled('button', {
+export const buttonStyles = {
   px: '$3',
   py: '$2',
   fontWeight: '$bold',
@@ -11,11 +11,20 @@ export const Button = styled('button', {
   backgroundColor: '$buttonNormal',
   '&:hover': { backgroundColor: '$buttonHover' },
   '&:focus': { backgroundColor: '$buttonFocus' },
-  [`${darkTheme}`]: {},
+}
+
+/**
+ * Button
+ */
+
+export const Button = styled('button', {
+  ...buttonStyles,
 })
 
 /**
- * Need to pass dark theme into Button component or the dark
- * theme variables aren't compiled and added to :root. This isn't
- * normally necessary.
+ * Anchor Button
  */
+
+export const AnchorButton = styled('a', {
+  ...buttonStyles,
+})
