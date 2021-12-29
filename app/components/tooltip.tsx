@@ -68,7 +68,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
       <TooltipTrigger asChild>
         <span>{children}</span>
       </TooltipTrigger>
-      <TooltipContent side="top" sideOffset={5}>
+      <TooltipContent side="bottom" sideOffset={5}>
         <span>{text}</span>
         <TooltipArrow height="10" />
       </TooltipContent>
