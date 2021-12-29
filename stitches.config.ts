@@ -1,6 +1,8 @@
 import {
   blackA,
   whiteA,
+  amber,
+  amberDark,
   blue,
   blueDark,
   cyan,
@@ -9,6 +11,8 @@ import {
   cyanDarkA,
   green,
   greenDark,
+  pink,
+  pinkDark,
   red,
   redDark,
   slate,
@@ -446,16 +450,19 @@ export const {
 } = createStitches({
   theme: {
     colors: {
+      ...amber,
       ...blackA,
       ...blue,
       ...cyan,
       ...cyanA,
       ...green,
+      ...pink,
       ...red,
       ...slate,
       ...slateA,
       ...whiteA,
       ...yellow,
+
       ...colorsTokens,
       ...colorsTokensLightTheme,
     },
@@ -483,10 +490,12 @@ export const lightTheme = createTheme('light')
 
 export const darkTheme = createTheme('dark', {
   colors: {
+    ...amberDark,
     ...blueDark,
     ...cyanDark,
     ...cyanDarkA,
     ...greenDark,
+    ...pinkDark,
     ...redDark,
     ...slateDark,
     ...slateDarkA,

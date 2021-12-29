@@ -24,24 +24,21 @@ export default function Hello() {
             <P>Hello in English</P>
             <P>Halo in Indonesian or Malay</P>
             <P>
-              <Span css={{ color: '$red10' }} lang="ja">
-                こんにちは
-              </Span>{' '}
-              in Japanese
+              <Span lang="ja">こんにちは</Span> in Japanese
             </P>
             <P>
-              <Span css={{ color: '$blue10' }}>안녕하세요</Span> in Korean
+              <Span lang="ko">안녕하세요</Span> in Korean
             </P>
             <P>Bonjour in French</P>
             <P>Kamusta in Filipino</P>
             <P>
-              <Span>你好</Span> in Chinese
+              <Span lang="zh">你好</Span> in Chinese
             </P>
             <P>
-              <Span>สวัสดี</Span> in Thai
+              <Span lang="th">สวัสดี</Span> in Thai
             </P>
             <P>
-              <Span>مرحبا</Span> in Arabic
+              <Span lang="ar">مرحبا</Span> in Arabic
             </P>
           </ArticleSection>
         </Article>
