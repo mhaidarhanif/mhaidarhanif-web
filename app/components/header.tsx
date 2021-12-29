@@ -36,20 +36,20 @@ const NavigationLinks = styled('div', {
   alignItems: 'center',
   gap: '$1',
   '@tablet': { gap: '$3' },
-  a: {
-    px: '$3',
-    py: '$2',
-    fontWeight: '$bold',
-    fontSize: '$-1',
-    '@tablet': {
-      fontSize: '$1',
-    },
-  },
 })
 
 const NavigationLink = styled(Link, {
+  transition: 'all 0.2s ease',
+  px: '$3',
+  py: '$2',
+  fontWeight: '$bold',
+  fontSize: '$-1',
+  '@tablet': {
+    fontSize: '$1',
+  },
   borderRadius: '$pill',
-  '&:hover': { background: '$brand4' },
+  color: '$anchor',
+  '&:hover': { background: '$brand4', color: '$anchorHover' },
   '&:focus': { background: '$brand5' },
 })
 

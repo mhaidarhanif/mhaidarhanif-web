@@ -1,17 +1,20 @@
 import { Link } from 'remix'
 export { Link }
-import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
 
-interface LinkProps {
-  css?: any
-  to: string
-  display?: 'block' | 'with-icon' | undefined
-  children: React.ReactNode
-}
-
-const LinkButtonStyled = styled(Link, {
+export const LinkButton = styled(Link, {
+  px: '$3',
+  py: '$2',
+  fontWeight: '$bold',
+  cursor: 'pointer',
+  border: '$none',
+  borderRadius: '$1',
+  color: '$sky12',
+  transition: 'all 0.2s ease',
+  backgroundColor: '$sky9',
+  '&:hover': { backgroundColor: '$sky10' },
+  '&:focus': { backgroundColor: '$sky10' },
   variants: {
     display: {
       block: {
@@ -26,7 +29,3 @@ const LinkButtonStyled = styled(Link, {
     },
   },
 })
-
-export const LinkButton: FunctionComponent<LinkProps> = (props) => {
-  return <LinkButtonStyled {...props}>{props.children}</LinkButtonStyled>
-}

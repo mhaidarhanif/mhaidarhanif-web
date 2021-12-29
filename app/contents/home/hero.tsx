@@ -10,6 +10,10 @@ import {
   H,
   P,
   SocialMediaLinks,
+  LinkButton,
+  Article,
+  ArticleSection,
+  ButtonGroup,
 } from '~/components'
 
 export const HomeHero: FunctionComponent = () => {
@@ -29,40 +33,50 @@ export const HomeHero: FunctionComponent = () => {
       </Center>
 
       <Center layout="vertical-adaptive">
-        <P>
-          🧑🏻‍🏫 Educator / Mentor 🧑🏻‍💻 Software Engineer / Full Stack Web
-          Developer
-        </P>
-        <P>
-          ⚡ Helping people in modern career, web development, software
-          engineering, tech business, and life in general
-        </P>
-        <P>
-          <span>
-            Founder and Mentor of{' '}
-            <Anchor href="https://catamyst.com">Catamyst</Anchor>
-          </span>
-          <span> • </span>
-          <span>
-            Developer Relations Lead of{' '}
-            <Anchor href="https://kontenbase.com">Kontenbase</Anchor>
-          </span>
-          <span> • </span>
-          <span>
-            Content Creator at{' '}
-            <Anchor href="https://codepolitan.com">CodePolitan</Anchor>
-          </span>
-          <span> • </span>
-          <span>
-            Community Lead of{' '}
-            <Anchor href="https://github.com/highskillmasters">
-              High Skill Masters
-            </Anchor>
-          </span>
-        </P>
-        <P>
-          <Link to="/about">❯ Read more about the story ❮</Link>
-        </P>
+        <Article>
+          <ArticleSection>
+            <P>
+              🧑🏻‍🏫 Educator / Mentor 🧑🏻‍💻 Software Engineer / Full Stack Web
+              Developer
+            </P>
+            <P>
+              ⚡ Helping people in modern career, web development, software
+              engineering, tech business, and life in general
+            </P>
+            <P>
+              <span>
+                Founder and Mentor of{' '}
+                <Anchor href="https://catamyst.com">Catamyst</Anchor>
+              </span>
+              <span> • </span>
+              <span>
+                Developer Relations Lead of{' '}
+                <Anchor href="https://kontenbase.com">Kontenbase</Anchor>
+              </span>
+              <span> • </span>
+              <span>
+                Content Creator at{' '}
+                <Anchor href="https://codepolitan.com">CodePolitan</Anchor>
+              </span>
+              <span> • </span>
+              <span>
+                Community Lead of{' '}
+                <Anchor href="https://github.com/highskillmasters">
+                  High Skill Masters
+                </Anchor>
+              </span>
+            </P>
+          </ArticleSection>
+
+          <ArticleSection>
+            <Center>
+              <ButtonGroup>
+                <LinkButton to="/about">❯ Follow more story ❮</LinkButton>
+                <LinkButton to="/blog">❯ Enjoy blog posts ❮</LinkButton>
+              </ButtonGroup>
+            </Center>
+          </ArticleSection>
+        </Article>
       </Center>
     </Hero>
   )

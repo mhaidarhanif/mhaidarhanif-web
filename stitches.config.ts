@@ -546,9 +546,6 @@ globalCss({
   },
   a: {
     textDecoration: 'none',
-    color: '$anchor',
-    transition: 'color 0.2s ease',
-    '&:hover': { color: '$anchorHover' },
   },
   hr: {
     display: 'block',

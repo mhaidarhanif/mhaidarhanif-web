@@ -1,6 +1,7 @@
 import { styled } from '~/stitches'
 
 export const buttonStyles = {
+  transition: 'all 0.2s ease',
   px: '$3',
   py: '$2',
   fontWeight: '$bold',
