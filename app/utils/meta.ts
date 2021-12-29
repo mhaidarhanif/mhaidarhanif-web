@@ -10,7 +10,7 @@ type CreateMeta = {
   twiterImageUrl?: string
   url?: string
   route?: string
-  fbAppId?: string
+  locale?: string
 }
 
 export const createMeta = ({
@@ -23,7 +23,7 @@ export const createMeta = ({
   twiterImageUrl,
   url,
   route,
-  fbAppId,
+  locale,
 }: CreateMeta) => {
   return {
     title: title || name || metaDefault.title,
@@ -39,7 +39,7 @@ export const createMeta = ({
     'og:site_name': name || title || metaDefault.name,
     'og:title': title || name || metaDefault.title,
     'og:description': description || metaDefault.description,
-    'og:locale': 'en_US',
+    'og:locale': locale || metaDefault.locale,
     'og:url': route
       ? `https://kontenbase.com/${route}`
       : url || metaDefault.url,
@@ -47,7 +47,7 @@ export const createMeta = ({
       ? metaDefault.url + ogImageUrl
       : metaDefault.url + metaDefault.ogImageUrl,
     'og:image:type': 'image/jpeg',
-    'og:image:alt': ogImageAlt || name || metaDefault.ogImageAlt,
+    'og:image:alt': ogImageAlt ? ogImageAlt : title || metaDefault.ogImageAlt,
 
     'og:type': 'profile',
     'profile:first_name': 'M Haidar',

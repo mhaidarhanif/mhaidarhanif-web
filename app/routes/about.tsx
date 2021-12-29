@@ -1,4 +1,3 @@
-import { Meta } from 'remix'
 import type { MetaFunction } from 'remix'
 
 import {

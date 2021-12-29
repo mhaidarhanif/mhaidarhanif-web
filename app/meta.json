@@ -8,5 +8,6 @@
   "ogImageAlt": "Website of M Haidar Hanif",
   "ogImageUrl": "images/mhaidarhanif-og.jpg?v=1",
   "twiterImageUrl": "images/mhaidarhanif-twitter.jpg?v=1",
-  "fbAppId": "221593320168071"
+  "fbAppId": "221593320168071",
+  "locale": "en_US"
 }
