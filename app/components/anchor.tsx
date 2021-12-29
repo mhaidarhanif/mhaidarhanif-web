@@ -19,7 +19,7 @@ const AnchorStyled = styled('a', {
         verticalAlign: 'bottom',
         display: 'inline-flex',
         alignItems: 'center',
-        gap: '0.5rem',
+        gap: '0.25rem',
       },
     },
   },

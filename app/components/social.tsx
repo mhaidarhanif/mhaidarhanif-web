@@ -25,7 +25,6 @@ const socialMediaLinks = [
 
 const SocialContainer = styled('div', {
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
   flexWrap: 'wrap',
   gap: '1rem',

@@ -14,8 +14,14 @@ import {
   FaYoutube as YouTubeIcon,
   FaTh as PolyworkIcon,
   // Misc
+  FaCat as CatamystIcon,
   FaFileAlt as CVIcon,
 } from 'react-icons/fa'
+import {
+  BsSlack as SlackIcon,
+  BsFillChatSquareFill as TwistIcon,
+  BsDiscord as DiscordIcon,
+} from 'react-icons/bs'
 
 interface IconProps {
   name: string
@@ -55,8 +61,19 @@ export function Icon(props: IconProps) {
     case 'polywork':
       return <PolyworkIcon />
     /**
+     * Chat
+     */
+    case 'slack':
+      return <SlackIcon />
+    case 'twist':
+      return <TwistIcon />
+    case 'discord':
+      return <DiscordIcon />
+    /**
      * Misc
      */
+    case 'catamyst':
+      return <CatamystIcon />
     case 'cv':
       return <CVIcon />
     /**

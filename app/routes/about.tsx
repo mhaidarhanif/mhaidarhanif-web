@@ -70,8 +70,10 @@ export default function About() {
             </P>
             <P>
               Currently founding{' '}
-              <Anchor href="https://catamyst.com">Catamyst</Anchor>, an
-              education platform and software company to bring that mission
+              <Anchor display="with-icon" href="https://catamyst.com">
+                <Icon name="catamyst" /> Catamyst
+              </Anchor>
+              , an education platform and software company to bring that mission
               forward.
             </P>
             <P>
@@ -107,9 +109,19 @@ export default function About() {
               .
             </P>
             <P>
-              For work, I'm on <Anchor href="https://twist.com">Twist</Anchor>{' '}
-              and <Anchor href="https://slack.com">Slack</Anchor>. Sometimes on{' '}
-              <Anchor href="https://discord.com">Discord</Anchor>.
+              For work, I'm on{' '}
+              <Anchor display="with-icon" href="https://twist.com">
+                <Icon name="twist" /> Twist
+              </Anchor>{' '}
+              and{' '}
+              <Anchor display="with-icon" href="https://slack.com">
+                <Icon name="slack" /> Slack
+              </Anchor>
+              , sometimes on{' '}
+              <Anchor display="with-icon" href="https://discord.com">
+                <Icon name="discord" /> Discord
+              </Anchor>
+              .
             </P>
           </ArticleSection>
 
