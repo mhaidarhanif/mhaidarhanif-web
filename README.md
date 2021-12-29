@@ -1,5 +1,12 @@
 # mhaidarhanif-web
 
+[![MIT License][license-badge]][license]
+
+<!-- prettier-ignore-start -->
+[license-badge]: https://img.shields.io/badge/license-MIT-cyan.svg?style=flat-square
+[license]: https://github.com/mhaidarhanif/mhaidarhanif-web/blob/main/LICENSE
+<!-- prettier-ignore-end -->
+
 M Haidar Hanif's personal website with React, Remix, Stitches, Radix UI, and deployed to Vercel.
 
 Current repo is at [mhaidarhanif-web](https://github.com/mhaidarhanif/mhaidarhanif-web) on [GitHub](https://github.com/mhaidarhanif).
