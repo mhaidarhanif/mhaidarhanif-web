@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "remix setup node",
-    "dev": "node -r dotenv/config remix dev",
+    "dev": "node -r dotenv/config node_modules/.bin/remix dev",
     "dev:remix": "remix dev",
     "build": "remix build",
     "start": "remix-serve build"
