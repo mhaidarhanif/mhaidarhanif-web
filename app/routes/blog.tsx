@@ -3,11 +3,9 @@ import type { MetaFunction, LoaderFunction } from 'remix'
 import { json, useLoaderData } from 'remix'
 
 import { BlogHero, BlogPosts } from '~/contents'
-import { createMeta } from '~/utils'
-
-import { getEnv } from '~/utils'
-
 import { Container, H, P } from '~/components'
+import { createMeta, getEnv, getEnvServer } from '~/utils'
+import type { BlogPost } from '~/types'
 
 export const meta: MetaFunction = () => {
   return createMeta({
@@ -18,28 +16,22 @@ export const meta: MetaFunction = () => {
   })
 }
 
-// export type LoaderData = {
-// }
+export type BlogLoaderData = BlogPost[]
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const data = [
-    {
-      title: 'Hello',
-    },
-    {
-      title: 'World',
-    },
-  ]
-  return json(data)
+  const apiUrl = getEnvServer('KONTENBASE_API_URL')
+  const response = await fetch(`${apiUrl}/posts`)
+  const posts = await response.json()
+  return json({ posts })
 }
 
 export default function Blog() {
-  const posts = useLoaderData()
+  const data = useLoaderData()
 
   return (
     <>
       <BlogHero />
-      <BlogPosts posts={posts} />
+      <BlogPosts posts={data.posts} />
     </>
   )
 }

@@ -1,14 +1,10 @@
 import { FunctionComponent } from 'react'
 
 import { Container, H, P } from '~/components'
-
-type Post = {
-  title?: string
-  description?: string
-}
+import type { BlogPost } from '~/types'
 
 interface BlogPostProps {
-  posts: Post[]
+  posts: BlogPost[]
 }
 
 export const BlogPosts: FunctionComponent<BlogPostProps> = ({ posts }) => {
