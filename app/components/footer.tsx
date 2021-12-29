@@ -30,14 +30,21 @@ export const Footer = () => {
             <P>© M Haidar Hanif 2077 </P>
             <P lang="ja">🌏 ワールド 🌍 ワイド 🌎 ウェブ</P>
             <P>
+              <Anchor
+                css={{ color: '$text' }}
+                href="https://github.com/mhaidarhanif/mhaidarhanif-web"
+              >
+                🐙 Code
+              </Anchor>
+              <span> &#8594; </span>
               <Anchor css={{ color: '$text' }} href="https://beta.reactjs.org">
                 ⚛️ React
               </Anchor>
-              <span> &amp; </span>
+              <span> &#43; </span>
               <Anchor css={{ color: '$text' }} href="https://remix.run">
                 💿 Remix
               </Anchor>
-              <span> on </span>
+              <span> &#8594; </span>
               <Anchor css={{ color: '$text' }} href="https://vercel.com">
                 ▲ Vercel
               </Anchor>
