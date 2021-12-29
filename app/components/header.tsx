@@ -1,13 +1,7 @@
 import { Link } from 'remix'
 
 import { styled } from '~/stitches'
-import {
-  Container,
-  Logo,
-  ButtonToggleTheme,
-  TooltipProvider,
-  Tooltip,
-} from '~/components'
+import { Container, Logo, ButtonToggleTheme } from '~/components'
 
 const HeaderStyled = styled('header', {
   userSelect: 'none',
@@ -32,9 +26,7 @@ const NavigationLogo = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  a: {
-    borderRadius: '$2',
-  },
+  a: { borderRadius: '$2' },
 })
 
 const NavigationLinks = styled('div', {
@@ -43,9 +35,7 @@ const NavigationLinks = styled('div', {
   justifyContent: 'flex-end',
   alignItems: 'center',
   gap: '$1',
-  '@tablet': {
-    gap: '$3',
-  },
+  '@tablet': { gap: '$3' },
   a: {
     px: '$3',
     py: '$2',
@@ -59,18 +49,23 @@ const NavigationLinks = styled('div', {
 
 const NavigationLink = styled(Link, {
   borderRadius: '$pill',
-  '&:hover': {
-    background: '$brand4',
-  },
-  '&:focus': {
-    background: '$brand5',
-  },
+  '&:hover': { background: '$brand4' },
+  '&:focus': { background: '$brand5' },
 })
 
 /**
  * Header
  */
+
 export const Header = () => {
+  const navigationLinks = [
+    { to: '/', name: 'Home' },
+    { to: '/about', name: 'About' },
+    { to: '/blog', name: 'Blog' },
+    { to: '/projects', name: 'Projects' },
+    { to: '/dashboard', name: 'Dashboard' },
+  ]
+
   return (
     <HeaderStyled>
       <Container>
@@ -83,9 +78,13 @@ export const Header = () => {
 
           <NavigationLinks>
             <ButtonToggleTheme />
-            <NavigationLink to="/">Home</NavigationLink>
-            <NavigationLink to="/about">About</NavigationLink>
-            <NavigationLink to="/blog">Blog</NavigationLink>
+            {navigationLinks.map((link) => {
+              return (
+                <NavigationLink key={link.name} to={link.to}>
+                  {link.name}
+                </NavigationLink>
+              )
+            })}
           </NavigationLinks>
         </Navigation>
       </Container>
