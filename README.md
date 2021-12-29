@@ -1,8 +1,25 @@
 # mhaidarhanif-web
 
-M Haidar Hanif's personal website with React+Remix. Deployed to Vercel.
+M Haidar Hanif's personal website with React, Remix, Stitches, Radix UI, and deployed to Vercel.
 
-Current repo is at [mhaidarhanif-web](https://github.com/mhaidarhanif/mhaidarhanif-web) on GitHub.
+Current repo is at [mhaidarhanif-web](https://github.com/mhaidarhanif/mhaidarhanif-web) on [GitHub](https://github.com/mhaidarhanif).
+
+## Tech Stack
+
+- React
+  - HTML
+  - CSS
+  - JavaScript
+  - TypeScript
+- Remix
+  - React Router
+- Stitches
+- Radix UI
+  - Radix Colors
+- Framer Motion
+- Splitbee
+- Vercel
+- Cloudflare DNS
 
 ## Variants
 
@@ -22,6 +39,8 @@ To run this Remix app locally, make sure the project's local dependencies are in
 npm install
 ```
 
+It will also do `postinstall`, which run `remix setup node`.
+
 Afterwards, start the Remix development server like so:
 
 ```sh
@@ -32,11 +51,17 @@ Open up [http://localhost:3000](http://localhost:3000) and you should be ready t
 
 If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
 
+To make sure everything fine, we can also build:
+
+```sh
+npm run build
+```
+
 ## Deployment
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+This repo is being generated with `create-remix` command and selected "Vercel" as a deployment target. So we only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed. How easy is that?
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+If you'd like test this but avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
 
 ```sh
 npm i -g vercel
