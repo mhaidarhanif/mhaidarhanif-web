@@ -1,7 +1,13 @@
-import type { MetaFunction } from 'remix'
+import { FunctionComponent } from 'react'
+import type { MetaFunction, LoaderFunction } from 'remix'
+import { json, useLoaderData } from 'remix'
 
 import { BlogHero, BlogPosts } from '~/contents'
 import { createMeta } from '~/utils'
+
+import { getEnv } from '~/utils'
+
+import { Container, H, P } from '~/components'
 
 export const meta: MetaFunction = () => {
   return createMeta({
@@ -12,11 +18,28 @@ export const meta: MetaFunction = () => {
   })
 }
 
+// export type LoaderData = {
+// }
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const data = [
+    {
+      title: 'Hello',
+    },
+    {
+      title: 'World',
+    },
+  ]
+  return json(data)
+}
+
 export default function Blog() {
+  const posts = useLoaderData()
+
   return (
     <>
       <BlogHero />
-      <BlogPosts />
+      <BlogPosts posts={posts} />
     </>
   )
 }

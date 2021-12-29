@@ -8,6 +8,7 @@ const processEnv = {
   APP_ENV: process.env.APP_ENV /* local | development | staging | production */,
   API_URL: process.env.API_URL /* localhost | api.domain.com */,
   VERCEL: process.env.VERCEL,
+  KONTENBASE_API_URL: process.env.KONTENBASE_API_URL,
   BUTTONDOWN_API_KEY: process.env.BUTTONDOWN_API_KEY,
   SPLITBEE_ID: process.env.SPLITBEE_ID,
   GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
