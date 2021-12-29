@@ -15,11 +15,15 @@ import {
   Icon,
 } from '~/components'
 import { createMeta } from '~/utils'
-// import metaData from './meta.json'
 
-// export const meta: MetaFunction = () => {
-//   return createMeta(metaData)
-// }
+export const meta: MetaFunction = () => {
+  return createMeta({
+    title: 'About M Haidar Hanif',
+    description:
+      'Get to know Haidar. The story and summary of life and career.',
+    route: 'about',
+  })
+}
 
 export default function About() {
   return (

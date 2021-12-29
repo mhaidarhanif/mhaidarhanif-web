@@ -14,48 +14,56 @@ type CreateMeta = {
 }
 
 export const createMeta = ({
-  title = metaDefault.title,
-  description = metaDefault.description,
-  name = metaDefault.name,
-  color = metaDefault.color,
-  ogImageAlt = metaDefault.ogImageAlt,
-  ogImageUrl = metaDefault.ogImageUrl,
-  twiterImageUrl = metaDefault.twiterImageUrl,
-  url = metaDefault.url,
-  route = metaDefault.route,
-  fbAppId = metaDefault.fbAppId,
+  title,
+  description,
+  name,
+  color,
+  ogImageAlt,
+  ogImageUrl,
+  twiterImageUrl,
+  url,
+  route,
+  fbAppId,
 }: CreateMeta) => {
   return {
-    title: title,
-    description: description,
+    title: title || name || metaDefault.title,
+    description: description || metaDefault.description,
 
-    'application-name': name,
-    'apple-mobile-web-app-title': title,
-    'theme-color': color,
-    'msapplication-TileColor': color,
-    'msapplication-config': url + '/icons/browserconfig.xml?v=1',
+    'application-name': name || title || metaDefault.name,
+    'apple-mobile-web-app-title': title || name || metaDefault.title,
+    'theme-color': color || metaDefault.color,
+    'msapplication-TileColor': color || metaDefault.color,
+    'msapplication-config':
+      url || metaDefault.url + 'icons/browserconfig.xml?v=1',
 
-    'og:site_name': name,
-    'og:title': title,
-    'og:description': description,
-    'og:url': url || `https://kontenbase.com/${route}`,
+    'og:site_name': name || title || metaDefault.name,
+    'og:title': title || name || metaDefault.title,
+    'og:description': description || metaDefault.description,
     'og:locale': 'en_US',
-    'og:image': url + ogImageUrl,
-    'og:image:alt': ogImageAlt,
+    'og:url': route
+      ? `https://kontenbase.com/${route}`
+      : url || metaDefault.url,
+    'og:image': ogImageUrl
+      ? metaDefault.url + ogImageUrl
+      : metaDefault.url + metaDefault.ogImageUrl,
     'og:image:type': 'image/jpeg',
+    'og:image:alt': ogImageAlt || name || metaDefault.ogImageAlt,
+
     'og:type': 'profile',
-    'profile:first_name': 'John',
-    'profile:last_name': 'Doe',
+    'profile:first_name': 'M Haidar',
+    'profile:last_name': 'Hanif',
     'profile:gender': 'male',
-    'profile:username': 'johndoe',
+    'profile:username': 'mhaidarhanif',
 
     'twitter:card': 'summary_large_image',
     'twitter:site': '@mhaidarhanif',
     'twitter:creator': '@mhaidarhanif',
-    'twitter:title': title,
-    'twitter:description': description,
-    'twitter:image': url + twiterImageUrl,
+    'twitter:title': title || name || metaDefault.title,
+    'twitter:description': description || metaDefault.description,
+    'twitter:image': twiterImageUrl
+      ? metaDefault.url + twiterImageUrl
+      : metaDefault.url + metaDefault.twiterImageUrl,
 
-    'fb:app_id': fbAppId,
+    'fb:app_id': metaDefault.fbAppId,
   }
 }
