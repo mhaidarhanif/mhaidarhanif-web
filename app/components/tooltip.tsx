@@ -32,7 +32,7 @@ export const TooltipContent = styled(TooltipPrimitive.Content, {
     border: '1px solid $brand',
   },
   boxShadow:
-    'hsla(190,95%,39%,35%) 0px 10px 38px -10px, hsla(190,95%,39%,20%) 0px 10px 20px -15px',
+    'hsla(190,95%,39%,35%) 0px -5px 30px -10px, hsla(190,95%,39%,20%) 0px 10px 20px -15px',
   '@media (prefers-reduced-motion: no-preference)': {
     animationDuration: '300ms',
     animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
@@ -68,7 +68,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
       <TooltipTrigger asChild>
         <span>{children}</span>
       </TooltipTrigger>
-      <TooltipContent side="bottom" sideOffset={5}>
+      <TooltipContent side="bottom" sideOffset={3}>
         <span>{text}</span>
         <TooltipArrow height="10" />
       </TooltipContent>
