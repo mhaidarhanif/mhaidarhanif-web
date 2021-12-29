@@ -59,8 +59,8 @@ const NavigationLink = styled(Link, {
 
 export const Header = () => {
   const navigationLinks = [
-    { to: '/', name: 'Home' },
     { to: '/about', name: 'About' },
+    { to: '/hello', name: 'Hello' },
     { to: '/blog', name: 'Blog' },
     { to: '/projects', name: 'Projects' },
     { to: '/dashboard', name: 'Dashboard' },

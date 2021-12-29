@@ -47,18 +47,18 @@ const H3 = styled('h3', {
 
 const H4 = styled('h4', {
   mt: '0',
-  mb: '$2',
+  mb: '$4',
   fontSize: '1.5rem',
 })
 
 const H5 = styled('h5', {
   mt: '0',
-  mb: '$2',
+  mb: '$3',
   fontSize: '1.25rem',
 })
 
 const H6 = styled('h6', {
-  my: '0',
+  my: '$2',
   fontSize: '1rem',
 })
 
