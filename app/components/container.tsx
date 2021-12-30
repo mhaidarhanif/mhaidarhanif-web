@@ -7,7 +7,7 @@ interface ContainerProps {
 }
 
 const ContainerStyled = styled('div', {
-  width: '720px',
+  width: '760px',
   marginRight: 'auto',
   marginLeft: 'auto',
   maxWidth: 'calc(100% - 1rem * 2)',

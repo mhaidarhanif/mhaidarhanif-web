@@ -27,10 +27,10 @@ import {
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
 import { createMeta, getEnv } from '~/utils'
-import metaData from './meta.json'
 
 import { lightTheme, darkTheme } from '~/stitches'
 import { H, Layout, LayoutBoundary, P } from '~/components'
+import { metaDefault } from '~/data'
 
 /**
  * Headers
@@ -98,7 +98,7 @@ export let links: LinksFunction = () => {
  */
 
 export const meta: MetaFunction = () => {
-  return createMeta(metaData)
+  return createMeta(metaDefault)
 }
 
 /**

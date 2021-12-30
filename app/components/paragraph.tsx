@@ -4,7 +4,7 @@ export const P = styled('p', {
   fontSize: '$2',
   lineHeight: '$8',
   mt: '$2',
-  mb: '$3',
+  mb: '$4',
 
   variants: {
     lang: {

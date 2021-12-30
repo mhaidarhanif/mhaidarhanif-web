@@ -2,6 +2,7 @@ import { Link } from 'remix'
 
 import { styled } from '~/stitches'
 import { Container, Logo, ButtonToggleTheme } from '~/components'
+import { navigationLinks } from '~/data'
 
 const HeaderStyled = styled('header', {
   userSelect: 'none',
@@ -35,7 +36,7 @@ const NavigationLinks = styled('div', {
   justifyContent: 'flex-end',
   alignItems: 'center',
   gap: '$1',
-  '@tablet': { gap: '$3' },
+  '@tablet': { gap: '$2' },
 })
 
 const NavigationLink = styled(Link, {
@@ -58,14 +59,6 @@ const NavigationLink = styled(Link, {
  */
 
 export const Header = () => {
-  const navigationLinks = [
-    { to: '/about', name: 'About' },
-    { to: '/hello', name: 'Hello' },
-    { to: '/blog', name: 'Blog' },
-    { to: '/projects', name: 'Projects' },
-    { to: '/dashboard', name: 'Dashboard' },
-  ]
-
   return (
     <HeaderStyled>
       <Container>

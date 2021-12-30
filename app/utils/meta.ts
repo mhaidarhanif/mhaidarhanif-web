@@ -1,4 +1,4 @@
-import metaDefault from '../meta.json'
+import { metaDefault } from '~/data'
 
 type CreateMeta = {
   title: string
