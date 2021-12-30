@@ -39,7 +39,16 @@ export default function About() {
             <span> My name is Haidar!</span>
           </P>
           <P lang="ja">
-            <Tooltip text="Watashinonamaewa... Haidā!">
+            <Tooltip
+              align="start"
+              text={
+                <>
+                  <span>Watashinonamaewa... Haidā!</span>
+                  <br />
+                  <span>My name is... Haidar!</span>
+                </>
+              }
+            >
               私の名前は...ハイダー！
             </Tooltip>
           </P>
@@ -54,7 +63,18 @@ export default function About() {
             Runner.
           </P>
           <P lang="ja">
-            <Tooltip text="Nesshin'na anime to manga no aikō-ka.">
+            <Tooltip
+              align="start"
+              text={
+                <>
+                  <span>Nesshin'na anime to manga no aikō-ka.</span>
+                  <br />
+                  <span>Avid anime and manga lover.</span>
+                  <br />
+                  <span>(Sorry if I made grammatical mistake!)</span>
+                </>
+              }
+            >
               熱心なアニメとマンガの愛好家。
             </Tooltip>
           </P>
