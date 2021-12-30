@@ -9,6 +9,8 @@ import {
   cyanA,
   cyanDark,
   cyanDarkA,
+  gray,
+  grayDark,
   green,
   greenDark,
   pink,
@@ -37,6 +39,7 @@ const colorsTokens = {
   black: '$black12',
   white: '$white12',
 
+  // Brand Solid
   brand1: '$cyan1',
   brand2: '$cyan2',
   brand3: '$cyan3',
@@ -50,6 +53,7 @@ const colorsTokens = {
   brand11: '$cyan11',
   brand12: '$cyan12',
 
+  // Brand Alpha
   brandA1: '$cyanA1',
   brandA2: '$cyanA2',
   brandA3: '$cyanA3',
@@ -63,6 +67,7 @@ const colorsTokens = {
   brandA11: '$cyanA11',
   brandA12: '$cyanA12',
 
+  // Background Solid
   background1: '$slate12',
   background2: '$slate11',
   background3: '$slate10',
@@ -76,6 +81,7 @@ const colorsTokens = {
   background11: '$slate2',
   background12: '$slate1',
 
+  // Text Solid
   text1: '$slate12',
   text2: '$slate11',
   text3: '$slate10',
@@ -88,6 +94,22 @@ const colorsTokens = {
   text10: '$slate3',
   text11: '$slate2',
   text12: '$slate1',
+
+  // Rename Solid
+  gray1: '$slate1',
+  gray2: '$slate2',
+  gray3: '$slate3',
+  gray4: '$slate4',
+  gray5: '$slate5',
+  gray6: '$slate6',
+  gray7: '$slate7',
+  gray8: '$slate8',
+  gray9: '$slate9',
+  gray10: '$slate10',
+  gray11: '$slate11',
+  gray12: '$slate12',
+
+  // Semantic
 
   brand: '#05a2c2',
   heading: '$brand11',
@@ -121,6 +143,7 @@ const colorsTokens = {
 }
 
 const colorsTokensLightTheme = {
+  textAbsolute: '$slate12',
   anchor: '$brand9',
   anchorHover: '$brand10',
   background: '$background10',
@@ -128,6 +151,7 @@ const colorsTokensLightTheme = {
 }
 
 const colorsTokensDarkTheme = {
+  textAbsolute: '$slate1',
   anchor: '$brand10',
   anchorHover: '$brand11',
   background: '$background12',
@@ -457,6 +481,7 @@ export const {
       ...blue,
       ...cyan,
       ...cyanA,
+      ...gray,
       ...green,
       ...pink,
       ...red,
@@ -497,6 +522,7 @@ export const darkTheme = createTheme('dark', {
     ...blueDark,
     ...cyanDark,
     ...cyanDarkA,
+    ...grayDark,
     ...greenDark,
     ...pinkDark,
     ...redDark,
