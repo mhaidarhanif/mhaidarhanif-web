@@ -56,18 +56,20 @@ export const TooltipTrigger = TooltipPrimitive.Trigger
 
 interface TooltipProps {
   text: string
+  side?: 'top' | 'bottom' | string
   children: React.ReactNode
 }
 
 export const Tooltip: FunctionComponent<TooltipProps> = ({
   text,
+  side = 'bottom',
   children,
 }) => (
   <TooltipRoot>
     <TooltipTrigger asChild>
       <span>{children}</span>
     </TooltipTrigger>
-    <TooltipContent side="bottom" sideOffset={3}>
+    <TooltipContent side={side} sideOffset={3}>
       <span>{text}</span>
       <TooltipArrow height="10" />
     </TooltipContent>

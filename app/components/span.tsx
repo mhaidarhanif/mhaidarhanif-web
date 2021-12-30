@@ -2,6 +2,10 @@ import { styled } from '~/stitches'
 
 export const Span = styled('span', {
   variants: {
+    color: {
+      normal: { color: '$text' },
+      pink: { color: '$pink10' },
+    },
     lang: {
       en: { fontFamily: '$fontDefault' },
       ja: { color: '$pink10', fontFamily: '$fontJapanese' },

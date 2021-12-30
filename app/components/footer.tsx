@@ -1,5 +1,6 @@
-import { Container, P, Anchor, Tooltip } from '~/components'
+import { Container, P, Anchor, Tooltip, Span } from '~/components'
 import { styled } from '~/stitches'
+import { getDayName, getYear } from '~/utils'
 
 const FooterStyled = styled('footer', {
   display: 'flex',
@@ -22,6 +23,7 @@ const FooterGroup = styled('div', {
   variants: {
     align: {
       left: {
+        pr: '$5',
         alignItems: 'flex-start',
         '@desktop': { alignItems: 'flex-start' },
       },
@@ -40,13 +42,19 @@ export const Footer = () => (
   <FooterStyled>
     <Container size="full">
       <FooterGroup align="left">
-        <P>Happy Monday!</P>
-        <P>© M Haidar Hanif 2077 </P>
+        <P>
+          Happy{' '}
+          <Tooltip side="top" text={getDayName('ja')}>
+            <Span color="pink">{getDayName('en')}</Span>
+          </Tooltip>
+          !
+        </P>
+        <P>© M Haidar Hanif {getYear()}</P>
       </FooterGroup>
 
       <FooterGroup align="right">
         <P lang="ja">
-          <Tooltip text="🌏 World 🌍 Wide 🌎 Web">
+          <Tooltip side="top" text="🌏 World 🌍 Wide 🌎 Web">
             🌏 ワールド 🌍 ワイド 🌎 ウェブ
           </Tooltip>
         </P>
