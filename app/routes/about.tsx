@@ -41,7 +41,7 @@ export default function About() {
           <P lang="ja">
             <Tooltip
               align="start"
-              text={
+              content={
                 <>
                   <span>Watashinonamaewa... Haidā!</span>
                   <br />
@@ -65,7 +65,7 @@ export default function About() {
           <P lang="ja">
             <Tooltip
               align="start"
-              text={
+              content={
                 <>
                   <span>Nesshin'na anime to manga no aikō-ka.</span>
                   <br />

@@ -44,7 +44,7 @@ export const Footer = () => (
       <FooterGroup align="left">
         <P>
           Happy{' '}
-          <Tooltip side="top" text={getDayName('ja')}>
+          <Tooltip side="top" content={getDayName('ja')}>
             <Span color="pink">{getDayName('en')}</Span>
           </Tooltip>
           !
@@ -54,7 +54,7 @@ export const Footer = () => (
 
       <FooterGroup align="right">
         <P lang="ja">
-          <Tooltip side="top" text="🌏 World 🌍 Wide 🌎 Web">
+          <Tooltip side="top" content="🌏 World 🌍 Wide 🌎 Web">
             🌏 ワールド 🌍 ワイド 🌎 ウェブ
           </Tooltip>
         </P>

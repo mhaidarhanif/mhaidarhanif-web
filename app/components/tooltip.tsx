@@ -1,5 +1,5 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
 import { styled, keyframes } from '~/stitches'
 
@@ -65,37 +65,33 @@ export const TooltipRoot = TooltipPrimitive.Root
 export const TooltipTrigger = TooltipPrimitive.Trigger
 
 interface TooltipProps {
-  text: any
+  content: string | ReactNode | any
   side?: 'top' | 'bottom'
   align?: 'center' | 'start'
   children: React.ReactNode
 }
 
 export const Tooltip: FunctionComponent<TooltipProps> = ({
-  text,
+  content,
   side = 'bottom',
   align = 'center',
   children,
-}) => {
-  const avoidCollisionsBool = align !== 'start'
-
-  return (
-    <TooltipRoot>
-      <TooltipTrigger asChild>
-        <span>{children}</span>
-      </TooltipTrigger>
-      <TooltipContent
-        avoidCollisions={avoidCollisionsBool}
-        side={side}
-        align={align}
-        radius={align}
-        sideOffset={3}
-      >
-        <span>{text}</span>
-        <TooltipArrow height="10" />
-      </TooltipContent>
-    </TooltipRoot>
-  )
-}
+}) => (
+  <TooltipRoot>
+    <TooltipTrigger asChild>
+      <span>{children}</span>
+    </TooltipTrigger>
+    <TooltipContent
+      avoidCollisions={align !== 'start'}
+      side={side}
+      align={align}
+      radius={align}
+      sideOffset={3}
+    >
+      <span>{content}</span>
+      <TooltipArrow height="10" />
+    </TooltipContent>
+  </TooltipRoot>
+)
 
 export default Tooltip

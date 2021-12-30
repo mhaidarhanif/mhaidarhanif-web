@@ -40,7 +40,7 @@ interface SocialMediaLinkProps {
 export const SocialMediaLink: FunctionComponent<SocialMediaLinkProps> = ({
   link,
 }) => (
-  <Tooltip text={link.name}>
+  <Tooltip content={link.name}>
     <AnchorIcon href={link.url}>
       <Icon name={link.name.toLowerCase()} />
     </AnchorIcon>
