@@ -4,7 +4,7 @@ interface HeadingProps {
   as?: string
   css?: any
   color?: 'brand' | 'solid' | undefined
-  children: React.ReactNode
+  children: React.ReactNode | any
 }
 
 const headingGradient = {
@@ -62,21 +62,50 @@ const H6 = styled('h6', {
   fontSize: '1rem',
 })
 
-export const H = (props: HeadingProps) => {
-  switch (props.as) {
+export const H: React.FunctionComponent<HeadingProps> = ({
+  as,
+  color,
+  css,
+  children,
+}) => {
+  switch (as) {
     case 'h1':
-      return <H1 {...props}>{props.children}</H1>
+      return (
+        <H1 as={as} color={color} css={css}>
+          {children}
+        </H1>
+      )
     case 'h2':
-      return <H2 {...props}>{props.children}</H2>
+      return (
+        <H2 as={as} color={color} css={css}>
+          {children}
+        </H2>
+      )
     case 'h3':
-      return <H3 {...props}>{props.children}</H3>
+      return (
+        <H3 as={as} color={color} css={css}>
+          {children}
+        </H3>
+      )
     case 'h4':
-      return <H4 {...props}>{props.children}</H4>
+      return (
+        <H4 as={as} color={color} css={css}>
+          {children}
+        </H4>
+      )
     case 'h5':
-      return <H5 {...props}>{props.children}</H5>
+      return (
+        <H5 as={as} color={color} css={css}>
+          {children}
+        </H5>
+      )
     case 'h6':
-      return <H6 {...props}>{props.children}</H6>
+      return (
+        <H6 as={as} color={color} css={css}>
+          {children}
+        </H6>
+      )
     default:
-      return <H1 {...props}>{props.children}</H1>
+      return children
   }
 }

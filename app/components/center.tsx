@@ -49,8 +49,14 @@ const CenterStyled = styled('div', {
   },
 })
 
-export const Center: FunctionComponent<CenterProps> = (props) => {
-  return <CenterStyled {...props}>{props.children}</CenterStyled>
-}
+export const Center: FunctionComponent<CenterProps> = ({
+  css,
+  layout,
+  children,
+}) => (
+  <CenterStyled css={css} layout={layout}>
+    {children}
+  </CenterStyled>
+)
 
 export default Center

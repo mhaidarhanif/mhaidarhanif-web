@@ -1,5 +1,5 @@
-import { FunctionComponent } from 'react'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+import { FunctionComponent } from 'react'
 
 import { styled, keyframes } from '~/stitches'
 
@@ -62,18 +62,16 @@ interface TooltipProps {
 export const Tooltip: FunctionComponent<TooltipProps> = ({
   text,
   children,
-}) => {
-  return (
-    <TooltipRoot>
-      <TooltipTrigger asChild>
-        <span>{children}</span>
-      </TooltipTrigger>
-      <TooltipContent side="bottom" sideOffset={3}>
-        <span>{text}</span>
-        <TooltipArrow height="10" />
-      </TooltipContent>
-    </TooltipRoot>
-  )
-}
+}) => (
+  <TooltipRoot>
+    <TooltipTrigger asChild>
+      <span>{children}</span>
+    </TooltipTrigger>
+    <TooltipContent side="bottom" sideOffset={3}>
+      <span>{text}</span>
+      <TooltipArrow height="10" />
+    </TooltipContent>
+  </TooltipRoot>
+)
 
 export default Tooltip

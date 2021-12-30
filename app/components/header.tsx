@@ -1,8 +1,8 @@
 import { Link } from 'remix'
 
-import { styled } from '~/stitches'
 import { Container, Logo, ButtonToggleTheme } from '~/components'
 import { navigationLinks } from '~/data'
+import { styled } from '~/stitches'
 
 const HeaderStyled = styled('header', {
   userSelect: 'none',
@@ -58,29 +58,25 @@ const NavigationLink = styled(Link, {
  * Header
  */
 
-export const Header = () => {
-  return (
-    <HeaderStyled>
-      <Container>
-        <Navigation>
-          <NavigationLogo>
-            <Link to="/" title="M Haidar Hanif">
-              <Logo />
-            </Link>
-          </NavigationLogo>
+export const Header = () => (
+  <HeaderStyled>
+    <Container>
+      <Navigation>
+        <NavigationLogo>
+          <Link to="/" title="M Haidar Hanif">
+            <Logo />
+          </Link>
+        </NavigationLogo>
 
-          <NavigationLinks>
-            <ButtonToggleTheme />
-            {navigationLinks.map((link) => {
-              return (
-                <NavigationLink key={link.name} to={link.to}>
-                  {link.name}
-                </NavigationLink>
-              )
-            })}
-          </NavigationLinks>
-        </Navigation>
-      </Container>
-    </HeaderStyled>
-  )
-}
+        <NavigationLinks>
+          <ButtonToggleTheme />
+          {navigationLinks.map((link) => (
+            <NavigationLink key={link.name} to={link.to}>
+              {link.name}
+            </NavigationLink>
+          ))}
+        </NavigationLinks>
+      </Navigation>
+    </Container>
+  </HeaderStyled>
+)

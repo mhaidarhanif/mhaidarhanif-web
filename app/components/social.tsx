@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
 
-import { styled } from '~/stitches'
-import { TooltipProvider, Tooltip, AnchorIcon, Icon } from '~/components'
+import { Tooltip, AnchorIcon, Icon } from '~/components'
 import { socialMediaLinks } from '~/data'
+import { styled } from '~/stitches'
 
 const SocialContainer = styled('div', {
   display: 'flex',
@@ -21,18 +21,14 @@ export const SocialMediaLinks: FunctionComponent<SocialMediaLinksProps> = ({
 }) => {
   // Check if there are enabledLinks array
   const filteredLinks = enabledLinks?.length
-    ? socialMediaLinks.filter((item) => {
-        if (enabledLinks?.includes(item.name)) {
-          return item
-        }
-      })
+    ? socialMediaLinks.filter((item) => enabledLinks?.includes(item.name))
     : socialMediaLinks
 
   return (
     <SocialContainer>
-      {filteredLinks.map((link, index) => {
-        return <SocialMediaLink key={link.name} link={link} />
-      })}
+      {filteredLinks.map((link) => (
+        <SocialMediaLink key={link.name} link={link} />
+      ))}
     </SocialContainer>
   )
 }
@@ -43,12 +39,10 @@ interface SocialMediaLinkProps {
 
 export const SocialMediaLink: FunctionComponent<SocialMediaLinkProps> = ({
   link,
-}) => {
-  return (
-    <Tooltip key={link.name} text={link.name}>
-      <AnchorIcon key={link.name} href={link.url}>
-        <Icon name={link.name.toLowerCase()} />
-      </AnchorIcon>
-    </Tooltip>
-  )
-}
+}) => (
+  <Tooltip text={link.name}>
+    <AnchorIcon href={link.url}>
+      <Icon name={link.name.toLowerCase()} />
+    </AnchorIcon>
+  </Tooltip>
+)

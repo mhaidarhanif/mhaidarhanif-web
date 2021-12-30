@@ -1,5 +1,4 @@
 import type { MetaFunction } from 'remix'
-
 import {
   Hero,
   H,

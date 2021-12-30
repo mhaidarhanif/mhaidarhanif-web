@@ -11,13 +11,11 @@ const LogoWrapper = styled('div', {
   },
 })
 
-export const Logo = () => {
-  return (
-    <LogoWrapper>
-      <LogoSVG />
-    </LogoWrapper>
-  )
-}
+export const Logo = () => (
+  <LogoWrapper>
+    <LogoSVG />
+  </LogoWrapper>
+)
 
 const LogoSVG = () => (
   <svg

@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
 
+import { Icon } from '~/components'
 import { styled } from '~/stitches'
 import { Theme, useTheme } from '~/utils/theme'
-import { Icon } from '~/components'
 
 const ButtonToggleThemeStyled = styled('button', {
   fontSize: '$0',

@@ -1,3 +1,5 @@
+import { FunctionComponent } from 'react'
+
 import { styled } from '~/stitches'
 
 interface ContainerProps {
@@ -38,10 +40,12 @@ const ContainerStyled = styled('div', {
 /**
  * Container
  */
-export const Container = (props: ContainerProps) => {
-  return (
-    <ContainerStyled className="content" {...props}>
-      {props.children}
-    </ContainerStyled>
-  )
-}
+export const Container: FunctionComponent<ContainerProps> = ({
+  layout,
+  size,
+  children,
+}) => (
+  <ContainerStyled className="content" layout={layout} size={size}>
+    {children}
+  </ContainerStyled>
+)

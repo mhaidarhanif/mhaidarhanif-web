@@ -1,3 +1,9 @@
+import { FunctionComponent } from 'react'
+import {
+  BsSlack as SlackIcon,
+  BsFillChatSquareFill as TwistIcon,
+  BsDiscord as DiscordIcon,
+} from 'react-icons/bs'
 import {
   // General
   FaCircle as CircleIcon,
@@ -17,18 +23,13 @@ import {
   FaCat as CatamystIcon,
   FaFileAlt as CVIcon,
 } from 'react-icons/fa'
-import {
-  BsSlack as SlackIcon,
-  BsFillChatSquareFill as TwistIcon,
-  BsDiscord as DiscordIcon,
-} from 'react-icons/bs'
 
 interface IconProps {
   name: string
 }
 
-export function Icon(props: IconProps) {
-  switch (props.name) {
+export const Icon: FunctionComponent<IconProps> = ({ name }) => {
+  switch (name) {
     /**
      * General
      */

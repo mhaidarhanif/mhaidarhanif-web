@@ -1,4 +1,5 @@
 import { Link } from 'remix'
+
 import { styled } from '~/stitches'
 
 export const LinkButton = styled(Link, {

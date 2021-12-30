@@ -1,10 +1,10 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
-import { styled } from '~/stitches'
 import { Container, Center } from '~/components'
+import { styled } from '~/stitches'
 
 interface HeroProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const HeroStyled = styled('div', {
@@ -19,12 +19,10 @@ const HeroStyled = styled('div', {
   },
 })
 
-export const Hero: FunctionComponent<HeroProps> = ({ children }) => {
-  return (
-    <HeroStyled id="hero">
-      <Container>
-        <Center>{children}</Center>
-      </Container>
-    </HeroStyled>
-  )
-}
+export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
+  <HeroStyled id="hero">
+    <Container>
+      <Center>{children}</Center>
+    </Container>
+  </HeroStyled>
+)

@@ -23,7 +23,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'unused-imports'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
+    '@typescript-eslint/no-use-before-define': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
