@@ -30,28 +30,38 @@ const NavigationLogo = styled('div', {
   a: { borderRadius: '$2' },
 })
 
-const NavigationLinks = styled('div', {
+const NavigationGroupLogo = styled('div', {
+  display: 'flex',
+  alignSelf: 'flex-start',
+  alignItems: 'center',
+  gap: '$4',
+})
+
+const NavigationGroupLinks = styled('div', {
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'flex-end',
   alignItems: 'center',
   gap: '$1',
-  '@tablet': { gap: '$2' },
 })
 
 const NavigationLink = styled(Link, {
   transition: 'all 0.2s ease',
-  px: '$3',
-  py: '$2',
+
   fontWeight: '$bold',
-  fontSize: '$-1',
-  '@tablet': {
-    fontSize: '$1',
-  },
   borderRadius: '$pill',
   color: '$anchor',
   '&:hover': { background: '$brand4', color: '$anchorHover' },
   '&:focus': { background: '$brand5' },
+
+  fontSize: '$-1',
+  px: '$2',
+  py: '$1',
+  '@desktop': {
+    fontSize: '$1',
+    px: '$3',
+    py: '$2',
+  },
 })
 
 /**
@@ -62,20 +72,22 @@ export const Header = () => (
   <HeaderStyled>
     <Container>
       <Navigation>
-        <NavigationLogo>
-          <Link to="/" title="M Haidar Hanif">
-            <Logo />
-          </Link>
-        </NavigationLogo>
-
-        <NavigationLinks>
+        <NavigationGroupLogo>
+          <NavigationLogo>
+            <Link to="/" title="M Haidar Hanif">
+              <Logo />
+            </Link>
+          </NavigationLogo>
           <ButtonToggleTheme />
+        </NavigationGroupLogo>
+
+        <NavigationGroupLinks>
           {navigationLinks.map((link) => (
             <NavigationLink key={link.name} to={link.to}>
               {link.name}
             </NavigationLink>
           ))}
-        </NavigationLinks>
+        </NavigationGroupLinks>
       </Navigation>
     </Container>
   </HeaderStyled>
