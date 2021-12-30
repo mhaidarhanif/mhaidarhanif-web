@@ -4,22 +4,36 @@ import { styled } from '~/stitches'
 
 interface ContainerProps {
   layout?: 'center-horizontal' | 'center-vertical' | undefined
-  size?: 'adaptive' | undefined
+  size?: 'full' | 'adaptive' | undefined
   children: React.ReactNode
 }
 
 const ContainerStyled = styled('div', {
   width: '760px',
+  display: 'flex',
+  justifyContent: 'space-between',
   marginRight: 'auto',
   marginLeft: 'auto',
   maxWidth: 'calc(100% - 1rem * 2)',
-  '@desktop': { maxWidth: 'calc(100% - 2rem * 2)' },
+  '@desktop': {
+    maxWidth: 'calc(100% - 2rem * 2)',
+  },
   variants: {
     size: {
+      full: {
+        width: '100%',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        maxWidth: 'calc(100% - 1rem * 2)',
+      },
       adaptive: {
         maxWidth: '100%',
-        '@tablet': { maxWidth: 'calc(100% - 1rem * 2)' },
-        '@desktop': { maxWidth: 'calc(100% - 2rem * 2)' },
+        '@tablet': {
+          maxWidth: 'calc(100% - 1rem * 2)',
+        },
+        '@desktop': {
+          maxWidth: 'calc(100% - 2rem * 2)',
+        },
       },
     },
     layout: {
@@ -45,7 +59,7 @@ export const Container: FunctionComponent<ContainerProps> = ({
   size,
   children,
 }) => (
-  <ContainerStyled className="content" layout={layout} size={size}>
+  <ContainerStyled className="container" layout={layout} size={size}>
     {children}
   </ContainerStyled>
 )

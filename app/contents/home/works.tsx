@@ -4,8 +4,10 @@ import { Container, H, P } from '~/components'
 
 export const HomeWorks: FunctionComponent = () => (
   <Container>
-    <H as="h2">Works</H>
+    <div>
+      <H as="h2">Works</H>
 
-    <P>Some list of works here.</P>
+      <P>Some list of works here.</P>
+    </div>
   </Container>
 )

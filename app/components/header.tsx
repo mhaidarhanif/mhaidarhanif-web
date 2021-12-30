@@ -15,6 +15,7 @@ const HeaderStyled = styled('header', {
 })
 
 const Navigation = styled('nav', {
+  width: '100%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-start',

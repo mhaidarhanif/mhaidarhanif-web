@@ -1,19 +1,34 @@
-import { Container, Center, P, Anchor, Tooltip } from '~/components'
+import { Container, P, Anchor, Tooltip } from '~/components'
 import { styled } from '~/stitches'
 
 const FooterStyled = styled('footer', {
-  py: '$1',
-  mt: '10rem',
+  display: 'flex',
+  justifyContent: 'space-between',
+  py: '$2',
+  mt: '$60',
 })
 
-const FooterText = styled('div', {
+const FooterGroup = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
   letterSpacing: '$widest',
   textTransform: 'uppercase',
-  textAlign: 'center',
   p: {
+    mb: '$0',
     fontSize: '$-2',
-    '@tablet': {
-      fontSize: '$-1',
+    '@tablet': { fontSize: '$-1' },
+  },
+
+  variants: {
+    align: {
+      left: {
+        alignItems: 'flex-start',
+        '@desktop': { alignItems: 'flex-start' },
+      },
+      right: {
+        alignItems: 'flex-start',
+        '@desktop': { alignItems: 'flex-end' },
+      },
     },
   },
 })
@@ -23,38 +38,39 @@ const FooterText = styled('div', {
  */
 export const Footer = () => (
   <FooterStyled>
-    <Container>
-      <Center>
-        <FooterText>
-          <P>© M Haidar Hanif 2077 </P>
+    <Container size="full">
+      <FooterGroup align="left">
+        <P>Happy Monday!</P>
+        <P>© M Haidar Hanif 2077 </P>
+      </FooterGroup>
 
-          <P lang="ja">
-            <Tooltip text="🌏 World 🌍 Wide 🌎 Web">
-              🌏 ワールド 🌍 ワイド 🌎 ウェブ
-            </Tooltip>
-          </P>
-          <P>
-            <Anchor
-              css={{ color: '$text' }}
-              href="https://github.com/mhaidarhanif/mhaidarhanif-web"
-            >
-              🐙 Code
-            </Anchor>
-            <span> &#8594; </span>
-            <Anchor css={{ color: '$text' }} href="https://beta.reactjs.org">
-              ⚛️ React
-            </Anchor>
-            <span> &#43; </span>
-            <Anchor css={{ color: '$text' }} href="https://remix.run">
-              💿 Remix
-            </Anchor>
-            <span> &#8594; </span>
-            <Anchor css={{ color: '$text' }} href="https://vercel.com">
-              ▲ Vercel
-            </Anchor>
-          </P>
-        </FooterText>
-      </Center>
+      <FooterGroup align="right">
+        <P lang="ja">
+          <Tooltip text="🌏 World 🌍 Wide 🌎 Web">
+            🌏 ワールド 🌍 ワイド 🌎 ウェブ
+          </Tooltip>
+        </P>
+        <P>
+          <Anchor
+            css={{ color: '$text' }}
+            href="https://github.com/mhaidarhanif/mhaidarhanif-web"
+          >
+            🐙 Code
+          </Anchor>
+          <span> &#8594; </span>
+          <Anchor css={{ color: '$text' }} href="https://beta.reactjs.org">
+            ⚛️ React
+          </Anchor>
+          <span> &#43; </span>
+          <Anchor css={{ color: '$text' }} href="https://remix.run">
+            💿 Remix
+          </Anchor>
+          <span> &#8594; </span>
+          <Anchor css={{ color: '$text' }} href="https://vercel.com">
+            ▲ Vercel
+          </Anchor>
+        </P>
+      </FooterGroup>
     </Container>
   </FooterStyled>
 )
