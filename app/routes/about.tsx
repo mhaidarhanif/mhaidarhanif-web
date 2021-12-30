@@ -1,4 +1,4 @@
-import type { MetaFunction } from 'remix'
+import { Link, MetaFunction } from 'remix'
 import {
   Hero,
   Article,
@@ -208,8 +208,12 @@ export default function About() {
         </ArticleSection>
 
         <ArticleSection>
-          <P>Follow and reach me on social media:</P>
+          <P>Follow and reach me on social media. I also have a CV.</P>
           <SocialMediaLinks />
+          <P>
+            If you are interested to talk directly, you can also{' '}
+            <Link to="/contact">contact me via this website</Link>.
+          </P>
         </ArticleSection>
       </Article>
     </Hero>

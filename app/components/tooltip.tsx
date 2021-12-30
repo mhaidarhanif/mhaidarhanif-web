@@ -36,6 +36,7 @@ export const TooltipContent = styled(TooltipPrimitive.Content, {
   },
   boxShadow:
     'hsla(190,95%,39%,35%) 0px -5px 30px -10px, hsla(190,95%,39%,20%) 0px 10px 20px -10px',
+
   '@media (prefers-reduced-motion: no-preference)': {
     animationDuration: '300ms',
     animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
@@ -50,8 +51,12 @@ export const TooltipContent = styled(TooltipPrimitive.Content, {
 
   variants: {
     radius: {
-      center: { borderRadius: '$4' },
-      start: { borderRadius: '0 $4 $4 $4' },
+      center: {
+        borderRadius: '$4',
+      },
+      start: {
+        borderRadius: '0 $4 $4 $0',
+      },
     },
   },
 
@@ -68,6 +73,7 @@ interface TooltipProps {
   content: string | ReactNode | any
   side?: 'top' | 'bottom'
   align?: 'center' | 'start'
+  avoidCollisions?: boolean
   children: React.ReactNode
 }
 
@@ -75,6 +81,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
   content,
   side = 'bottom',
   align = 'center',
+  avoidCollisions,
   children,
 }) => (
   <TooltipRoot>
@@ -82,7 +89,7 @@ export const Tooltip: FunctionComponent<TooltipProps> = ({
       <span>{children}</span>
     </TooltipTrigger>
     <TooltipContent
-      avoidCollisions={align !== 'start'}
+      avoidCollisions={avoidCollisions}
       side={side}
       align={align}
       radius={align}

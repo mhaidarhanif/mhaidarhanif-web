@@ -576,6 +576,10 @@ globalCss({
   },
   a: {
     textDecoration: 'none',
+    color: '$anchor',
+    '&:hover': {
+      color: '$anchorHover',
+    },
   },
   hr: {
     display: 'block',
