@@ -44,6 +44,7 @@ const FooterGroup = styled('div', {
 
 const FooterSubGroup = styled('div', {
   display: 'flex',
+  flexWrap: 'wrap',
   alignItems: 'center',
   gap: '$5',
 })
