@@ -1,3 +1,9 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable react/jsx-no-useless-fragment */
+/* eslint-disable react/no-danger */
+
 /**
  * This file should be named theme, not theme.client
  */
@@ -47,7 +53,7 @@ function ThemeProvider({
      */
     if (specifiedTheme) {
       if (themes.includes(specifiedTheme)) return specifiedTheme
-      else return null
+      return null
     }
 
     /**
@@ -215,9 +221,9 @@ function Themed({
         {React.createElement('light', null, light)}
       </>
     )
-  } else {
-    return <>{themeToReference === 'light' ? light : dark}</>
   }
+
+  return <>{themeToReference === 'light' ? light : dark}</>
 }
 
 /**

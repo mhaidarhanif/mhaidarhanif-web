@@ -32,18 +32,22 @@ const AnchorStyled = styled('a', {
   },
 })
 
-export const Anchor: FunctionComponent<AnchorProps> = (props) => {
-  return (
-    <AnchorStyled
-      display={props.display}
-      target="_blank"
-      rel="noopener noreferrer"
-      {...props}
-    >
-      {props.children}
-    </AnchorStyled>
-  )
-}
+export const Anchor: FunctionComponent<AnchorProps> = ({
+  href,
+  display,
+  css,
+  children,
+}) => (
+  <AnchorStyled
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    display={display}
+    css={css}
+  >
+    {children}
+  </AnchorStyled>
+)
 
 export const AnchorIcon = styled(Anchor, {
   svg: { height: '100%' },

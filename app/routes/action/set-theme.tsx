@@ -1,8 +1,8 @@
 import { json, redirect } from 'remix'
-import type { ActionFunction } from 'remix'
 
-import { getThemeSession } from '~/utils/theme.server'
+import type { ActionFunction } from 'remix'
 import { isTheme } from '~/utils/theme'
+import { getThemeSession } from '~/utils/theme.server'
 
 export const action: ActionFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request)

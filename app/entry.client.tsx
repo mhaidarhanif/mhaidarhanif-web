@@ -5,6 +5,6 @@ import { splitbee } from '~/utils'
 
 hydrate(<RemixBrowser />, document)
 
-if (ENV.NODE_ENV !== 'development') {
+if (window.ENV.NODE_ENV !== 'development') {
   splitbee.init()
 }

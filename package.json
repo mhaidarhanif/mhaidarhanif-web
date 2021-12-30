@@ -9,7 +9,7 @@
     "build": "remix build",
     "start": "remix-serve build",
     "prettify": "prettier --write .",
-    "lint": "eslint"
+    "lint": "eslint . --ext .js,.ts,.tsx"
   },
   "dependencies": {
     "@radix-ui/colors": "0.1.8",

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 /**
  * This will expose all variables within global ENV
  * Only for client-side env
@@ -40,12 +41,9 @@ function getEnvRequired(
   return value
 }
 
-type ENV = ReturnType<typeof getEnv>
-
 declare global {
-  var ENV: ENV
   interface Window {
-    ENV: ENV
+    ENV: ReturnType<typeof getEnv>
   }
 }
 

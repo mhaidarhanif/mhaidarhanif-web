@@ -1,13 +1,11 @@
-import { Hero, H, P, Article, ArticleSection } from '~/components'
+import { Hero, H, Article } from '~/components'
 
 export default function ProjectsSlug() {
   return (
-    <>
-      <Hero>
-        <Article>
-          <H as="h1">Project Name</H>
-        </Article>
-      </Hero>
-    </>
+    <Hero>
+      <Article>
+        <H as="h1">Project Name</H>
+      </Article>
+    </Hero>
   )
 }

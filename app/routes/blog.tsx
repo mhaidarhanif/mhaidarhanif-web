@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => {
 
 export type BlogLoaderData = BlogPost[]
 
-export const loader: LoaderFunction = async ({ request }) => {
+export const loader: LoaderFunction = async () => {
   const apiUrl = getEnvServer('KONTENBASE_API_URL')
   const response = await fetch(`${apiUrl}/posts`)
   const posts = await response.json()

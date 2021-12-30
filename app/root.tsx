@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import {
   Links,
   LiveReload,
@@ -11,14 +13,17 @@ import {
   useCatch,
   Link,
 } from 'remix'
+
 import type {
-  ActionFunction,
   HeadersFunction,
   LinksFunction,
   LoaderFunction,
   MetaFunction,
 } from 'remix'
-
+import { H, Layout, LayoutBoundary, P } from '~/components'
+import { metaDefault } from '~/data'
+import { lightTheme, darkTheme } from '~/stitches'
+import { createMeta, getEnv } from '~/utils'
 import {
   PreventFlashOnWrongTheme,
   Theme,
@@ -26,11 +31,6 @@ import {
   useTheme,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
-import { createMeta, getEnv } from '~/utils'
-
-import { lightTheme, darkTheme } from '~/stitches'
-import { H, Layout, LayoutBoundary, P } from '~/components'
-import { metaDefault } from '~/data'
 
 /**
  * Headers
@@ -46,60 +46,56 @@ export const headers: HeadersFunction = () => ({
  * https://remix.run/api/app#links
  */
 
-export let links: LinksFunction = () => {
-  return [
-    {
-      rel: 'shortcut icon',
-      href: '/icons/favicon.ico?v=1',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      href: '/icons/favicon-32x32.png?v=1',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      href: '/icons/favicon-16x16.png?v=1',
-    },
-    {
-      rel: 'apple-touch-icon',
-      sizes: '180x180',
-      href: '/icons/apple-touch-icon.png?v=1',
-    },
-    {
-      rel: 'mask-icon',
-      href: '/icons/safari-pinned-tab.svg?v=1',
-      color: '#05a2c2',
-    },
-    {
-      rel: 'manifest',
-      href: '/icons/site.webmanifest?v=1',
-    },
-    {
-      href: 'https://fonts.googleapis.com',
-      rel: 'preconnect',
-    },
-    {
-      href: 'https://fonts.gstatic.com',
-      rel: 'preconnect',
-    },
-    {
-      href: 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Sarina&family=Shippori+Antique+B1&family=Space+Mono&display=swap',
-      rel: 'stylesheet',
-    },
-  ]
-}
+export const links: LinksFunction = () => [
+  {
+    rel: 'shortcut icon',
+    href: '/icons/favicon.ico?v=1',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/icons/favicon-32x32.png?v=1',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/icons/favicon-16x16.png?v=1',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '180x180',
+    href: '/icons/apple-touch-icon.png?v=1',
+  },
+  {
+    rel: 'mask-icon',
+    href: '/icons/safari-pinned-tab.svg?v=1',
+    color: '#05a2c2',
+  },
+  {
+    rel: 'manifest',
+    href: '/icons/site.webmanifest?v=1',
+  },
+  {
+    href: 'https://fonts.googleapis.com',
+    rel: 'preconnect',
+  },
+  {
+    href: 'https://fonts.gstatic.com',
+    rel: 'preconnect',
+  },
+  {
+    href: 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Sarina&family=Shippori+Antique+B1&family=Space+Mono&display=swap',
+    rel: 'stylesheet',
+  },
+]
 
 /**
  * Metadata
  */
 
-export const meta: MetaFunction = () => {
-  return createMeta(metaDefault)
-}
+export const meta: MetaFunction = () => createMeta(metaDefault)
 
 /**
  * Loader
@@ -186,7 +182,7 @@ function Document({
  * DocumentBody is required because
  * useTheme can only be used inside ThemeProvider
  */
-const DocumentBody = ({ children }: { children: React.ReactNode }) => {
+function DocumentBody({ children }: { children: React.ReactNode }) {
   const [theme] = useTheme()
 
   return (
@@ -236,6 +232,7 @@ function DocumentBoundary({
 export function ErrorBoundary({ error }: { error: Error }) {
   const location = useLocation()
 
+  // eslint-disable-next-line no-console
   console.error(error)
 
   return (
@@ -266,6 +263,7 @@ export function CatchBoundary() {
   const caught = useCatch()
   const location = useLocation()
 
+  // eslint-disable-next-line no-console
   console.error('CatchBoundary', caught)
 
   let message
