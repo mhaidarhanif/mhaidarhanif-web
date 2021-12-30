@@ -51,7 +51,7 @@ const NavigationLink = styled(Link, {
 
   fontWeight: '$bold',
   borderRadius: '$pill',
-  color: '$anchor',
+  color: '$text',
   '&:hover': { background: '$brand4', color: '$anchorHover' },
   '&:focus': { background: '$brand5' },
 
