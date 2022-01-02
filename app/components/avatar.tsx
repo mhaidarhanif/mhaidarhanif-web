@@ -25,14 +25,16 @@ const AvatarStyled = styled(AvatarPrimitive.Root, {
   },
 })
 
-const ImageStyled = styled(AvatarPrimitive.Image, {
+const AvatarImageStyled = styled(AvatarPrimitive.Image, {
   width: '100%',
   height: '100%',
   objectFit: 'cover',
   borderRadius: 'inherit',
+  zIndex: '$1',
 })
 
 const FallbackStyled = styled(AvatarPrimitive.Fallback, {
+  position: 'relative',
   width: '100%',
   height: '100%',
   display: 'flex',
@@ -46,5 +48,5 @@ const FallbackStyled = styled(AvatarPrimitive.Fallback, {
 })
 
 export const Avatar = AvatarStyled
-export const AvatarImage = ImageStyled
+export const AvatarImage = AvatarImageStyled
 export const AvatarFallback = FallbackStyled

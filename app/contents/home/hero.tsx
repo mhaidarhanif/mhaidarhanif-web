@@ -2,8 +2,6 @@ import { FunctionComponent } from 'react'
 
 import {
   Anchor,
-  Avatar,
-  AvatarImage,
   Center,
   Hero,
   H,
@@ -14,16 +12,12 @@ import {
   ArticleSection,
   ButtonGroup,
 } from '~/components'
+import { AvatarHaidar } from '~/contents'
 
 export const HomeHero: FunctionComponent = () => (
   <Hero>
     <Center layout="vertical-center" css={{ mb: '$10' }}>
-      <Avatar size="5">
-        <AvatarImage
-          src="/photos/mhaidarhanif-cyan.jpeg"
-          alt="M Haidar Hanif"
-        />
-      </Avatar>
+      <AvatarHaidar />
       <H as="h1" css={{ mb: '$5' }}>
         M Haidar Hanif
       </H>

@@ -4,15 +4,15 @@ import {
   Hero,
   Article,
   ArticleSection,
-  Avatar,
-  AvatarImage,
   Anchor,
   H,
   P,
   SocialMediaLinks,
   Tooltip,
   Icon,
+  Span,
 } from '~/components'
+import { AvatarHaidar } from '~/contents'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -31,13 +31,8 @@ export default function About() {
 
         <ArticleSection>
           <P>
-            <Avatar size="3">
-              <AvatarImage
-                src="/photos/mhaidarhanif-cyan.jpeg"
-                alt="M Haidar Hanif"
-              />
-            </Avatar>
-            <span> My name is Haidar!</span>
+            <AvatarHaidar size="3" />
+            <Span css={{ ml: '$3' }}> My name is Haidar!</Span>
           </P>
           <P lang="ja">
             <Tooltip
