@@ -133,7 +133,7 @@ export default function AppWithProviders() {
   )
 }
 
-function App() {
+export function App() {
   return (
     <Document>
       <Layout>
@@ -146,7 +146,7 @@ function App() {
 /**
  * Document is used for App component only, not Boundary components
  */
-function Document({
+export function Document({
   title,
   children,
 }: {
@@ -182,7 +182,7 @@ function Document({
  * DocumentBody is required because
  * useTheme can only be used inside ThemeProvider
  */
-function DocumentBody({ children }: { children: React.ReactNode }) {
+export function DocumentBody({ children }: { children: React.ReactNode }) {
   const [theme] = useTheme()
 
   return (
@@ -198,7 +198,7 @@ function DocumentBody({ children }: { children: React.ReactNode }) {
 /**
  * DocumentBoundary
  */
-function DocumentBoundary({
+export function DocumentBoundary({
   title,
   children,
 }: {
@@ -215,7 +215,12 @@ function DocumentBoundary({
         <Links />
       </head>
 
-      <body>{children}</body>
+      <body className={darkTheme}>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+        {process.env.NODE_ENV === 'development' && <LiveReload />}
+      </body>
     </html>
   )
 }
@@ -281,7 +286,7 @@ export function CatchBoundary() {
       message = (
         <div>
           <P>Sorry, this page doesn't exist.</P>
-          <P>${location.pathname} is not available.</P>
+          <P>{location.pathname} is not available.</P>
           <P lang="ja">ごめんなさい〜</P>
         </div>
       )
