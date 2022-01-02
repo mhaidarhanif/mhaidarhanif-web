@@ -1,4 +1,4 @@
-import { Link } from 'remix'
+import { Link, useLocation } from 'remix'
 
 import { Container, Logo, ButtonToggleTheme } from '~/components'
 import { navigationLinks } from '~/data'
@@ -50,17 +50,31 @@ const NavigationLink = styled(Link, {
 
   fontWeight: '$bold',
   borderRadius: '$pill',
-  color: '$text',
-  '&:hover': { background: '$brand4', color: '$anchorHover' },
-  '&:focus': { background: '$brand5' },
-
   fontSize: '$-1',
   px: '$2',
   py: '$1',
+  color: '$text',
+  '&:hover': {
+    background: '$brand4',
+    color: '$anchorHover',
+  },
+  '&:focus': {
+    background: '$brand5',
+  },
   '@desktop': {
     fontSize: '$1',
     px: '$3',
     py: '$2',
+  },
+
+  variants: {
+    variant: {
+      normal: {},
+      active: {
+        background: '$brand4',
+        color: '$anchorHover',
+      },
+    },
   },
 })
 
@@ -68,27 +82,35 @@ const NavigationLink = styled(Link, {
  * Header
  */
 
-export const Header = () => (
-  <HeaderStyled>
-    <Container>
-      <Navigation>
-        <NavigationGroupLogo>
-          <NavigationLogo>
-            <Link to="/" title="M Haidar Hanif">
-              <Logo />
-            </Link>
-          </NavigationLogo>
-          <ButtonToggleTheme />
-        </NavigationGroupLogo>
+export const Header = () => {
+  const location = useLocation()
 
-        <NavigationGroupLinks>
-          {navigationLinks.map((link) => (
-            <NavigationLink key={link.name} to={link.to}>
-              {link.name}
-            </NavigationLink>
-          ))}
-        </NavigationGroupLinks>
-      </Navigation>
-    </Container>
-  </HeaderStyled>
-)
+  return (
+    <HeaderStyled>
+      <Container>
+        <Navigation>
+          <NavigationGroupLogo>
+            <NavigationLogo>
+              <Link to="/" title="M Haidar Hanif">
+                <Logo />
+              </Link>
+            </NavigationLogo>
+            <ButtonToggleTheme />
+          </NavigationGroupLogo>
+
+          <NavigationGroupLinks>
+            {navigationLinks.map((link) => (
+              <NavigationLink
+                key={link.name}
+                to={link.to}
+                variant={location.pathname === link.to ? 'active' : 'normal'}
+              >
+                {link.name}
+              </NavigationLink>
+            ))}
+          </NavigationGroupLinks>
+        </Navigation>
+      </Container>
+    </HeaderStyled>
+  )
+}
