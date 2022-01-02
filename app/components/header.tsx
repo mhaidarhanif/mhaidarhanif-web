@@ -6,7 +6,6 @@ import { styled } from '~/stitches'
 
 const HeaderStyled = styled('header', {
   userSelect: 'none',
-  backgroundColor: '$background',
   top: '0',
   left: '0',
   width: '100%',

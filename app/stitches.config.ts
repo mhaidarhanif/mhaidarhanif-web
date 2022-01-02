@@ -563,6 +563,7 @@ globalCss({
     boxSizing: 'border-box',
     fontFamily: '$fontDefault',
     border: '5px solid $brand',
+    transition: 'all 0.2s ease-in-out',
   },
   h1: { color: '$heading' },
   h2: { color: '$heading' },
@@ -571,6 +572,7 @@ globalCss({
   h5: { color: '$heading' },
   h6: { color: '$heading' },
   p: {
+    transition: 'color 0.2s ease-in-out',
     fontFamily: '$fontText',
     color: '$text',
   },
