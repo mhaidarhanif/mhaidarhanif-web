@@ -8,6 +8,10 @@ interface ContainerProps {
   children: React.ReactNode
 }
 
+interface ContainerBoundaryProps {
+  children: React.ReactNode
+}
+
 const ContainerStyled = styled('div', {
   width: '760px',
   display: 'flex',
@@ -51,6 +55,16 @@ const ContainerStyled = styled('div', {
   },
 })
 
+const ContainerBoundaryStyled = styled('div', {
+  width: '760px',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  maxWidth: 'calc(100% - 1rem * 2)',
+  '@desktop': {
+    maxWidth: 'calc(100% - 2rem * 2)',
+  },
+})
+
 /**
  * Container
  */
@@ -62,4 +76,15 @@ export const Container: FunctionComponent<ContainerProps> = ({
   <ContainerStyled className="container" layout={layout} size={size}>
     {children}
   </ContainerStyled>
+)
+
+/**
+ * Container Boundary
+ */
+export const ContainerBoundary: FunctionComponent<ContainerBoundaryProps> = ({
+  children,
+}) => (
+  <ContainerBoundaryStyled className="container-boundary">
+    {children}
+  </ContainerBoundaryStyled>
 )

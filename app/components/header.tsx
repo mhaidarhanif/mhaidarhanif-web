@@ -9,8 +9,10 @@ const HeaderStyled = styled('header', {
   top: '0',
   left: '0',
   width: '100%',
-  py: '$5',
-  '@tablet': { py: '$7' },
+  py: '$4',
+  '@desktop': {
+    py: '$7',
+  },
 })
 
 const Navigation = styled('nav', {
@@ -43,6 +45,7 @@ const NavigationGroupLinks = styled('div', {
   justifyContent: 'flex-end',
   alignItems: 'center',
   gap: '$1',
+  pl: '$4',
 })
 
 const NavigationLink = styled(Link, {
@@ -50,10 +53,8 @@ const NavigationLink = styled(Link, {
 
   fontWeight: '$bold',
   borderRadius: '$pill',
-  fontSize: '$-1',
-  px: '$2',
-  py: '$1',
   color: '$text',
+
   '&:hover': {
     background: '$brand4',
     color: '$anchorHover',
@@ -61,6 +62,10 @@ const NavigationLink = styled(Link, {
   '&:focus': {
     background: '$brand5',
   },
+
+  fontSize: '$0',
+  px: '$2',
+  py: '$1',
   '@desktop': {
     fontSize: '$1',
     px: '$3',
