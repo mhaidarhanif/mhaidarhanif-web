@@ -13,8 +13,8 @@ import { createMeta } from '~/utils'
 export const meta: MetaFunction = () =>
   createMeta({
     route: '/',
-    title: 'Blank Page - M Haidar Hanif',
-    description: '',
+    title: 'Error / Not Found',
+    description: 'Error or not found page.',
   })
 
 export const loader: LoaderFunction = async () => {
