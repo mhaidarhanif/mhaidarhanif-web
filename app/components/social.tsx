@@ -1,14 +1,30 @@
 import { FunctionComponent } from 'react'
 
-import { Tooltip, AnchorIcon, Icon } from '~/components'
+import { Tooltip, Icon, Anchor } from '~/components'
 import { socialMediaLinks } from '~/data'
 import { styled } from '~/stitches'
+
+interface SocialMediaLinksProps {
+  size?: 'small'
+  side?: 'top'
+  enabledLinks?: string[]
+  withName?: boolean
+}
+
+interface SocialMediaLinkProps {
+  link: any
+  side?: 'top' | 'bottom'
+}
+
+interface SocialMediaLinkNamedProps {
+  link: any
+}
 
 const SocialContainer = styled('div', {
   display: 'inline-flex',
   alignItems: 'center',
   flexWrap: 'wrap',
-  fontSize: '1.5rem',
+  fontSize: '$5',
   gap: '1rem',
   variants: {
     size: {
@@ -20,16 +36,11 @@ const SocialContainer = styled('div', {
   },
 })
 
-interface SocialMediaLinksProps {
-  size?: 'small'
-  side?: 'top'
-  enabledLinks?: string[]
-}
-
 export const SocialMediaLinks: FunctionComponent<SocialMediaLinksProps> = ({
   size,
   side,
   enabledLinks,
+  withName,
 }) => {
   // Check if there are enabledLinks array
   const filteredLinks = enabledLinks?.length
@@ -38,16 +49,15 @@ export const SocialMediaLinks: FunctionComponent<SocialMediaLinksProps> = ({
 
   return (
     <SocialContainer size={size}>
-      {filteredLinks.map((link) => (
-        <SocialMediaLink key={link.name} link={link} side={side} />
-      ))}
+      {withName
+        ? filteredLinks.map((link) => (
+            <SocialMediaLinkNamed key={link.name} link={link} side={side} />
+          ))
+        : filteredLinks.map((link) => (
+            <SocialMediaLink key={link.name} link={link} side={side} />
+          ))}
     </SocialContainer>
   )
-}
-
-interface SocialMediaLinkProps {
-  link: any
-  side?: 'top' | 'bottom'
 }
 
 export const SocialMediaLink: FunctionComponent<SocialMediaLinkProps> = ({
@@ -60,8 +70,16 @@ export const SocialMediaLink: FunctionComponent<SocialMediaLinkProps> = ({
     align="center"
     avoidCollisions={false}
   >
-    <AnchorIcon href={link.url}>
+    <Anchor href={link.url}>
       <Icon name={link.name.toLowerCase()} />
-    </AnchorIcon>
+    </Anchor>
   </Tooltip>
+)
+
+export const SocialMediaLinkNamed: FunctionComponent<
+  SocialMediaLinkNamedProps
+> = ({ link }) => (
+  <Anchor display="with-icon" href={link.url}>
+    <Icon name={link.name.toLowerCase()} /> <span>{link.name}</span>
+  </Anchor>
 )

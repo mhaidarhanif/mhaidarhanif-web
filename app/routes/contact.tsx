@@ -29,7 +29,10 @@ export default function Contact() {
             Until that, the best way would be reaching me via social media that
             I use often for external communication:
           </P>
-          <SocialMediaLinks enabledLinks={['Twitter', 'GitHub', 'LinkedIn']} />
+          <SocialMediaLinks
+            withName
+            enabledLinks={['Twitter', 'GitHub', 'LinkedIn']}
+          />
         </ArticleSection>
       </Article>
     </Hero>
