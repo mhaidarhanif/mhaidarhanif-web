@@ -208,7 +208,10 @@ export default function About() {
           <SocialMediaLinks />
           <P>
             If you are interested to talk directly, you can also{' '}
-            <Link to="/contact">contact me via this website</Link>.
+            <Link to="/contact" prefetch="intent">
+              contact me via this website
+            </Link>
+            .
           </P>
         </ArticleSection>
       </Article>

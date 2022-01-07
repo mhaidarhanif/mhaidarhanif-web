@@ -96,7 +96,7 @@ export const Header = () => {
         <Navigation>
           <NavigationGroupLogo>
             <NavigationLogo>
-              <Link to="/" title="M Haidar Hanif">
+              <Link to="/" title="M Haidar Hanif" prefetch="intent">
                 <Logo />
               </Link>
             </NavigationLogo>
@@ -109,6 +109,7 @@ export const Header = () => {
                 key={link.name}
                 to={link.to}
                 variant={location.pathname === link.to ? 'active' : 'normal'}
+                prefetch="intent"
               >
                 {link.name}
               </NavigationLink>

@@ -63,8 +63,12 @@ export const HomeHero: FunctionComponent = () => (
         <ArticleSection>
           <Center>
             <ButtonGroup>
-              <LinkButton to="/about">❯ Follow more story ❮</LinkButton>
-              <LinkButton to="/blog">❯ Enjoy blog posts ❮</LinkButton>
+              <LinkButton to="/about" prefetch="intent">
+                Follow more story
+              </LinkButton>
+              <LinkButton to="/blog" prefetch="intent">
+                Enjoy blog posts
+              </LinkButton>
             </ButtonGroup>
           </Center>
         </ArticleSection>

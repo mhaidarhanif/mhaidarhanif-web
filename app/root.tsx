@@ -251,7 +251,9 @@ export function ErrorBoundary({ error }: { error: Error }) {
           <P>Sorry, there is an error. Please try again or refresh the page.</P>
           <P lang="ja">何？ ごめんなさい〜</P>
           <P>
-            <Link to="/">Let's go back to homepage</Link>
+            <Link to="/" prefetch="intent">
+              Let's go back to homepage
+            </Link>
           </P>
         </div>
       </LayoutBoundary>
@@ -303,7 +305,9 @@ export function CatchBoundary() {
         </H>
         {message}
         <P>
-          <Link to="/">Let's go back to homepage</Link>
+          <Link to="/" prefetch="intent">
+            Let's go back to homepage
+          </Link>
         </P>
       </LayoutBoundary>
     </DocumentBoundary>

@@ -98,7 +98,9 @@ export function CatchBoundary() {
       </H>
       {message}
       <P>
-        <Link to="/">Let's go back to homepage</Link>
+        <Link to="/" prefetch="intent">
+          Let's go back to homepage
+        </Link>
       </P>
     </ContainerBoundary>
   )
