@@ -3,6 +3,8 @@ import { FunctionComponent } from 'react'
 import { Avatar, AvatarImage } from '~/components'
 import { styled } from '~/stitches'
 
+const haidarAvatarUrl = '/photos/mhaidarhanif-cyan-500.jpeg'
+
 interface AvatarHaidarProps {
   size?: any
 }
@@ -50,7 +52,7 @@ export const AvatarHaidar: FunctionComponent<AvatarHaidarProps> = ({
 }) => (
   <AvatarContainer size={size}>
     <Avatar size={size}>
-      <AvatarImage src="/photos/mhaidarhanif-cyan.jpeg" alt="M Haidar Hanif" />
+      <AvatarImage src={haidarAvatarUrl} alt="M Haidar Hanif" />
     </Avatar>
   </AvatarContainer>
 )
