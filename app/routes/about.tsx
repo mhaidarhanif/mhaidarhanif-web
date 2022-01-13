@@ -1,16 +1,16 @@
-import { Link, MetaFunction } from 'remix'
+import { MetaFunction } from 'remix'
 
 import {
   Hero,
   Article,
   ArticleSection,
-  Anchor,
+  Link,
   H,
   P,
   SocialMediaLinks,
   Tooltip,
-  Icon,
   Span,
+  AnchorIcon,
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 import { createMeta } from '~/utils'
@@ -84,9 +84,9 @@ export default function About() {
           <P>And I've been doing this professionally since 2010.</P>
           <P>
             Currently founding{' '}
-            <Anchor display="with-icon" href="https://catamyst.com">
-              <Icon name="catamyst" /> Catamyst
-            </Anchor>
+            <AnchorIcon name="catamyst" href="https://catamyst.com">
+              Catamyst
+            </AnchorIcon>
             , an education platform and software company to bring that mission
             forward.
           </P>
@@ -99,42 +99,38 @@ export default function About() {
         <ArticleSection>
           <P>
             Usually hangout on{' '}
-            <Anchor
-              display="with-icon"
+            <AnchorIcon
+              name="twitter"
               href="https://a.mhaidarhanif.com/twitter"
             >
-              <Icon name="twitter" /> Twitter
-            </Anchor>
+              Twitter
+            </AnchorIcon>
             ,{' '}
-            <Anchor
-              display="with-icon"
-              href="https://a.mhaidarhanif.com/github"
-            >
-              {' '}
-              <Icon name="github" /> GitHub
-            </Anchor>
+            <AnchorIcon name="github" href="https://a.mhaidarhanif.com/github">
+              GitHub
+            </AnchorIcon>
             , and{' '}
-            <Anchor
-              display="with-icon"
+            <AnchorIcon
+              name="linkedin"
               href="https://a.mhaidarhanif.com/linkedin"
             >
-              <Icon name="linkedin" /> LinkedIn
-            </Anchor>
+              LinkedIn
+            </AnchorIcon>
             .
           </P>
           <P>
             For work, I'm on{' '}
-            <Anchor display="with-icon" href="https://twist.com">
-              <Icon name="twist" /> Twist
-            </Anchor>{' '}
+            <AnchorIcon name="twist" href="https://twist.com">
+              Twist
+            </AnchorIcon>{' '}
             and{' '}
-            <Anchor display="with-icon" href="https://slack.com">
-              <Icon name="slack" /> Slack
-            </Anchor>
+            <AnchorIcon name="slack" href="https://slack.com">
+              Slack
+            </AnchorIcon>
             , sometimes on{' '}
-            <Anchor display="with-icon" href="https://discord.com">
-              <Icon name="discord" /> Discord
-            </Anchor>
+            <AnchorIcon name="discord" href="https://discord.com">
+              Discord
+            </AnchorIcon>
             .
           </P>
         </ArticleSection>
@@ -142,26 +138,33 @@ export default function About() {
         <ArticleSection>
           <P>
             There are some other stuffs that collaborate with{' '}
-            <Anchor display="with-icon" href="https://catamyst.com">
-              <Icon name="catamyst" /> Catamyst
-            </Anchor>{' '}
+            <AnchorIcon name="catamyst" href="https://catamyst.com">
+              Catamyst
+            </AnchorIcon>{' '}
             such as...
           </P>
           <P>
             Developer Relations Lead of{' '}
-            <Anchor href="https://kontenbase.com">Kontenbase</Anchor>, a backend
-            as a service platform.
+            <AnchorIcon name="kontenbase" href="https://kontenbase.com">
+              Kontenbase
+            </AnchorIcon>
+            , a backend as a service platform.
           </P>
           <P>
             Content Creator at{' '}
-            <Anchor href="https://codepolitan.com">CodePolitan</Anchor>, a
-            programming community.
+            <AnchorIcon name="codepolitan" href="https://codepolitan.com">
+              CodePolitan
+            </AnchorIcon>
+            , a programming community.
           </P>
           <P>
             Community Lead of{' '}
-            <Anchor href="https://github.com/highskillmasters">
+            <AnchorIcon
+              name="highskillmasters"
+              href="https://github.com/highskillmasters"
+            >
               High Skill Masters
-            </Anchor>
+            </AnchorIcon>
             , a gathering of highly skilled professionals.
           </P>
         </ArticleSection>
@@ -170,20 +173,31 @@ export default function About() {
           <P>Previously...</P>
           <P>
             Co-founding and teaching at{' '}
-            <Anchor href="https://impactbyte.com">Impact Byte</Anchor>, a
-            flexible coding bootcamp.
+            <AnchorIcon name="impactbyte" href="https://impactbyte.com">
+              Impact Byte
+            </AnchorIcon>
+            , a flexible coding bootcamp.
           </P>
           <P>
-            Teaching at <Anchor href="httsp://hacktiv8.com">Hacktiv8</Anchor>,
-            an intensive coding bootcamp.
+            Teaching at{' '}
+            <AnchorIcon name="hacktiv8" href="httsp://hacktiv8.com">
+              Hacktiv8
+            </AnchorIcon>
+            , an intensive coding bootcamp.
           </P>
           <P>
-            Teaching at <Anchor href="https://agnium.co.id">Agnium</Anchor>, a
-            software training agency.
+            Teaching at{' '}
+            <AnchorIcon name="agnium" href="https://agnium.co.id">
+              Agnium
+            </AnchorIcon>
+            , a software training agency.
           </P>
           <P>
-            Coding at <Anchor href="https://amp.asia">AMPlified</Anchor>, a
-            startup incubator.
+            Coding at{' '}
+            <AnchorIcon name="amplified" href="https://amp.asia">
+              AMPlified
+            </AnchorIcon>
+            , a startup incubator.
           </P>
           <P>And working as freelancer in several places.</P>
         </ArticleSection>

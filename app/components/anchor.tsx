@@ -1,11 +1,18 @@
 import { FunctionComponent } from 'react'
 
+import { Icon } from '~/components'
 import { styled } from '~/stitches'
 
 interface AnchorProps {
   css?: any
   href: string
   display?: 'block' | 'with-icon' | undefined
+  children: React.ReactNode
+}
+
+interface AnchorIconProps {
+  name: string
+  href: string
   children: React.ReactNode
 }
 
@@ -46,4 +53,14 @@ export const Anchor: FunctionComponent<AnchorProps> = ({
   >
     {children}
   </AnchorStyled>
+)
+
+export const AnchorIcon: FunctionComponent<AnchorIconProps> = ({
+  name,
+  href,
+  children,
+}) => (
+  <Anchor display="with-icon" href={href}>
+    <Icon name={name} /> {children}
+  </Anchor>
 )
