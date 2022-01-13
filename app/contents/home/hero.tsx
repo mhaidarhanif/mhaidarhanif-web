@@ -28,8 +28,9 @@ export const HomeHero: FunctionComponent = () => (
       <Article>
         <ArticleSection>
           <P>
-            🧑🏻‍🏫 Educator / Mentor 🧑🏻‍💻 Software Engineer / Full Stack Web
-            Developer
+            <span>🧑🏻‍🏫🧑🏻‍💻</span> <span>Educator</span> • <span>Mentor</span>{' '}
+            • <span>Software Engineer</span> •{' '}
+            <span>Full Stack Web Developer</span>
           </P>
           <P>
             ⚡ Helping people in modern career, web development, software
