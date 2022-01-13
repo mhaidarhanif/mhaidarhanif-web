@@ -17,7 +17,7 @@ import { AvatarHaidar } from '~/contents'
 export const HomeHero: FunctionComponent = () => (
   <Hero>
     <Center layout="vertical-center" css={{ mb: '$10' }}>
-      <AvatarHaidar />
+      <AvatarHaidar mode="gradient" />
       <H as="h1" css={{ mb: '$5' }}>
         M Haidar Hanif
       </H>
