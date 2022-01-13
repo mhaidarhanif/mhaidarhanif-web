@@ -1,5 +1,12 @@
 import type { MetaFunction } from 'remix'
-import { Hero, H, P, Article, ArticleSection } from '~/components'
+import {
+  Hero,
+  H,
+  P,
+  Article,
+  ArticleSection,
+  ArticleHeader,
+} from '~/components'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -14,7 +21,11 @@ export default function Dashboard() {
   return (
     <Hero>
       <Article>
-        <H as="h1">Dashboard</H>
+        <ArticleHeader>
+          <H as="h1">Dashboard</H>
+          <H as="ja">ダッシュボード</H>
+        </ArticleHeader>
+
         <ArticleSection>
           <P>
             Personal dashboard that contains statistics and links. From
