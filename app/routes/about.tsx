@@ -11,6 +11,7 @@ import {
   Tooltip,
   Span,
   AnchorIcon,
+  Flex,
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 import { createMeta } from '~/utils'
@@ -30,10 +31,12 @@ export default function About() {
         <H as="h1">Hi there</H>
 
         <ArticleSection>
-          <P>
+          <Flex>
             <AvatarHaidar size="3" />
-            <Span css={{ ml: '$3' }}> My name is Haidar!</Span>
-          </P>
+            <P css={{ ml: '$3' }}>
+              <Span> My name is Haidar!</Span>
+            </P>
+          </Flex>
           <P lang="ja">
             <Tooltip
               align="start"
@@ -170,7 +173,7 @@ export default function About() {
         </ArticleSection>
 
         <ArticleSection>
-          <P>Previously...</P>
+          <P>Previously I was...</P>
           <P>
             Co-founding and teaching at{' '}
             <AnchorIcon name="impactbyte" href="https://impactbyte.com">
