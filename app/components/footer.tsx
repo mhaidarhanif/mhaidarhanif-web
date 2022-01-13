@@ -1,3 +1,5 @@
+import { TooltipTrigger } from './tooltip'
+
 import {
   Container,
   P,
@@ -58,7 +60,7 @@ export const Footer = () => (
       <FooterGroup align="left">
         <P>
           Happy{' '}
-          <Tooltip side="top" content={getDayName('ja')}>
+          <Tooltip content={getDayName('ja')}>
             <Span color="pink">{getDayName('en')}</Span>
           </Tooltip>
           !
@@ -68,9 +70,9 @@ export const Footer = () => (
 
       <FooterGroup align="right">
         <FooterSubGroup>
-          <SocialMediaLinks side="top" size="small" />
+          <SocialMediaLinks size="small" />
           <P lang="ja">
-            <Tooltip side="top" content="🌏 World 🌍 Wide 🌎 Web">
+            <Tooltip content="🌏 World 🌍 Wide 🌎 Web">
               🌏 ワールド 🌍 ワイド 🌎 ウェブ
             </Tooltip>
           </P>

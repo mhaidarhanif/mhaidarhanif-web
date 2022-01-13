@@ -51,7 +51,7 @@ export const SocialMediaLinks: FunctionComponent<SocialMediaLinksProps> = ({
     <SocialContainer size={size}>
       {withName
         ? filteredLinks.map((link) => (
-            <SocialMediaLinkNamed key={link.name} link={link} side={side} />
+            <SocialMediaLinkNamed key={link.name} link={link} />
           ))
         : filteredLinks.map((link) => (
             <SocialMediaLink key={link.name} link={link} side={side} />
