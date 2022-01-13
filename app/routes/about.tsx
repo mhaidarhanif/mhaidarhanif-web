@@ -81,6 +81,7 @@ export default function About() {
             Helping people to become become better at what they do is my life
             and work mission.
           </P>
+          <P>And I've been doing this professionally since 2010.</P>
           <P>
             Currently founding{' '}
             <Anchor display="with-icon" href="https://catamyst.com">
@@ -140,8 +141,11 @@ export default function About() {
 
         <ArticleSection>
           <P>
-            There are some other stuffs that collaborate with Catamyst such
-            as...
+            There are some other stuffs that collaborate with{' '}
+            <Anchor display="with-icon" href="https://catamyst.com">
+              <Icon name="catamyst" /> Catamyst
+            </Anchor>{' '}
+            such as...
           </P>
           <P>
             Developer Relations Lead of{' '}

@@ -24,7 +24,7 @@ export const HomeHero: FunctionComponent = () => (
       <SocialMediaLinks />
     </Center>
 
-    <Center layout="vertical-adaptive">
+    <Center layout="vertical">
       <Article>
         <ArticleSection>
           <P>
@@ -62,16 +62,14 @@ export const HomeHero: FunctionComponent = () => (
         </ArticleSection>
 
         <ArticleSection>
-          <Center>
-            <ButtonGroup>
-              <LinkButton to="/about" prefetch="intent">
-                Follow more story
-              </LinkButton>
-              <LinkButton to="/blog" prefetch="intent">
-                Enjoy blog posts
-              </LinkButton>
-            </ButtonGroup>
-          </Center>
+          <ButtonGroup size="3">
+            <LinkButton to="/about" prefetch="intent">
+              Follow more story
+            </LinkButton>
+            <LinkButton to="/blog" prefetch="intent">
+              Enjoy blog posts
+            </LinkButton>
+          </ButtonGroup>
         </ArticleSection>
       </Article>
     </Center>
