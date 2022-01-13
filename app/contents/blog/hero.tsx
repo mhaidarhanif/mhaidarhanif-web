@@ -1,11 +1,22 @@
 import { FunctionComponent } from 'react'
 
-import { Hero, H, P, Article, ArticleSection } from '~/components'
+import {
+  Hero,
+  H,
+  P,
+  Article,
+  ArticleSection,
+  ArticleHeader,
+} from '~/components'
 
 export const BlogHero: FunctionComponent = () => (
   <Hero>
     <Article>
-      <H as="h1">Blog</H>
+      <ArticleHeader>
+        <H as="h1">Blog</H>
+        <H as="ja">ブログ</H>
+      </ArticleHeader>
+
       <ArticleSection>
         <P>
           Collection of ideas, stories, thoughts, learnings, and various
