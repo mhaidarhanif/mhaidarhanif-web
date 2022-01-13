@@ -7,8 +7,8 @@ export const metaDefault = {
   route: '',
   color: '#05a2c2',
   ogImageAlt: 'Website of M Haidar Hanif',
-  ogImageUrl: 'images/mhaidarhanif-og.jpg?v=2',
-  twiterImageUrl: 'images/mhaidarhanif-twitter.jpg?v=2',
+  ogImageUrl: 'images/mhaidarhanif-og.jpg?v=3',
+  twiterImageUrl: 'images/mhaidarhanif-twitter.jpg?v=3',
   fbAppId: '221593320168071',
   locale: 'en_US',
 }
