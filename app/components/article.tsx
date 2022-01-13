@@ -10,7 +10,4 @@ export const ArticleHeader = styled('section', {
 
 export const ArticleSection = styled('section', {
   mb: '$14',
-  p: {
-    fontSize: '$2',
-  },
 })
