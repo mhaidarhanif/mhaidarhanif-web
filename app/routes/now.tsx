@@ -1,5 +1,13 @@
 import type { MetaFunction } from 'remix'
-import { Hero, H, P, Article, ArticleSection } from '~/components'
+import {
+  Hero,
+  H,
+  P,
+  Article,
+  ArticleSection,
+  ArticleHeader,
+  Anchor,
+} from '~/components'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -13,9 +21,24 @@ export default function Now() {
   return (
     <Hero>
       <Article>
-        <H as="h1">Now</H>
+        <ArticleHeader>
+          <H as="h1">Now</H>
+          <H as="ja">今</H>
+        </ArticleHeader>
+
         <ArticleSection>
-          <P>Coming soon here.</P>
+          <P>The Now page is coming soon here.</P>
+        </ArticleSection>
+
+        <ArticleSection>
+          <P>References:</P>
+          <ul>
+            <li>
+              <Anchor href="https://sive.rs/nowff">
+                The /now page movement by Derek Sivers
+              </Anchor>
+            </li>
+          </ul>
         </ArticleSection>
       </Article>
     </Hero>
