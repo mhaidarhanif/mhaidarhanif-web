@@ -16,7 +16,7 @@ export const LinkButton = styled(Link, {
         color: '$textAbsolute',
         backgroundColor: '$sky9',
         '&:hover': { backgroundColor: '$sky10' },
-        '&:focus': { backgroundColor: '$sky10' },
+        '&:focus': { backgroundColor: '$sky11' },
       },
     },
     display: {

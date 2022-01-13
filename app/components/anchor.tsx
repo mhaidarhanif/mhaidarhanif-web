@@ -11,9 +11,8 @@ interface AnchorProps {
 
 const AnchorStyled = styled('a', {
   transition: 'color 0.2s ease',
-  color: '$anchor',
   borderRadius: '$2',
-
+  color: '$anchor',
   '&:hover': {
     color: '$anchorHover',
   },

@@ -1,7 +1,6 @@
 import { styled } from '~/stitches'
 
 export const buttonStyles = {
-  transition: 'all 0.2s ease',
   px: '$3',
   py: '$2',
   fontWeight: '$bold',
@@ -9,6 +8,7 @@ export const buttonStyles = {
   border: '$none',
   borderRadius: '$1',
   color: '$buttonText',
+  transition: 'all 0.2s ease',
   backgroundColor: '$buttonNormal',
   '&:hover': { backgroundColor: '$buttonHover' },
   '&:focus': { backgroundColor: '$buttonFocus' },

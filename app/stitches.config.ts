@@ -548,11 +548,15 @@ globalCss({
     backgroundColor: '$brandA4',
   },
   ':-moz-focusring': {
-    outline: 'auto',
+    '@desktop': {
+      outline: 'auto',
+    },
   },
   ':focus': {
-    outline: '$focusOutline solid 2px',
-    outlineOffset: '2px',
+    '@desktop': {
+      outline: '$focusOutline solid 2px',
+      outlineOffset: '2px',
+    },
   },
   body: {
     color: '$text',
@@ -563,7 +567,6 @@ globalCss({
     boxSizing: 'border-box',
     fontFamily: '$fontDefault',
     border: '5px solid $brand',
-    transition: 'all 0.2s ease-in-out',
   },
   h1: { color: '$heading' },
   h2: { color: '$heading' },
@@ -572,16 +575,12 @@ globalCss({
   h5: { color: '$heading' },
   h6: { color: '$heading' },
   p: {
-    transition: 'color 0.2s ease-in-out',
     fontFamily: '$fontText',
     color: '$text',
   },
   a: {
     textDecoration: 'none',
-    color: '$anchor',
-    '&:hover': {
-      color: '$anchorHover',
-    },
+    // color should be defined in Anchor/Link
   },
   hr: {
     display: 'block',
