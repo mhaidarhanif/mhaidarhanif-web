@@ -77,7 +77,7 @@ export const HomeHero: FunctionComponent = () => (
               Follow more story
             </LinkButton>
             <LinkButton to="/blog" prefetch="intent">
-              Enjoy blog posts
+              Enjoy blog articles
             </LinkButton>
           </ButtonGroup>
         </ArticleSection>
