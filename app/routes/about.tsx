@@ -30,8 +30,8 @@ export default function About() {
     <Hero>
       <Article>
         <ArticleHeader>
-          <H as="h1">Hi there</H>
-          <H as="ja">こんにちは！</H>
+          <H as="h1">Hi!</H>
+          <H as="ja">やあ！</H>
         </ArticleHeader>
 
         <ArticleSection>

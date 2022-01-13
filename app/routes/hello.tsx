@@ -1,5 +1,13 @@
 import type { MetaFunction } from 'remix'
-import { Hero, H, P, Article, ArticleSection, Span } from '~/components'
+import {
+  Hero,
+  H,
+  P,
+  Article,
+  ArticleSection,
+  Span,
+  ArticleHeader,
+} from '~/components'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -14,9 +22,13 @@ export default function Hello() {
   return (
     <Hero>
       <Article>
-        <H as="h1">Hello</H>
-        <H as="h4">Hello from visitors and friends</H>
+        <ArticleHeader>
+          <H as="h1">Hello</H>
+          <H as="ja">こんにちは</H>
+        </ArticleHeader>
+
         <ArticleSection>
+          <H as="h4">Hello from visitors and friends</H>
           <P>Some kind of a guestbook which you can say anything.</P>
           <P>Hello in English</P>
           <P>Halo in Indonesian or Malay</P>
