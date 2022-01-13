@@ -6,6 +6,7 @@ import {
   Article,
   ArticleSection,
   SocialMediaLinks,
+  ArticleHeader,
 } from '~/components'
 import { createMeta } from '~/utils'
 
@@ -20,10 +21,15 @@ export default function Contact() {
   return (
     <Hero>
       <Article>
-        <H as="h1">Contact</H>
+        <ArticleHeader>
+          <H as="h1">Contact</H>
+          <H as="ja">連絡</H>
+        </ArticleHeader>
+
         <ArticleSection>
           <P>There will be a contact form here for convenience.</P>
         </ArticleSection>
+
         <ArticleSection>
           <P>
             Until that, the best way would be reaching me via social media that
