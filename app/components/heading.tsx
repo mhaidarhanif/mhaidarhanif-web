@@ -24,11 +24,9 @@ const headingGradient = {
 
 const H1 = styled('h1', {
   ...headingGradient,
-  mt: '$5',
-  mb: '$12',
   fontSize: '2.5rem',
-  '@tablet': { fontSize: '2.75rem' },
-  '@desktop': { fontSize: '3.5rem' },
+  '@tablet': { fontSize: '3rem' },
+  '@desktop': { fontSize: '4rem' },
 })
 
 const H2 = styled('h2', {
@@ -60,6 +58,14 @@ const H5 = styled('h5', {
 const H6 = styled('h6', {
   my: '$2',
   fontSize: '1rem',
+})
+
+const HJA = styled('h2', {
+  color: '$pink10',
+  mt: '$0',
+  fontSize: '2rem',
+  '@tablet': { fontSize: '2.5rem' },
+  '@desktop': { fontSize: '3rem' },
 })
 
 export const H: React.FunctionComponent<HeadingProps> = ({
@@ -105,6 +111,8 @@ export const H: React.FunctionComponent<HeadingProps> = ({
           {children}
         </H6>
       )
+    case 'ja':
+      return <HJA css={css}>{children}</HJA>
     default:
       return children
   }

@@ -267,6 +267,8 @@ const fontSizesTokens = {
   '8': '1.8rem',
   '9': '1.9rem',
   '10': '2rem',
+  '11': '2.1rem',
+  '12': '2.2rem',
 }
 
 const fontWeightsTokens = {
@@ -568,12 +570,12 @@ globalCss({
     fontFamily: '$fontDefault',
     border: '5px solid $brand',
   },
-  h1: { color: '$heading' },
-  h2: { color: '$heading' },
-  h3: { color: '$heading' },
-  h4: { color: '$heading' },
-  h5: { color: '$heading' },
-  h6: { color: '$heading' },
+  h1: { color: '$heading', m: '$0' },
+  h2: { color: '$heading', m: '$0' },
+  h3: { color: '$heading', m: '$0' },
+  h4: { color: '$heading', m: '$0' },
+  h5: { color: '$heading', m: '$0' },
+  h6: { color: '$heading', m: '$0' },
   p: {
     fontFamily: '$fontText',
     color: '$text',

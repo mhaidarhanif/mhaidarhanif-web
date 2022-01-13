@@ -12,6 +12,7 @@ import {
   Span,
   AnchorIcon,
   Flex,
+  ArticleHeader,
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 import { createMeta } from '~/utils'
@@ -28,7 +29,10 @@ export default function About() {
   return (
     <Hero>
       <Article>
-        <H as="h1">Hi there</H>
+        <ArticleHeader>
+          <H as="h1">Hi there</H>
+          <H as="ja">こんにちは！</H>
+        </ArticleHeader>
 
         <ArticleSection>
           <Flex>
