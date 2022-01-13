@@ -11,6 +11,7 @@ import {
   Article,
   ArticleSection,
   ButtonGroup,
+  AnchorIcon,
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 
@@ -39,24 +40,33 @@ export const HomeHero: FunctionComponent = () => (
           <P>
             <span>
               Founder and Mentor of{' '}
-              <Anchor href="https://catamyst.com">Catamyst</Anchor>
+              <AnchorIcon name="catamyst" href="https://catamyst.com">
+                Catamyst
+              </AnchorIcon>
             </span>
             <span> • </span>
             <span>
               Developer Relations Lead of{' '}
-              <Anchor href="https://kontenbase.com">Kontenbase</Anchor>
+              <AnchorIcon name="kontenbase" href="https://kontenbase.com">
+                Kontenbase
+              </AnchorIcon>
             </span>
             <span> • </span>
             <span>
               Content Creator at{' '}
-              <Anchor href="https://codepolitan.com">CodePolitan</Anchor>
+              <AnchorIcon name="codepolitan" href="https://codepolitan.com">
+                CodePolitan
+              </AnchorIcon>
             </span>
             <span> • </span>
             <span>
               Community Lead of{' '}
-              <Anchor href="https://github.com/highskillmasters">
+              <AnchorIcon
+                name="highskillmasters"
+                href="https://github.com/highskillmasters"
+              >
                 High Skill Masters
-              </Anchor>
+              </AnchorIcon>
             </span>
           </P>
         </ArticleSection>

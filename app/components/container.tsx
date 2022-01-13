@@ -13,7 +13,7 @@ interface ContainerBoundaryProps {
 }
 
 const ContainerStyled = styled('div', {
-  width: '760px',
+  width: '768px',
   display: 'flex',
   justifyContent: 'space-between',
   marginRight: 'auto',
