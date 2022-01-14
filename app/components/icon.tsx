@@ -21,12 +21,18 @@ import {
   FaTh as PolyworkIcon,
   // Misc
   FaFileAlt as CVIcon,
-  // Compnay
+  // Company
   FaCat as CatamystIcon,
   FaProjectDiagram as KontenbaseIcon,
   FaCode as CodePolitanIcon,
+  FaDragon as ImpactByteIcon,
+  FaFire as AgniumIcon,
+  FaLocationArrow as AMPlifiedIcon,
 } from 'react-icons/fa'
-import { GiClover as HighSkillMastersIcon } from 'react-icons/gi'
+import {
+  GiClover as HighSkillMastersIcon,
+  GiFox as Hacktiv8Icon,
+} from 'react-icons/gi'
 
 const switchFn =
   (lookupObject: any, defaultCase = '_default') =>
@@ -59,6 +65,10 @@ export const iconMaps = {
   kontenbase: <KontenbaseIcon />,
   codepolitan: <CodePolitanIcon />,
   highskillmasters: <HighSkillMastersIcon />,
+  impactbyte: <ImpactByteIcon />,
+  hacktiv8: <Hacktiv8Icon />,
+  agnium: <AgniumIcon />,
+  amplified: <AMPlifiedIcon />,
   // Default
   default: <CircleIcon />,
 }
