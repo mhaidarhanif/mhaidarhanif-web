@@ -26,9 +26,10 @@ export const loader: LoaderFunction = async () => {
 export default function Blog() {
   const data = useLoaderData()
   const frontmatter = {
-    heroName: 'Mount Fuji',
+    heroName: 'Book with Words',
     heroImage:
-      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+      'https://images.unsplash.com/photo-1581855339095-0c282d58527b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1773&q=80',
+    heroImageAlign: 'center',
   }
 
   return (

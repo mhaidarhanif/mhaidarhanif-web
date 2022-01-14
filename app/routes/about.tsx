@@ -14,15 +14,20 @@ export const meta: MetaFunction = () =>
 
 export default function About() {
   const frontmatter = {
-    heroName: 'Mount Fuji',
+    heroName: 'Tokyo Tower',
     heroImage:
-      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+      'https://images.unsplash.com/photo-1590335795853-328746287696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
+    heroImageAlign: 'bottom',
   }
 
   return (
     <>
       <Hero>
-        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+        <HeroImage
+          alt={frontmatter.heroName}
+          src={frontmatter.heroImage}
+          align={frontmatter.heroImageAlign}
+        />
       </Hero>
 
       <Content>

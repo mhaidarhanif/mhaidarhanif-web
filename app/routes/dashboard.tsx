@@ -13,9 +13,10 @@ export const meta: MetaFunction = () =>
 
 export default function Dashboard() {
   const frontmatter = {
-    heroName: 'Mount Fuji',
+    heroName: 'Assorted Sushi',
     heroImage:
-      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+      'https://images.unsplash.com/photo-1611143669185-af224c5e3252?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80',
+    heroImageAlign: 'center',
   }
 
   return (

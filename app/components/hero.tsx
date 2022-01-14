@@ -9,6 +9,7 @@ interface HeroProps {
 interface HeroImageProps {
   src: string
   alt: string
+  align?: string | 'top' | 'center' | 'bottom' | null | undefined
 }
 
 const HeroStyled = styled('div', {
@@ -20,10 +21,20 @@ const HeroStyled = styled('div', {
 
 const HeroImageContainer = styled('div', {
   display: 'flex',
-  alignItems: 'center',
   height: '300px',
   '@desktop': {
-    height: '420px',
+    height: '450px',
+  },
+
+  variants: {
+    align: {
+      top: { alignItems: 'flex-start' },
+      center: { alignItems: 'center' },
+      bottom: { alignItems: 'flex-end' },
+    },
+  },
+  defaultVariants: {
+    align: 'center',
   },
 })
 
@@ -36,8 +47,12 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
   <HeroStyled id="hero">{children}</HeroStyled>
 )
 
-export const HeroImage: FunctionComponent<HeroImageProps> = ({ src, alt }) => (
-  <HeroImageContainer id="hero-image">
+export const HeroImage: FunctionComponent<HeroImageProps> = ({
+  src,
+  alt,
+  align,
+}) => (
+  <HeroImageContainer id="hero-image" align={align}>
     <HeroImageStyled src={src} alt={alt} />
   </HeroImageContainer>
 )

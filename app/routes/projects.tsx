@@ -1,10 +1,5 @@
 import type { MetaFunction } from 'remix'
-import {
-  Hero,
-  HeroImage,
-  Content,
-  Container,
-} from '~/components'
+import { Hero, HeroImage, Content, Container } from '~/components'
 import { ProjectsIntro } from '~/contents'
 import { createMeta } from '~/utils'
 
@@ -17,15 +12,20 @@ export const meta: MetaFunction = () =>
 
 export default function Projects() {
   const frontmatter = {
-    heroName: 'Mount Fuji',
+    heroName: 'Real Life Gundam',
     heroImage:
-      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+      'https://images.unsplash.com/photo-1631791440984-dfad1c779742?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80',
+    heroImageAlign: 'top',
   }
 
   return (
     <>
       <Hero>
-        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+        <HeroImage
+          alt={frontmatter.heroName}
+          src={frontmatter.heroImage}
+          align={frontmatter.heroImageAlign}
+        />
       </Hero>
 
       <Content>

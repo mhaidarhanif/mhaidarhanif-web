@@ -1,4 +1,5 @@
 export const navigationLinks = [
+  { to: '/', name: 'Home' },
   { to: '/about', name: 'About' },
   { to: '/blog', name: 'Blog' },
   { to: '/hello', name: 'Hello' },
