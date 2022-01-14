@@ -2,6 +2,8 @@ import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
 
+type Align = 'top' | 'center' | 'bottom'
+
 interface HeroProps {
   children: React.ReactNode
 }
@@ -9,7 +11,7 @@ interface HeroProps {
 interface HeroImageProps {
   src: string
   alt: string
-  align?: string | 'top' | 'center' | 'bottom' | null | undefined
+  align?: string | 'top' | 'center' | 'bottom' | undefined
 }
 
 const HeroStyled = styled('div', {
@@ -20,11 +22,10 @@ const HeroStyled = styled('div', {
 })
 
 const HeroImageContainer = styled('div', {
+  background: '$background',
   display: 'flex',
   height: '300px',
-  '@desktop': {
-    height: '450px',
-  },
+  '@desktop': { height: '450px' },
 
   variants: {
     align: {
@@ -52,7 +53,7 @@ export const HeroImage: FunctionComponent<HeroImageProps> = ({
   alt,
   align,
 }) => (
-  <HeroImageContainer id="hero-image" align={align}>
+  <HeroImageContainer id="hero-image" align={align as Align}>
     <HeroImageStyled src={src} alt={alt} />
   </HeroImageContainer>
 )
