@@ -18,8 +18,6 @@ const LayoutContainer = styled('div', {
   alignItems: 'center',
   flexDirection: 'column',
   minHeight: 'calc(100vh - env(safe-area-inset-bottom))',
-  pb: '$5',
-  '@desktop': { pb: '$10' },
 })
 
 const LayoutContent = styled('div', {
@@ -29,6 +27,7 @@ const LayoutContent = styled('div', {
 })
 
 const LayoutMain = styled('main', {
+  background: '$background',
   display: 'flex',
   flexDirection: 'column',
   flex: 1,
@@ -55,11 +54,13 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
 )
 
 export const LayoutBoundary = ({ children }: { children: React.ReactNode }) => (
-  <LayoutContainer>
-    <LayoutContent>
-      <LayoutMain>
-        <ContainerBoundary>{children}</ContainerBoundary>
-      </LayoutMain>
-    </LayoutContent>
-  </LayoutContainer>
+  <LayoutBackground id="layout-background">
+    <LayoutContainer id="layout-container">
+      <LayoutContent id="layout-content">
+        <LayoutMain id="layout-main">
+          <ContainerBoundary>{children}</ContainerBoundary>
+        </LayoutMain>
+      </LayoutContent>
+    </LayoutContainer>
+  </LayoutBackground>
 )

@@ -1,13 +1,20 @@
 import {
   json,
-  Link,
   LoaderFunction,
   MetaFunction,
   useCatch,
   useLocation,
 } from 'remix'
 
-import { Hero, H, P, Article, ContainerBoundary, Tooltip } from '~/components'
+import {
+  Article,
+  ContainerBoundary,
+  H,
+  Hero,
+  Link,
+  P,
+  Tooltip,
+} from '~/components'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>

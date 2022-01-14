@@ -13,7 +13,6 @@ import {
   useLoaderData,
   ScrollRestoration,
   useCatch,
-  Link,
   useTransition,
 } from 'remix'
 
@@ -23,7 +22,7 @@ import type {
   LoaderFunction,
   MetaFunction,
 } from 'remix'
-import { H, Layout, LayoutBoundary, P } from '~/components'
+import { H, Layout, LayoutBoundary, P, Link } from '~/components'
 import { metaDefault } from '~/data'
 import { lightTheme, darkTheme } from '~/stitches'
 import { createMeta, getEnv } from '~/utils'
