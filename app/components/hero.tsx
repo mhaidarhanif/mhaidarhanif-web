@@ -17,23 +17,34 @@ interface HeroImageProps {
 }
 
 const HeroStyled = styled('div', {
+  height: '300px',
+  '@desktop': { height: '450px' },
   h1: {
     fontFamily: '$fontHeading',
     fontWeight: '$normal',
   },
 })
 
+export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
+  <HeroStyled id="hero">{children}</HeroStyled>
+)
+
+const BlurhashContainer = styled('div', {
+  position: 'relative',
+  width: '100%',
+  height: '100%',
+})
+
 const HeroImageContainer = styled('div', {
+  position: 'relative',
+
   background: '$background',
   display: 'flex',
-  height: '300px',
-  '@desktop': { height: '450px' },
+  overflow: 'hidden',
 
-  '& .blurhash': {
-    width: '100%',
-    height: '300px',
-    '@desktop': { height: '450px' },
-  },
+  height: '300px',
+  top: '-300px',
+  '@desktop': { height: '450px', top: '-450px' },
 
   variants: {
     align: {
@@ -48,13 +59,10 @@ const HeroImageContainer = styled('div', {
 })
 
 const HeroImageStyled = styled('img', {
+  zIndex: '100',
   objectFit: 'contain',
   width: '100%',
 })
-
-export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
-  <HeroStyled id="hero">{children}</HeroStyled>
-)
 
 export const HeroImage: FunctionComponent<HeroImageProps> = ({
   src,
@@ -62,18 +70,21 @@ export const HeroImage: FunctionComponent<HeroImageProps> = ({
   align,
   blurhash,
 }) => (
-  <HeroImageContainer id="hero-image" align={align as Align}>
+  <>
     {blurhash && (
-      <Blurhash
-        className="blurhash"
-        hash={blurhash as string}
-        width="100%"
-        height="450px"
-        resolutionX={32}
-        resolutionY={32}
-        punch={1}
-      />
+      <BlurhashContainer>
+        <Blurhash
+          hash={blurhash as string}
+          width="100%"
+          height="450px"
+          resolutionX={32}
+          resolutionY={32}
+          punch={1}
+        />
+      </BlurhashContainer>
     )}
-    <HeroImageStyled src={src} alt={alt} />
-  </HeroImageContainer>
+    <HeroImageContainer align={align as Align}>
+      <HeroImageStyled src={src} alt={alt} />
+    </HeroImageContainer>
+  </>
 )

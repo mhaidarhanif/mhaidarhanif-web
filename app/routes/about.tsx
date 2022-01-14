@@ -18,6 +18,7 @@ export default function About() {
     heroImage:
       'https://images.unsplash.com/photo-1590335795853-328746287696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
     heroImageAlign: 'bottom',
+    heroImageBlurhash: 'L35z]*WV0#s:1fjs|[oL+voLKOR+',
   }
 
   return (
@@ -27,6 +28,7 @@ export default function About() {
           alt={frontmatter.heroName}
           src={frontmatter.heroImage}
           align={frontmatter.heroImageAlign}
+          blurhash={frontmatter.heroImageBlurhash}
         />
       </Hero>
 
