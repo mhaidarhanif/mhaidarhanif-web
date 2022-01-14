@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react'
-import { Blurhash } from 'react-blurhash'
 
 import { styled } from '~/stitches'
 
@@ -13,7 +12,6 @@ interface HeroImageProps {
   src: string
   alt: string
   align?: string | 'top' | 'center' | 'bottom' | undefined
-  blurhash?: string
 }
 
 const HeroStyled = styled('div', {
@@ -29,16 +27,7 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
   <HeroStyled id="hero">{children}</HeroStyled>
 )
 
-const BlurhashContainer = styled('div', {
-  position: 'relative',
-  width: '100%',
-  height: '300px',
-  '@desktop': { height: '450px' },
-  overflow: 'hidden',
-})
-
 const HeroImageContainer = styled('div', {
-  position: 'relative',
   background: '$background',
   display: 'flex',
   overflow: 'hidden',
@@ -71,21 +60,8 @@ export const HeroImage: FunctionComponent<HeroImageProps> = ({
   src,
   alt,
   align,
-  blurhash = 'L35z]*WV0#s:1fjs|[oL+voLKOR+',
 }) => (
-  <>
-    <BlurhashContainer>
-      <Blurhash
-        hash={blurhash as string}
-        width="100%"
-        height="450px"
-        resolutionX={32}
-        resolutionY={32}
-        punch={1}
-      />
-    </BlurhashContainer>
-    <HeroImageContainer align={align as Align}>
-      <HeroImageStyled src={src} alt={alt} />
-    </HeroImageContainer>
-  </>
+  <HeroImageContainer align={align as Align}>
+    <HeroImageStyled src={src} alt={alt} />
+  </HeroImageContainer>
 )

@@ -2,7 +2,6 @@ import { FunctionComponent } from 'react'
 
 import {
   Center,
-  Hero,
   H,
   P,
   SocialMediaLinks,
