@@ -1,6 +1,7 @@
 import { json, useLoaderData } from 'remix'
 
 import type { MetaFunction, LoaderFunction } from 'remix'
+import { Container, Content, Hero, HeroImage } from '~/components'
 import { BlogHero, BlogArticles } from '~/contents'
 import type { BlogArticle } from '~/types'
 import { createMeta, getEnvServer } from '~/utils'
@@ -24,11 +25,24 @@ export const loader: LoaderFunction = async () => {
 
 export default function Blog() {
   const data = useLoaderData()
+  const frontmatter = {
+    heroName: 'Mount Fuji',
+    heroImage:
+      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+  }
 
   return (
     <>
-      <BlogHero />
-      <BlogArticles articles={data.articles} />
+      <Hero>
+        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+      </Hero>
+
+      <Content>
+        <Container>
+          <BlogHero />
+        </Container>
+        <BlogArticles articles={data.articles} />
+      </Content>
     </>
   )
 }

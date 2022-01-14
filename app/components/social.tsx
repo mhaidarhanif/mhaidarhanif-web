@@ -24,7 +24,7 @@ const SocialContainer = styled('div', {
   display: 'inline-flex',
   alignItems: 'center',
   flexWrap: 'wrap',
-  fontSize: '$5',
+  fontSize: '$3',
   gap: '1rem',
   variants: {
     size: {

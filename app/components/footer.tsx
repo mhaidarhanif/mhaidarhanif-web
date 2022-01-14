@@ -1,5 +1,3 @@
-import { TooltipTrigger } from './tooltip'
-
 import {
   Container,
   P,
@@ -14,8 +12,9 @@ import { getDayName, getYear } from '~/utils'
 const FooterStyled = styled('footer', {
   display: 'flex',
   justifyContent: 'space-between',
-  py: '$2',
-  mt: '$60',
+  pt: '$32',
+  pb: '$3',
+  background: '$background',
 })
 
 const FooterGroup = styled('div', {
@@ -54,8 +53,8 @@ const FooterSubGroup = styled('div', {
 /**
  * Footer
  */
-export const Footer = () => (
-  <FooterStyled>
+export const Footer = ({ id }: { id: string }) => (
+  <FooterStyled id={id}>
     <Container size="full">
       <FooterGroup align="left">
         <P>

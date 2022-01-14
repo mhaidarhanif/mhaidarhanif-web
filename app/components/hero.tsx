@@ -1,10 +1,14 @@
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 
-import { Container, Center } from '~/components'
 import { styled } from '~/stitches'
 
 interface HeroProps {
-  children: ReactNode
+  children: React.ReactNode
+}
+
+interface HeroImageProps {
+  src: string
+  alt: string
 }
 
 const HeroStyled = styled('div', {
@@ -12,17 +16,28 @@ const HeroStyled = styled('div', {
     fontFamily: '$fontHeading',
     fontWeight: '$normal',
   },
-  py: '$5',
-  '@tablet': {
-    py: '$5',
-    mb: '$10',
+})
+
+const HeroImageContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  height: '300px',
+  '@desktop': {
+    height: '420px',
   },
 })
 
+const HeroImageStyled = styled('img', {
+  objectFit: 'contain',
+  width: '100%',
+})
+
 export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
-  <HeroStyled id="hero">
-    <Container>
-      <Center>{children}</Center>
-    </Container>
-  </HeroStyled>
+  <HeroStyled id="hero">{children}</HeroStyled>
+)
+
+export const HeroImage: FunctionComponent<HeroImageProps> = ({ src, alt }) => (
+  <HeroImageContainer id="hero-image">
+    <HeroImageStyled src={src} alt={alt} />
+  </HeroImageContainer>
 )

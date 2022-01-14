@@ -1,12 +1,11 @@
 import type { MetaFunction } from 'remix'
 import {
   Hero,
-  H,
-  P,
-  Article,
-  ArticleSection,
-  ArticleHeader,
+  HeroImage,
+  Content,
+  Container,
 } from '~/components'
+import { ProjectsIntro } from '~/contents'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -17,24 +16,23 @@ export const meta: MetaFunction = () =>
   })
 
 export default function Projects() {
-  return (
-    <Hero>
-      <Article>
-        <ArticleHeader>
-          <H as="h1">Projects</H>
-          <H as="ja">プロジェクト</H>
-        </ArticleHeader>
+  const frontmatter = {
+    heroName: 'Mount Fuji',
+    heroImage:
+      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+  }
 
-        <ArticleSection>
-          <P>
-            Various projects, apps, websites, and things to use. All experiments
-            are open source!
-          </P>
-        </ArticleSection>
-        <ArticleSection>
-          <P>Coming soon here.</P>
-        </ArticleSection>
-      </Article>
-    </Hero>
+  return (
+    <>
+      <Hero>
+        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+      </Hero>
+
+      <Content>
+        <Container>
+          <ProjectsIntro />
+        </Container>
+      </Content>
+    </>
   )
 }

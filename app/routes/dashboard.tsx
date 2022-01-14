@@ -1,12 +1,6 @@
 import type { MetaFunction } from 'remix'
-import {
-  Hero,
-  H,
-  P,
-  Article,
-  ArticleSection,
-  ArticleHeader,
-} from '~/components'
+import { Hero, Container, Content, HeroImage } from '~/components'
+import { DashboardIntro } from '~/contents/dashboard'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -18,25 +12,23 @@ export const meta: MetaFunction = () =>
   })
 
 export default function Dashboard() {
-  return (
-    <Hero>
-      <Article>
-        <ArticleHeader>
-          <H as="h1">Dashboard</H>
-          <H as="ja">ダッシュボード</H>
-        </ArticleHeader>
+  const frontmatter = {
+    heroName: 'Mount Fuji',
+    heroImage:
+      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+  }
 
-        <ArticleSection>
-          <P>
-            Personal dashboard that contains statistics and links. From
-            different platforms such as Splitbee (web analytics), Twitter,
-            GitHub, YouTube, Spotify, subscribers, revenue, and so on.
-          </P>
-        </ArticleSection>
-        <ArticleSection>
-          <P>Coming soon here.</P>
-        </ArticleSection>
-      </Article>
-    </Hero>
+  return (
+    <>
+      <Hero>
+        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+      </Hero>
+
+      <Content>
+        <Container>
+          <DashboardIntro />
+        </Container>
+      </Content>
+    </>
   )
 }

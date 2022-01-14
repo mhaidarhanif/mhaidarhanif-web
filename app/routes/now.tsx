@@ -1,13 +1,11 @@
 import type { MetaFunction } from 'remix'
 import {
   Hero,
-  H,
-  P,
-  Article,
-  ArticleSection,
-  ArticleHeader,
-  Anchor,
+  HeroImage,
+  Content,
+  Container,
 } from '~/components'
+import { NowIntro } from '~/contents'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -18,29 +16,23 @@ export const meta: MetaFunction = () =>
   })
 
 export default function Now() {
+  const frontmatter = {
+    heroName: 'Mount Fuji',
+    heroImage:
+      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+  }
+
   return (
-    <Hero>
-      <Article>
-        <ArticleHeader>
-          <H as="h1">Now</H>
-          <H as="ja">今</H>
-        </ArticleHeader>
+    <>
+      <Hero>
+        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+      </Hero>
 
-        <ArticleSection>
-          <P>The Now page is coming soon here.</P>
-        </ArticleSection>
-
-        <ArticleSection>
-          <P>References:</P>
-          <ul>
-            <li>
-              <Anchor href="https://sive.rs/nowff">
-                The /now page movement by Derek Sivers
-              </Anchor>
-            </li>
-          </ul>
-        </ArticleSection>
-      </Article>
-    </Hero>
+      <Content>
+        <Container>
+          <NowIntro />
+        </Container>
+      </Content>
+    </>
   )
 }

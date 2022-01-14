@@ -1,22 +1,18 @@
 import { Link, useLocation } from 'remix'
 
-import { Container, Logo, ButtonToggleTheme } from '~/components'
+import { Logo, ButtonToggleTheme } from '~/components'
 import { navigationLinks } from '~/data'
 import { styled } from '~/stitches'
 
 const HeaderStyled = styled('header', {
+  zIndex: '$banner',
   userSelect: 'none',
-  top: '0',
-  left: '0',
-  width: '100%',
-  py: '$4',
-  '@desktop': {
-    py: '$7',
-  },
+  background: '$background',
+  py: '$8',
+  px: '$4',
 })
 
 const Navigation = styled('nav', {
-  width: '100%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-start',
@@ -87,36 +83,34 @@ const NavigationLink = styled(Link, {
  * Header
  */
 
-export const Header = () => {
+export const Header = ({ id }: { id: string }) => {
   const location = useLocation()
 
   return (
-    <HeaderStyled>
-      <Container>
-        <Navigation>
-          <NavigationGroupLogo>
-            <NavigationLogo>
-              <Link to="/" title="M Haidar Hanif" prefetch="intent">
-                <Logo />
-              </Link>
-            </NavigationLogo>
-            <ButtonToggleTheme />
-          </NavigationGroupLogo>
+    <HeaderStyled id={id}>
+      <Navigation>
+        <NavigationGroupLogo>
+          <NavigationLogo>
+            <Link to="/" title="M Haidar Hanif" prefetch="intent">
+              <Logo />
+            </Link>
+          </NavigationLogo>
+          <ButtonToggleTheme />
+        </NavigationGroupLogo>
 
-          <NavigationGroupLinks>
-            {navigationLinks.map((link) => (
-              <NavigationLink
-                key={link.name}
-                to={link.to}
-                variant={location.pathname === link.to ? 'active' : 'normal'}
-                prefetch="intent"
-              >
-                {link.name}
-              </NavigationLink>
-            ))}
-          </NavigationGroupLinks>
-        </Navigation>
-      </Container>
+        <NavigationGroupLinks>
+          {navigationLinks.map((link) => (
+            <NavigationLink
+              key={link.name}
+              to={link.to}
+              variant={location.pathname === link.to ? 'active' : 'normal'}
+              prefetch="intent"
+            >
+              {link.name}
+            </NavigationLink>
+          ))}
+        </NavigationGroupLinks>
+      </Navigation>
     </HeaderStyled>
   )
 }

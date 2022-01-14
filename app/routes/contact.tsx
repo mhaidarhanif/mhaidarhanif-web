@@ -1,13 +1,6 @@
 import type { MetaFunction } from 'remix'
-import {
-  Hero,
-  H,
-  P,
-  Article,
-  ArticleSection,
-  SocialMediaLinks,
-  ArticleHeader,
-} from '~/components'
+import { Hero, HeroImage, Content, Container } from '~/components'
+import { ContactIntro } from '~/contents'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -18,29 +11,23 @@ export const meta: MetaFunction = () =>
   })
 
 export default function Contact() {
+  const frontmatter = {
+    heroName: 'Mount Fuji',
+    heroImage:
+      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+  }
+
   return (
-    <Hero>
-      <Article>
-        <ArticleHeader>
-          <H as="h1">Contact</H>
-          <H as="ja">連絡</H>
-        </ArticleHeader>
+    <>
+      <Hero>
+        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+      </Hero>
 
-        <ArticleSection>
-          <P>There will be a contact form here for convenience.</P>
-        </ArticleSection>
-
-        <ArticleSection>
-          <P>
-            Until that, the best way would be reaching me via social media that
-            I use often for external communication:
-          </P>
-          <SocialMediaLinks
-            withName
-            enabledLinks={['Twitter', 'GitHub', 'LinkedIn']}
-          />
-        </ArticleSection>
-      </Article>
-    </Hero>
+      <Content>
+        <Container>
+          <ContactIntro />
+        </Container>
+      </Content>
+    </>
   )
 }

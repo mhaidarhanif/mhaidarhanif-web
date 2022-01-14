@@ -1,13 +1,6 @@
 import type { MetaFunction } from 'remix'
-import {
-  Hero,
-  H,
-  P,
-  Article,
-  ArticleSection,
-  Span,
-  ArticleHeader,
-} from '~/components'
+import { Hero, HeroImage, Content, Container } from '~/components'
+import { HelloIntro } from '~/contents'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
@@ -19,38 +12,23 @@ export const meta: MetaFunction = () =>
   })
 
 export default function Hello() {
-  return (
-    <Hero>
-      <Article>
-        <ArticleHeader>
-          <H as="h1">Hello</H>
-          <H as="ja">こんにちは</H>
-        </ArticleHeader>
+  const frontmatter = {
+    heroName: 'Mount Fuji',
+    heroImage:
+      'https://ik.imagekit.io/mhaidarhanif/covers/mount-fuji-akira-deng-unsplash_kt06XGXOUmD.jpeg?updatedAt=1642112456388',
+  }
 
-        <ArticleSection>
-          <H as="h4">Hello from visitors and friends</H>
-          <P>Some kind of a guestbook which you can say anything.</P>
-          <P>Hello in English</P>
-          <P>Halo in Indonesian or Malay</P>
-          <P>
-            <Span lang="ja">こんにちは</Span> in Japanese
-          </P>
-          <P>
-            <Span lang="ko">안녕하세요</Span> in Korean
-          </P>
-          <P>Bonjour in French</P>
-          <P>Kamusta in Filipino</P>
-          <P>
-            <Span lang="zh">你好</Span> in Chinese
-          </P>
-          <P>
-            <Span lang="th">สวัสดี</Span> in Thai
-          </P>
-          <P>
-            <Span lang="ar">مرحبا</Span> in Arabic
-          </P>
-        </ArticleSection>
-      </Article>
-    </Hero>
+  return (
+    <>
+      <Hero>
+        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+      </Hero>
+
+      <Content>
+        <Container>
+          <HelloIntro />
+        </Container>
+      </Content>
+    </>
   )
 }

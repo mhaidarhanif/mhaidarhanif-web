@@ -6,22 +6,24 @@ import {
 } from '~/components'
 import { styled } from '~/stitches'
 
+const LayoutBackground = styled('div', {
+  backgroundImage: 'url("/images/asanoha.svg")',
+  backgroundPosition: 'top center',
+  backgroundRepeat: 'repeat',
+  backgroundSize: '120px',
+})
+
 const LayoutContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'column',
   minHeight: 'calc(100vh - env(safe-area-inset-bottom))',
-  backgroundImage: 'url("/images/asanoha.svg")',
-  backgroundPosition: 'top center',
-  backgroundRepeat: 'repeat',
-  backgroundSize: '120px',
   pb: '$5',
   '@desktop': { pb: '$10' },
 })
 
 const LayoutContent = styled('div', {
   width: '100%',
-  background: '$background',
   maxWidth: 'calc(100% - $5)',
   '@desktop': { maxWidth: 'calc(100% - $20)' },
 })
@@ -29,7 +31,6 @@ const LayoutContent = styled('div', {
 const LayoutMain = styled('main', {
   display: 'flex',
   flexDirection: 'column',
-  py: '$10',
   flex: 1,
 })
 
@@ -38,15 +39,19 @@ const LayoutMain = styled('main', {
  */
 
 export const Layout = ({ children }: { children: React.ReactNode }) => (
-  <LayoutContainer>
-    <TooltipProvider delayDuration={200} skipDelayDuration={500}>
-      <LayoutContent>
-        <Header />
-        <LayoutMain>{children}</LayoutMain>
-        <Footer />
-      </LayoutContent>
-    </TooltipProvider>
-  </LayoutContainer>
+  <LayoutBackground id="layout-background">
+    <LayoutContainer id="layout-container">
+      <TooltipProvider delayDuration={200} skipDelayDuration={500}>
+        <LayoutContent id="layout-content">
+          <LayoutMain id="layout-main">
+            <Header id="layout-header" />
+            {children}
+          </LayoutMain>
+          <Footer id="layout-footer" />
+        </LayoutContent>
+      </TooltipProvider>
+    </LayoutContainer>
+  </LayoutBackground>
 )
 
 export const LayoutBoundary = ({ children }: { children: React.ReactNode }) => (

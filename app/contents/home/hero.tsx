@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react'
 
 import {
-  Anchor,
   Center,
   Hero,
   H,

@@ -5,7 +5,9 @@ export const Article = styled('article', {
 })
 
 export const ArticleHeader = styled('section', {
-  mb: '$20',
+  mb: '$12',
+  '@tablet': { mb: '$16' },
+  '@desktop': { mb: '$20' },
 })
 
 export const ArticleSection = styled('section', {
