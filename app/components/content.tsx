@@ -7,7 +7,9 @@ interface ContentProps {
 }
 
 const ContentStyled = styled('div', {
-  display: 'block',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$10',
   background: '$background',
   py: '2rem',
   '@tablet': { py: '3rem' },

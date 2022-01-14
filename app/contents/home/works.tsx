@@ -1,13 +1,17 @@
 import { FunctionComponent } from 'react'
 
-import { Container, H, P } from '~/components'
+import { Box, Container, H, P } from '~/components'
 
 export const HomeWorks: FunctionComponent = () => (
   <Container>
-    <div>
+    <Box>
       <H as="h2">Works</H>
-
-      <P>Some list of works here.</P>
-    </div>
+      <P>Some featured works</P>
+      <img
+        src="/illustrations/character-earth-chikyu.png"
+        alt="Character Earth Chikyu"
+        width="200"
+      />
+    </Box>
   </Container>
 )
