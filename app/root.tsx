@@ -1,5 +1,7 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable @typescript-eslint/no-use-before-define */
+import NProgress from 'nprogress'
+import { useEffect } from 'react'
 import {
   Links,
   LiveReload,
@@ -12,6 +14,7 @@ import {
   ScrollRestoration,
   useCatch,
   Link,
+  useTransition,
 } from 'remix'
 
 import type {
@@ -31,6 +34,8 @@ import {
   useTheme,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
+
+import nProgressStyles from '~/styles/nprogress.css'
 
 /**
  * Headers
@@ -89,6 +94,10 @@ export const links: LinksFunction = () => [
     href: 'https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Sarina&family=Shippori+Antique+B1&family=Space+Mono&display=swap',
     rel: 'stylesheet',
   },
+  {
+    rel: 'stylesheet',
+    href: nProgressStyles,
+  },
 ]
 
 /**
@@ -134,6 +143,16 @@ export default function AppWithProviders() {
 }
 
 export function App() {
+  const transition = useTransition()
+
+  useEffect(() => {
+    // when the state is idle then we can to complete the progress bar
+    if (transition.state === 'idle') NProgress.done()
+    // and when it's something else it means it's either submitting a form or
+    // waiting for the loaders of the next location so we start it
+    else NProgress.start()
+  }, [transition.state])
+
   return (
     <Document>
       <Layout>
