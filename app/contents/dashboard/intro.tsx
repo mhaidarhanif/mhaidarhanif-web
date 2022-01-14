@@ -1,12 +1,21 @@
 import { FunctionComponent } from 'react'
 
-import { Article, ArticleSection, H, P, ArticleHeader } from '~/components'
+import {
+  Article,
+  ArticleSection,
+  H,
+  P,
+  ArticleHeader,
+  Tooltip,
+} from '~/components'
 
 export const DashboardIntro: FunctionComponent = () => (
   <Article>
     <ArticleHeader>
       <H as="h1">Dashboard</H>
-      <H as="ja">ダッシュボード</H>
+      <H as="ja">
+        <Tooltip content="Dasshubōdo">ダッシュボード</Tooltip>
+      </H>
     </ArticleHeader>
 
     <ArticleSection>

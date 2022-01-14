@@ -7,13 +7,16 @@ import {
   P,
   ArticleHeader,
   SocialMediaLinks,
+  Tooltip,
 } from '~/components'
 
 export const ContactIntro: FunctionComponent = () => (
   <Article>
     <ArticleHeader>
       <H as="h1">Contact</H>
-      <H as="ja">連絡</H>
+      <H as="ja">
+        <Tooltip content="Renraku">連絡</Tooltip>
+      </H>
     </ArticleHeader>
 
     <ArticleSection>

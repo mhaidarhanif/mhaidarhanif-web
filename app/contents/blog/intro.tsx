@@ -7,14 +7,17 @@ import {
   Article,
   ArticleSection,
   ArticleHeader,
+  Tooltip,
 } from '~/components'
 
-export const BlogHero: FunctionComponent = () => (
+export const BlogIntro: FunctionComponent = () => (
   <Hero>
     <Article>
       <ArticleHeader>
         <H as="h1">Blog</H>
-        <H as="ja">ブログ</H>
+        <H as="ja">
+          <Tooltip content="Burogu">ブログ</Tooltip>
+        </H>
       </ArticleHeader>
 
       <ArticleSection>

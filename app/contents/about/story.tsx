@@ -19,7 +19,9 @@ export const AboutStory: FunctionComponent = () => (
   <Article>
     <ArticleHeader>
       <H as="h1">Hi!</H>
-      <H as="ja">やあ！</H>
+      <H as="ja">
+        <Tooltip content="Yaa!">やあ！</Tooltip>
+      </H>
     </ArticleHeader>
 
     <ArticleSection>

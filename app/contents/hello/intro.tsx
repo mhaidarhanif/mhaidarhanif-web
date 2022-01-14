@@ -7,13 +7,16 @@ import {
   P,
   Span,
   ArticleHeader,
+  Tooltip,
 } from '~/components'
 
 export const HelloIntro: FunctionComponent = () => (
   <Article>
     <ArticleHeader>
       <H as="h1">Hello</H>
-      <H as="ja">こんにちは</H>
+      <H as="ja">
+        <Tooltip content="Konnichiwa">こんにちは</Tooltip>
+      </H>
     </ArticleHeader>
 
     <ArticleSection>

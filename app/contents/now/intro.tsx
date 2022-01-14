@@ -7,13 +7,16 @@ import {
   P,
   ArticleHeader,
   Anchor,
+  Tooltip,
 } from '~/components'
 
 export const NowIntro: FunctionComponent = () => (
   <Article>
     <ArticleHeader>
       <H as="h1">Now</H>
-      <H as="ja">今</H>
+      <H as="ja">
+        <Tooltip content="Ima">今</Tooltip>
+      </H>
     </ArticleHeader>
 
     <ArticleSection>
