@@ -17,8 +17,8 @@ interface HeroImageProps {
 }
 
 const HeroStyled = styled('div', {
-  height: '300px',
-  '@desktop': { height: '450px' },
+  // height: '300px',
+  // '@desktop': { height: '450px' },
   h1: {
     fontFamily: '$fontHeading',
     fontWeight: '$normal',
@@ -30,14 +30,11 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
 )
 
 const BlurhashContainer = styled('div', {
-  position: 'relative',
   width: '100%',
   height: '100%',
 })
 
 const HeroImageContainer = styled('div', {
-  position: 'relative',
-
   background: '$background',
   display: 'flex',
   overflow: 'hidden',
