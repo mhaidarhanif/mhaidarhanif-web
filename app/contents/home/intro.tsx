@@ -14,8 +14,8 @@ import {
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 
-export const HomeHero: FunctionComponent = () => (
-  <Hero>
+export const HomeIntro: FunctionComponent = () => (
+  <>
     <Center layout="vertical-center" css={{ mb: '$10' }}>
       <AvatarHaidar mode="gradient" />
       <H as="h1" css={{ mb: '$5' }}>
@@ -82,5 +82,5 @@ export const HomeHero: FunctionComponent = () => (
         </ArticleSection>
       </Article>
     </Center>
-  </Hero>
+  </>
 )

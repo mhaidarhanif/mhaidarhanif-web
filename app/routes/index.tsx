@@ -1,12 +1,13 @@
 import { Container, Content } from '~/components'
-import { HomeHero, HomeWorks } from '~/contents'
+import { HomeIntro, HomeWorks } from '~/contents'
 
 export default function Index() {
   return (
     <Content>
-      <Container>
-        <HomeHero />
+      <Container layout="center-vertical">
+        <HomeIntro />
       </Container>
+
       <HomeWorks />
     </Content>
   )

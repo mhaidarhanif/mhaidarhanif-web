@@ -71,7 +71,7 @@ export const HeroImage: FunctionComponent<HeroImageProps> = ({
   blurhash,
 }) => (
   <>
-    {blurhash && (
+    {/* {blurhash && (
       <BlurhashContainer>
         <Blurhash
           hash={blurhash as string}
@@ -82,7 +82,7 @@ export const HeroImage: FunctionComponent<HeroImageProps> = ({
           punch={1}
         />
       </BlurhashContainer>
-    )}
+    )} */}
     <HeroImageContainer align={align as Align}>
       <HeroImageStyled src={src} alt={alt} />
     </HeroImageContainer>
