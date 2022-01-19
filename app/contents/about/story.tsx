@@ -99,18 +99,21 @@ export const AboutStory: FunctionComponent = () => (
         engineering, and startup building.
       </P>
       <P>
-        Catamyst provides free and paid learning materials, private mentorship,
-        as well as business/software development and consultancy service.
+        <AnchorIcon color="teal" name="catamyst" href="https://catamyst.com">
+          Catamyst
+        </AnchorIcon>{' '}
+        provides free and paid learning materials, private mentorship, as well
+        as business/software development and consultancy service.
       </P>
     </ArticleSection>
 
     <ArticleSection>
       <P>
-        There are some other stuffs that collaborate with{' '}
+        There are some other stuffs I collaborate with{' '}
         <AnchorIcon color="teal" name="catamyst" href="https://catamyst.com">
           Catamyst
         </AnchorIcon>{' '}
-        such as...
+        on which roles I have...
       </P>
       <P>
         Developer Relations Lead of{' '}
@@ -140,6 +143,17 @@ export const AboutStory: FunctionComponent = () => (
           CodePolitan
         </AnchorIcon>
         , a programming community.
+      </P>
+      <P>
+        Web Consultant at{' '}
+        <AnchorIcon
+          color="yellow"
+          name="superdupergallery"
+          href="https://superdupergallery.com"
+        >
+          Super Duper Gallery
+        </AnchorIcon>
+        , an <Tooltip content="In Real Life">IRL</Tooltip> unique art gallery.
       </P>
       <P>
         Community Lead of{' '}

@@ -34,7 +34,7 @@ const AnchorStyled = styled('a', {
       pink: { color: '$pink10', '&:hover': { color: '$pink11' } },
       red: { color: '$red10', '&:hover': { color: '$red11' } },
       teal: { color: '$teal10', '&:hover': { color: '$teal11' } },
-      yellow: { color: '$yellow10', '&:hover': { color: '$yellow11' } },
+      yellow: { color: '$yellow11', '&:hover': { color: '$yellow12' } },
     },
     display: {
       block: {
