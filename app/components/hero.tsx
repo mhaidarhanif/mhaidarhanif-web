@@ -15,8 +15,6 @@ interface HeroImageProps {
 }
 
 const HeroStyled = styled('div', {
-  height: '300px',
-  '@desktop': { height: '450px' },
   h1: {
     fontFamily: '$fontHeading',
     fontWeight: '$normal',
@@ -28,15 +26,12 @@ export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
 )
 
 const HeroImageContainer = styled('div', {
-  background: '$background',
+  background: '$backgroundSection',
   display: 'flex',
   overflow: 'hidden',
-  height: '300px',
-  top: '-300px',
-  '@desktop': {
-    height: '450px',
-    top: '-450px',
-  },
+  height: '260px',
+  '@tablet': { height: '300px' },
+  '@desktop': { height: '390px' },
 
   variants: {
     align: {

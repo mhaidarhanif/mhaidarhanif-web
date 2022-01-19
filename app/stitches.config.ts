@@ -98,7 +98,7 @@ const colorsTokens = {
   text11: '$slate2',
   text12: '$slate1',
 
-  // Rename Solid
+  // Gray Solid Renamed
   gray1: '$slate1',
   gray2: '$slate2',
   gray3: '$slate3',
@@ -152,6 +152,7 @@ const colorsTokensLightTheme = {
   anchorHover: '$brand10',
   focusOutline: '$cyanA10',
   background: '$background10',
+  backgroundSection: '$background9',
   backgroundInvert: '$background1',
 }
 
@@ -161,6 +162,7 @@ const colorsTokensDarkTheme = {
   anchorHover: '$brand11',
   focusOutline: '$cyanA10',
   background: '$background12',
+  backgroundSection: '$background11',
   backgroundInvert: '$background1',
 }
 
