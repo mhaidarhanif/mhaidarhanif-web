@@ -15,6 +15,7 @@ import {
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 import { textToolTech } from '~/data'
+import { getDayName } from '~/utils'
 
 export const AboutStory: FunctionComponent = () => (
   <Article>
@@ -49,8 +50,11 @@ export const AboutStory: FunctionComponent = () => (
     </ArticleSection>
 
     <ArticleSection>
-      <P>I define myself as a computational yet creative thinker.</P>
-      <P>In daily basis goes by working as either...</P>
+      <P>
+        How are you this <span>{getDayName()}</span>? Hopefully you are good.
+      </P>
+      <P>Since you visit this About page, let me introduce myself.</P>
+      <P>In daily basis I go by working as either...</P>
       <P>
         Educator. Mentor. Trainer. Coach. Tech Person. Web Developer. Software
         Engineer. Full Stack Web Developer. Technical Lead. Developer Advocate.
@@ -90,44 +94,12 @@ export const AboutStory: FunctionComponent = () => (
           Catamyst
         </AnchorIcon>
         , an education platform and software company to bring that mission
-        forward.
+        forward. Especially in tech career, web app development, software
+        engineering, and startup building.
       </P>
       <P>
-        Especially in tech career, web app development, software engineering,
-        and startup building.
-      </P>
-    </ArticleSection>
-
-    <ArticleSection>
-      <P>
-        Usually hangout on{' '}
-        <AnchorIcon name="twitter" href="https://a.mhaidarhanif.com/twitter">
-          Twitter
-        </AnchorIcon>
-        ,{' '}
-        <AnchorIcon name="github" href="https://a.mhaidarhanif.com/github">
-          GitHub
-        </AnchorIcon>
-        , and{' '}
-        <AnchorIcon name="linkedin" href="https://a.mhaidarhanif.com/linkedin">
-          LinkedIn
-        </AnchorIcon>
-        .
-      </P>
-      <P>
-        For work, I'm on{' '}
-        <AnchorIcon name="twist" href="https://twist.com">
-          Twist
-        </AnchorIcon>{' '}
-        and{' '}
-        <AnchorIcon name="slack" href="https://slack.com">
-          Slack
-        </AnchorIcon>
-        , sometimes on{' '}
-        <AnchorIcon name="discord" href="https://discord.com">
-          Discord
-        </AnchorIcon>
-        .
+        Catamyst provides free and paid learning materials, private mentorship,
+        as well as business/software development and consultancy service.
       </P>
     </ArticleSection>
 
@@ -144,7 +116,18 @@ export const AboutStory: FunctionComponent = () => (
         <AnchorIcon color="red" name="kontenbase" href="https://kontenbase.com">
           Kontenbase
         </AnchorIcon>
-        , a backend as a service platform.
+        , a backend as a service platform that simple and easy to use.
+      </P>
+      <P>
+        Product Engineer of{' '}
+        <AnchorIcon
+          color="blue"
+          name="poinswap"
+          href="https://github.com/poinswap"
+        >
+          Poinswap
+        </AnchorIcon>
+        , a decentralized exchange for cryptocurrencies and tokens.
       </P>
       <P>
         Content Creator at{' '}
@@ -167,6 +150,20 @@ export const AboutStory: FunctionComponent = () => (
           High Skill Masters
         </AnchorIcon>
         , a gathering of highly skilled professionals.
+      </P>
+    </ArticleSection>
+
+    <ArticleSection>
+      <H as="h4">How I do things</H>
+      <P>
+        Since jumping into the web development industry, I mostly prefer work
+        with these tools and technologies:
+      </P>
+      <P>{textToolTech}</P>
+      <P>The industry that I prefer to work with also varies:</P>
+      <P>
+        Education, Tech, Engineering, Management, Communication, Software, Web,
+        Hardware, Crypto, Games, and as long as it is a legit business.
       </P>
     </ArticleSection>
 
@@ -216,29 +213,6 @@ export const AboutStory: FunctionComponent = () => (
     </ArticleSection>
 
     <ArticleSection>
-      <H as="h4">Preferred works</H>
-      <P>
-        Since jumping into the web development industry, I mostly prefer work
-        with these tools and technologies:
-      </P>
-      <P>{textToolTech}</P>
-      <P>The industry that I prefer to work with also varies:</P>
-      <P>
-        Education, Tech, Engineering, Management, Communication, Software, Web,
-        Hardware, Crypto, Games, and as long as it is a legit business.
-      </P>
-    </ArticleSection>
-
-    <ArticleSection>
-      <H as="h4">Fun facts</H>
-      <P mode="wrap" gap="3">
-        <Span lang="ja">(づ ◕‿◕ )づ</Span>
-        <Span> I like Japanese stuffs </Span>
-        <Span lang="ja"> =＾● ⋏ ●＾= </Span>
-      </P>
-    </ArticleSection>
-
-    <ArticleSection>
       <H as="h4">Social media</H>
       <P>Follow and reach me on various social media. I also have a CV.</P>
       <SocialMediaLinks withName />
@@ -248,6 +222,45 @@ export const AboutStory: FunctionComponent = () => (
           contact me via this website
         </Link>
         .
+      </P>
+      <P>
+        I usually hangout on{' '}
+        <AnchorIcon name="twitter" href="https://a.mhaidarhanif.com/twitter">
+          Twitter
+        </AnchorIcon>
+        ,{' '}
+        <AnchorIcon name="github" href="https://a.mhaidarhanif.com/github">
+          GitHub
+        </AnchorIcon>
+        , and{' '}
+        <AnchorIcon name="linkedin" href="https://a.mhaidarhanif.com/linkedin">
+          LinkedIn
+        </AnchorIcon>
+        .
+      </P>
+      <P>
+        For work, I'm on{' '}
+        <AnchorIcon name="twist" href="https://twist.com">
+          Twist
+        </AnchorIcon>{' '}
+        and{' '}
+        <AnchorIcon name="slack" href="https://slack.com">
+          Slack
+        </AnchorIcon>
+        , sometimes on{' '}
+        <AnchorIcon name="discord" href="https://discord.com">
+          Discord
+        </AnchorIcon>
+        .
+      </P>
+    </ArticleSection>
+
+    <ArticleSection>
+      <H as="h4">Fun facts</H>
+      <P mode="wrap" gap="3">
+        <Span lang="ja">(づ ◕‿◕ )づ</Span>
+        <Span> I like Japanese stuffs </Span>
+        <Span lang="ja"> =＾● ⋏ ●＾= </Span>
       </P>
     </ArticleSection>
   </Article>

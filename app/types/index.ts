@@ -9,6 +9,7 @@ export type Color =
   | 'teal'
   | 'yellow'
   | undefined
+  | any
 
 export type BlogArticle = {
   _id?: string
