@@ -13,7 +13,7 @@ const FooterStyled = styled('footer', {
   display: 'flex',
   justifyContent: 'space-between',
   pt: '$32',
-  pb: '$3',
+  pb: '$10',
   background: '$background',
 })
 
