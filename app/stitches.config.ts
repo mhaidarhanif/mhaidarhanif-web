@@ -17,6 +17,8 @@ import {
   pinkDark,
   red,
   redDark,
+  teal,
+  tealDark,
   sky,
   skyDark,
   slate,
@@ -495,6 +497,7 @@ export const {
       ...sky,
       ...slate,
       ...slateA,
+      ...teal,
       ...whiteA,
       ...yellow,
 
@@ -536,6 +539,7 @@ export const darkTheme = createTheme('dark', {
     ...skyDark,
     ...slateDark,
     ...slateDarkA,
+    ...tealDark,
     ...yellowDark,
 
     ...colorsTokens,

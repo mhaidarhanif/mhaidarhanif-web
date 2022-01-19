@@ -1,6 +1,6 @@
 {
   "name": "mhaidarhanif-web",
-  "description": "Personal website of M Haidar Hanif with React, Remix, Radix UI",
+  "description": "Personal website of M Haidar Hanif with React, Remix, Stitches, Radix UI",
   "license": "MIT",
   "scripts": {
     "postinstall": "remix setup node",
