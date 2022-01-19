@@ -22,7 +22,7 @@ interface AnchorIconProps {
 const AnchorStyled = styled('a', {
   cursor: 'alias',
   transition: 'color 0.2s ease',
-  borderRadius: '$2',
+  borderRadius: '$1',
   color: '$anchor',
   '&:hover': { color: '$anchorHover' },
   variants: {
@@ -31,6 +31,7 @@ const AnchorStyled = styled('a', {
       brand: { color: '$brand10', '&:hover': { color: '$brand11' } },
       blue: { color: '$blue10', '&:hover': { color: '$blue11' } },
       green: { color: '$green10', '&:hover': { color: '$green11' } },
+      orange: { color: '$orange10', '&:hover': { color: '$orange11' } },
       pink: { color: '$pink10', '&:hover': { color: '$pink11' } },
       red: { color: '$red10', '&:hover': { color: '$red11' } },
       teal: { color: '$teal10', '&:hover': { color: '$teal11' } },

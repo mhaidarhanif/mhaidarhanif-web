@@ -12,6 +12,8 @@ interface HeroImageProps {
   src: string
   alt: string
   align?: string | 'top' | 'center' | 'bottom' | undefined
+  // eslint-disable-next-line react/no-unused-prop-types
+  blurhash?: string
 }
 
 const HeroStyled = styled('div', {

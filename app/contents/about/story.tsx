@@ -87,6 +87,7 @@ export const AboutStory: FunctionComponent = () => (
         work mission. And I've been doing this professionally since 2010.
       </P>
     </ArticleSection>
+
     <ArticleSection>
       <H as="h4">What things I do</H>
       <P>
@@ -108,8 +109,9 @@ export const AboutStory: FunctionComponent = () => (
     </ArticleSection>
 
     <ArticleSection>
+      <H as="h4">What other things I do</H>
       <P>
-        There are some other stuffs I collaborate with{' '}
+        There are some collaborations run with{' '}
         <AnchorIcon color="teal" name="catamyst" href="https://catamyst.com">
           Catamyst
         </AnchorIcon>{' '}
@@ -212,14 +214,14 @@ export const AboutStory: FunctionComponent = () => (
       </P>
       <P>
         Teaching at{' '}
-        <AnchorIcon name="agnium" href="https://agnium.co.id">
+        <AnchorIcon color="red" name="agnium" href="https://agnium.co.id">
           Agnium
         </AnchorIcon>
         , a software training agency.
       </P>
       <P>
         Coding at{' '}
-        <AnchorIcon name="amplified" href="https://amp.asia">
+        <AnchorIcon color="red" name="amplified" href="https://amp.asia">
           AMPlified
         </AnchorIcon>
         , a startup incubator.
