@@ -25,7 +25,7 @@ export const AboutStory: FunctionComponent = () => (
     </ArticleHeader>
 
     <ArticleSection>
-      <Flex>
+      <Flex css={{ alignItems: 'center' }}>
         <AvatarHaidar size="3" />
         <P css={{ ml: '$3' }}>
           <Span> My name is Haidar!</Span>
