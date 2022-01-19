@@ -8,8 +8,9 @@ const HeaderStyled = styled('header', {
   zIndex: '$banner',
   userSelect: 'none',
   background: '$background',
-  py: '$8',
-  px: '$4',
+  pd: '$4',
+  '@tablet': { pd: '$6' },
+  '@desktop': { pd: '$8' },
 })
 
 const Navigation = styled('nav', {
@@ -32,7 +33,8 @@ const NavigationGroupLogo = styled('div', {
   display: 'flex',
   alignSelf: 'flex-start',
   alignItems: 'center',
-  gap: '$4',
+  gap: '$2',
+  '@tablet': { gap: '$4' },
 })
 
 const NavigationGroupLinks = styled('div', {
@@ -45,6 +47,11 @@ const NavigationGroupLinks = styled('div', {
 })
 
 const NavigationLink = styled(Link, {
+  '&:first-child': {
+    display: 'none',
+    '@tablet': { display: 'block' },
+  },
+
   transition: 'background 0.2s ease, color 0.2s ease',
 
   fontWeight: '$bold',
@@ -95,6 +102,7 @@ export const Header = ({ id }: { id: string }) => {
               <Logo />
             </Link>
           </NavigationLogo>
+
           <ButtonToggleTheme />
         </NavigationGroupLogo>
 

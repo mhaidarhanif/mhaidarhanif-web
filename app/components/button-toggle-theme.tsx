@@ -5,15 +5,16 @@ import { styled } from '~/stitches'
 import { Theme, useTheme } from '~/utils/theme'
 
 const ButtonToggleThemeStyled = styled('button', {
-  fontSize: '$0',
   fontWeight: '$bold',
-  pd: '$3',
   cursor: 'pointer',
   color: '$yellow11',
   borderRadius: '$round',
   backgroundColor: '$buttonNormal',
   '&:hover': { backgroundColor: '$buttonHover' },
   '&:focus': { backgroundColor: '$buttonFocus' },
+  fontSize: '$-1',
+  pd: '$2',
+  '@tablet': { fontSize: '$0', pd: '$3' },
 })
 
 export const ButtonToggleTheme: FunctionComponent = () => {

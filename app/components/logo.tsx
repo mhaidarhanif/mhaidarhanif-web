@@ -3,12 +3,10 @@ import { styled } from '~/stitches'
 const LogoWrapper = styled('div', {
   display: 'flex',
   gap: '1em',
-  height: 50,
-  svg: { height: 50, width: 50 },
   transition: 'filter 0.2s ease-in-out',
-  '&:hover': {
-    filter: 'brightness(0.9)',
-  },
+  '&:hover': { filter: 'brightness(0.9)' },
+  svg: { size: 40 },
+  '@tablet': { svg: { size: 50 } },
 })
 
 export const Logo = () => (
