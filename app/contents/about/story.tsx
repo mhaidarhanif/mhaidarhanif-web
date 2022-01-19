@@ -206,7 +206,7 @@ export const AboutStory: FunctionComponent = () => (
 
     <ArticleSection>
       <P>Fun fact:</P>
-      <P>
+      <P mode="wrap" gap="3">
         <Span lang="ja">(づ ◕‿◕ )づ</Span>
         <Span> I like Japanese stuffs </Span>
         <Span lang="ja"> =＾● ⋏ ●＾= </Span>
