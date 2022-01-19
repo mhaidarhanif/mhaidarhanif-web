@@ -13,6 +13,7 @@ import {
   IconSpan,
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
+import { textToolTech } from '~/data'
 
 export const HomeIntro: FunctionComponent = () => (
   <>
@@ -48,10 +49,7 @@ export const HomeIntro: FunctionComponent = () => (
           </P>
 
           <P>
-            <IconSpan color="pink" name="cog" /> Using Figma, Git, HTML, CSS,
-            JavaScript, TypeScript, Node.js, React.js, Redux, Next.js, Remix,
-            Prisma, PostgreSQL / Supabase, MySQL / MariaDB / PlanetScale, REST
-            API, GraphQL, Vercel, Railway, Cloudflare, and many more tech.
+            <IconSpan color="pink" name="cog" /> Using {textToolTech}.
           </P>
 
           <P>

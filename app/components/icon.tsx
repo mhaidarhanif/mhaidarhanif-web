@@ -25,19 +25,21 @@ import {
   FaCloud as CloudIcon,
   FaCog as CogIcon,
   // Company
-  FaCat as CatamystIcon,
   FaProjectDiagram as KontenbaseIcon,
-  FaCode as CodePolitanIcon,
-  FaDragon as ImpactByteIcon,
-  FaFire as AgniumIcon,
-  FaLocationArrow as AMPlifiedIcon,
   // Person
   FaChalkboardTeacher as EducatorIcon,
   FaUserNinja as DeveloperIcon,
 } from 'react-icons/fa'
 import {
+  // Company
+  GiCat as CatamystIcon,
   GiClover as HighSkillMastersIcon,
+  GiEmerald as CodePolitanIcon,
+  GiDragonHead as ImpactByteIcon,
   GiFox as Hacktiv8Icon,
+  GiOvermind as QopnetIcon,
+  GiFlamer as AgniumIcon,
+  GiCompass as AMPlifiedIcon,
 } from 'react-icons/gi'
 
 import { Span } from '~/components'
@@ -79,6 +81,7 @@ export const iconMaps = {
   highskillmasters: <HighSkillMastersIcon />,
   impactbyte: <ImpactByteIcon />,
   hacktiv8: <Hacktiv8Icon />,
+  qopnet: <QopnetIcon />,
   agnium: <AgniumIcon />,
   amplified: <AMPlifiedIcon />,
   // Person

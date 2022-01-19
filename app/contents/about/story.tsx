@@ -14,6 +14,7 @@ import {
   ArticleHeader,
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
+import { textToolTech } from '~/data'
 
 export const AboutStory: FunctionComponent = () => (
   <Article>
@@ -49,38 +50,43 @@ export const AboutStory: FunctionComponent = () => (
 
     <ArticleSection>
       <P>I define myself as a computational yet creative thinker.</P>
-      <P>In daily basis goes by working as an...</P>
+      <P>In daily basis goes by working as either...</P>
       <P>
-        Educator. Mentor. Software Engineer. Full Stack Web Developer. Technical
-        Lead. Experience Designer. Product Manager. Business Runner.
-      </P>
-      <P lang="ja">
-        <Tooltip
-          align="start"
-          content={
-            <>
-              <span>Nesshin'na anime to manga no aikō-ka.</span>
-              <br />
-              <span>Avid anime and manga lover.</span>
-              <br />
-              <span>(Sorry if I made grammatical mistake!)</span>
-            </>
-          }
-        >
-          熱心なアニメとマンガの愛好家。
-        </Tooltip>
+        Educator. Mentor. Trainer. Coach. Tech Person. Web Developer. Software
+        Engineer. Full Stack Web Developer. Technical Lead. Developer Advocate.
+        Interface/Experience Designer. Product Manager. Business Runner. Human.
+        <br />
+        <Span lang="ja">
+          <Tooltip
+            align="start"
+            content={
+              <>
+                <span>Nihon no aikō-ka.</span>
+                <br />
+                <span>Japanese enthusiast.</span>
+                <br />
+                <span>(Sorry if I made grammatical mistake!)</span>
+              </>
+            }
+          >
+            日本の愛好家。
+          </Tooltip>
+        </Span>
       </P>
     </ArticleSection>
 
     <ArticleSection>
+      <H as="h4">Why I do things</H>
       <P>
-        Helping people to become become better at what they do is my life and
-        work mission.
+        To help people to become become better at what they do is my life and
+        work mission. And I've been doing this professionally since 2010.
       </P>
-      <P>And I've been doing this professionally since 2010.</P>
+    </ArticleSection>
+    <ArticleSection>
+      <H as="h4">What things I do</H>
       <P>
         Currently founding{' '}
-        <AnchorIcon name="catamyst" href="https://catamyst.com">
+        <AnchorIcon color="teal" name="catamyst" href="https://catamyst.com">
           Catamyst
         </AnchorIcon>
         , an education platform and software company to bring that mission
@@ -128,21 +134,25 @@ export const AboutStory: FunctionComponent = () => (
     <ArticleSection>
       <P>
         There are some other stuffs that collaborate with{' '}
-        <AnchorIcon name="catamyst" href="https://catamyst.com">
+        <AnchorIcon color="teal" name="catamyst" href="https://catamyst.com">
           Catamyst
         </AnchorIcon>{' '}
         such as...
       </P>
       <P>
         Developer Relations Lead of{' '}
-        <AnchorIcon name="kontenbase" href="https://kontenbase.com">
+        <AnchorIcon color="red" name="kontenbase" href="https://kontenbase.com">
           Kontenbase
         </AnchorIcon>
         , a backend as a service platform.
       </P>
       <P>
         Content Creator at{' '}
-        <AnchorIcon name="codepolitan" href="https://codepolitan.com">
+        <AnchorIcon
+          color="pink"
+          name="codepolitan"
+          href="https://codepolitan.com"
+        >
           CodePolitan
         </AnchorIcon>
         , a programming community.
@@ -150,6 +160,7 @@ export const AboutStory: FunctionComponent = () => (
       <P>
         Community Lead of{' '}
         <AnchorIcon
+          color="green"
           name="highskillmasters"
           href="https://github.com/highskillmasters"
         >
@@ -160,17 +171,29 @@ export const AboutStory: FunctionComponent = () => (
     </ArticleSection>
 
     <ArticleSection>
+      <H as="h4">Previous roles</H>
       <P>Previously I was...</P>
       <P>
-        Co-founding and teaching at{' '}
-        <AnchorIcon name="impactbyte" href="https://impactbyte.com">
+        Co-Founder and Lead Mentor of{' '}
+        <AnchorIcon color="red" name="impactbyte" href="https://impactbyte.com">
           Impact Byte
         </AnchorIcon>
         , a flexible coding bootcamp.
       </P>
       <P>
-        Teaching at{' '}
-        <AnchorIcon name="hacktiv8" href="httsp://hacktiv8.com">
+        Contract Consultant of{' '}
+        <AnchorIcon color="orange" name="qopnet" href="https://qopnet.id">
+          Qopnet
+        </AnchorIcon>
+        , a{' '}
+        <Tooltip content="Business to Business">
+          <b>B2B</b>
+        </Tooltip>{' '}
+        marketplace.
+      </P>
+      <P>
+        Senior Instructor of{' '}
+        <AnchorIcon color="orange" name="hacktiv8" href="httsp://hacktiv8.com">
           Hacktiv8
         </AnchorIcon>
         , an intensive coding bootcamp.
@@ -193,19 +216,21 @@ export const AboutStory: FunctionComponent = () => (
     </ArticleSection>
 
     <ArticleSection>
+      <H as="h4">Preferred works</H>
       <P>
         Since jumping into the web development industry, I mostly prefer work
-        with:
+        with these tools and technologies:
       </P>
+      <P>{textToolTech}</P>
+      <P>The industry that I prefer to work with also varies:</P>
       <P>
-        UI, UX, HTML, CSS, JavaScript, TypeScript, Node.js, React.js, Redux,
-        Next.js, Remix, Prisma, PostgreSQL / Supabase, MySQL / MariaDB /
-        PlanetScale, REST API, GraphQL, and many more.
+        Education, Tech, Engineering, Management, Communication, Software, Web,
+        Hardware, Crypto, Games, and as long as it is a legit business.
       </P>
     </ArticleSection>
 
     <ArticleSection>
-      <P>Fun fact:</P>
+      <H as="h4">Fun facts</H>
       <P mode="wrap" gap="3">
         <Span lang="ja">(づ ◕‿◕ )づ</Span>
         <Span> I like Japanese stuffs </Span>
@@ -214,6 +239,7 @@ export const AboutStory: FunctionComponent = () => (
     </ArticleSection>
 
     <ArticleSection>
+      <H as="h4">Social media</H>
       <P>Follow and reach me on various social media. I also have a CV.</P>
       <SocialMediaLinks withName />
       <P>

@@ -20,6 +20,7 @@ interface AnchorIconProps {
 }
 
 const AnchorStyled = styled('a', {
+  cursor: 'alias',
   transition: 'color 0.2s ease',
   borderRadius: '$2',
   color: '$anchor',
