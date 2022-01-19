@@ -1,3 +1,15 @@
+export type Color =
+  | 'normal'
+  | 'brand'
+  | 'blue'
+  | 'blue'
+  | 'green'
+  | 'pink'
+  | 'red'
+  | 'teal'
+  | 'yellow'
+  | undefined
+
 export type BlogArticle = {
   _id?: string
   title?: string
