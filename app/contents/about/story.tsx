@@ -15,7 +15,7 @@ import {
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 import { textToolTech } from '~/data'
-import { getDayName } from '~/utils'
+import { getDayNamePeriod } from '~/utils'
 
 export const AboutStory: FunctionComponent = () => (
   <Article>
@@ -51,7 +51,8 @@ export const AboutStory: FunctionComponent = () => (
 
     <ArticleSection>
       <P>
-        How are you this <span>{getDayName()}</span>? Hopefully you are good.
+        How are you this <span>{getDayNamePeriod()}</span>? Hopefully you are
+        good.
       </P>
       <P>Since you visit this About page, let me introduce myself.</P>
       <P>In daily basis I go by working as either...</P>
