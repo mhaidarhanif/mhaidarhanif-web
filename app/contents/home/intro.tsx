@@ -10,6 +10,7 @@ import {
   ArticleSection,
   ButtonGroup,
   AnchorIcon,
+  IconSpan,
 } from '~/components'
 import { AvatarHaidar } from '~/contents'
 
@@ -17,7 +18,7 @@ export const HomeIntro: FunctionComponent = () => (
   <>
     <Center layout="vertical-center" css={{ mb: '$10' }}>
       <AvatarHaidar mode="gradient" />
-      <H as="h1" css={{ mb: '$5' }}>
+      <H as="h1" css={{ m: '$5' }}>
         M Haidar Hanif
       </H>
       <SocialMediaLinks />
@@ -27,32 +28,62 @@ export const HomeIntro: FunctionComponent = () => (
       <Article>
         <ArticleSection>
           <P>
-            <span>🧑🏻‍🏫🧑🏻‍💻</span> <span>Educator</span> • <span>Mentor</span>{' '}
-            • <span>Software Engineer</span> •{' '}
+            <IconSpan color="brand" name="educator" />{' '}
+            <IconSpan color="brand" name="developer" /> <span>Educator</span> •{' '}
+            <span>Mentor</span> • <span>Software Engineer</span> •{' '}
             <span>Full Stack Web Developer</span>
           </P>
+
           <P>
-            ⚡ Helping people in modern career, web development, software
-            engineering, tech business, and life in general
+            <IconSpan color="yellow" name="bolt" /> Helping people to be better
+            especially in modern career, web development, software engineering,
+            tech business, and life in general.
           </P>
+
+          <P>
+            <IconSpan color="blue" name="cloud" /> Doing education, mentoring,
+            training, business, management, design, user interface (UI), user
+            experience (UX), developer experience (DX), web design, web
+            development, software engineering, and more.
+          </P>
+
+          <P>
+            <IconSpan color="pink" name="cog" /> Using Figma, Git, HTML, CSS,
+            JavaScript, TypeScript, Node.js, React.js, Redux, Next.js, Remix,
+            Prisma, PostgreSQL / Supabase, MySQL / MariaDB / PlanetScale, REST
+            API, GraphQL, Vercel, Railway, Cloudflare, and many more tech.
+          </P>
+
           <P>
             <span>
               Founder and Mentor of{' '}
-              <AnchorIcon name="catamyst" href="https://catamyst.com">
+              <AnchorIcon
+                color="teal"
+                name="catamyst"
+                href="https://catamyst.com"
+              >
                 Catamyst
               </AnchorIcon>
             </span>
             <span> • </span>
             <span>
               Developer Relations Lead of{' '}
-              <AnchorIcon name="kontenbase" href="https://kontenbase.com">
+              <AnchorIcon
+                color="red"
+                name="kontenbase"
+                href="https://kontenbase.com"
+              >
                 Kontenbase
               </AnchorIcon>
             </span>
             <span> • </span>
             <span>
               Content Creator at{' '}
-              <AnchorIcon name="codepolitan" href="https://codepolitan.com">
+              <AnchorIcon
+                color="blue"
+                name="codepolitan"
+                href="https://codepolitan.com"
+              >
                 CodePolitan
               </AnchorIcon>
             </span>
@@ -60,6 +91,7 @@ export const HomeIntro: FunctionComponent = () => (
             <span>
               Community Lead of{' '}
               <AnchorIcon
+                color="green"
                 name="highskillmasters"
                 href="https://github.com/highskillmasters"
               >
@@ -70,7 +102,7 @@ export const HomeIntro: FunctionComponent = () => (
         </ArticleSection>
 
         <ArticleSection>
-          <ButtonGroup size="3">
+          <ButtonGroup size="2">
             <LinkButton to="/about" prefetch="intent">
               Follow more story
             </LinkButton>
