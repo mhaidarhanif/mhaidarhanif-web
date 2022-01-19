@@ -70,7 +70,7 @@ export const SocialMediaLink: FunctionComponent<SocialMediaLinkProps> = ({
     align="center"
     avoidCollisions={false}
   >
-    <Anchor href={link.url}>
+    <Anchor color="normal" href={link.url}>
       <Icon name={link.name.toLowerCase()} />
     </Anchor>
   </Tooltip>

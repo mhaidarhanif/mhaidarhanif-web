@@ -12,7 +12,7 @@ const headingGradient = {
   fontFamily: '$fontHeading',
   color: '$heading',
   backgroundColor: '$heading',
-  backgroundImage: 'linear-gradient(to right, $brand10, $brand8)',
+  backgroundImage: 'linear-gradient(to right, $brand10, $brand11)',
   backgroundSize: '100%',
   backgroundClip: 'text',
   textFillColor: 'transparent',

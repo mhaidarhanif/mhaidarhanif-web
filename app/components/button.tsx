@@ -9,7 +9,7 @@ export const buttonStyles = {
   fontWeight: '$bold',
   cursor: 'pointer',
   border: '$none',
-  borderRadius: '$pill',
+  borderRadius: '$1',
   color: '$buttonText',
   transition: 'all 0.2s ease',
   backgroundColor: '$buttonNormal',

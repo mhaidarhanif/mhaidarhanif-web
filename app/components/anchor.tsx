@@ -2,17 +2,20 @@ import { FunctionComponent } from 'react'
 
 import { Icon } from '~/components'
 import { styled } from '~/stitches'
+import { Color } from '~/types'
 
 interface AnchorProps {
   css?: any
   href: string
   display?: 'block' | 'with-icon' | undefined
+  color?: Color
   children: React.ReactNode
 }
 
 interface AnchorIconProps {
   name: string
   href: string
+  color?: Color
   children: React.ReactNode
 }
 
@@ -20,10 +23,18 @@ const AnchorStyled = styled('a', {
   transition: 'color 0.2s ease',
   borderRadius: '$2',
   color: '$anchor',
-  '&:hover': {
-    color: '$anchorHover',
-  },
+  '&:hover': { color: '$anchorHover' },
   variants: {
+    color: {
+      normal: { color: '$text', '&:hover': { color: '$text' } },
+      brand: { color: '$brand10', '&:hover': { color: '$brand11' } },
+      blue: { color: '$blue10', '&:hover': { color: '$blue11' } },
+      green: { color: '$green10', '&:hover': { color: '$green11' } },
+      pink: { color: '$pink10', '&:hover': { color: '$pink11' } },
+      red: { color: '$red10', '&:hover': { color: '$red11' } },
+      teal: { color: '$teal10', '&:hover': { color: '$teal11' } },
+      yellow: { color: '$yellow10', '&:hover': { color: '$yellow11' } },
+    },
     display: {
       block: {
         display: 'block',
@@ -36,11 +47,15 @@ const AnchorStyled = styled('a', {
       },
     },
   },
+  defaultVariants: {
+    color: 'brand',
+  },
 })
 
 export const Anchor: FunctionComponent<AnchorProps> = ({
   href,
   display,
+  color,
   css,
   children,
 }) => (
@@ -49,6 +64,7 @@ export const Anchor: FunctionComponent<AnchorProps> = ({
     target="_blank"
     rel="noopener noreferrer"
     display={display}
+    color={color}
     css={css}
   >
     {children}
@@ -57,10 +73,11 @@ export const Anchor: FunctionComponent<AnchorProps> = ({
 
 export const AnchorIcon: FunctionComponent<AnchorIconProps> = ({
   name,
+  color,
   href,
   children,
 }) => (
-  <Anchor display="with-icon" href={href}>
+  <Anchor display="with-icon" href={href} color={color}>
     <Icon name={name} /> {children}
   </Anchor>
 )

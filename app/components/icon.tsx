@@ -21,6 +21,9 @@ import {
   FaTh as PolyworkIcon,
   // Misc
   FaFileAlt as CVIcon,
+  FaBolt as BoltIcon,
+  FaCloud as CloudIcon,
+  FaCog as CogIcon,
   // Company
   FaCat as CatamystIcon,
   FaProjectDiagram as KontenbaseIcon,
@@ -28,11 +31,17 @@ import {
   FaDragon as ImpactByteIcon,
   FaFire as AgniumIcon,
   FaLocationArrow as AMPlifiedIcon,
+  // Person
+  FaChalkboardTeacher as EducatorIcon,
+  FaUserNinja as DeveloperIcon,
 } from 'react-icons/fa'
 import {
   GiClover as HighSkillMastersIcon,
   GiFox as Hacktiv8Icon,
 } from 'react-icons/gi'
+
+import { Span } from '~/components'
+import { Color } from '~/types'
 
 const switchFn =
   (lookupObject: any, defaultCase = '_default') =>
@@ -60,6 +69,9 @@ export const iconMaps = {
   discord: <DiscordIcon />,
   // Misc
   cv: <CVIcon />,
+  bolt: <BoltIcon />,
+  cloud: <CloudIcon />,
+  cog: <CogIcon />,
   // Company
   catamyst: <CatamystIcon />,
   kontenbase: <KontenbaseIcon />,
@@ -69,6 +81,9 @@ export const iconMaps = {
   hacktiv8: <Hacktiv8Icon />,
   agnium: <AgniumIcon />,
   amplified: <AMPlifiedIcon />,
+  // Person
+  educator: <EducatorIcon />,
+  developer: <DeveloperIcon />,
   // Default
   default: <CircleIcon />,
 }
@@ -79,4 +94,20 @@ interface IconProps {
   name: string
 }
 
+interface IconSpanProps {
+  name: string
+  color?: Color
+  css?: any
+}
+
 export const Icon: FunctionComponent<IconProps> = ({ name }) => iconSwitch(name)
+
+export const IconSpan: FunctionComponent<IconSpanProps> = ({
+  name,
+  color,
+  css,
+}) => (
+  <Span flex color={color} css={css}>
+    <Icon name={name} />
+  </Span>
+)

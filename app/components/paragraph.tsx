@@ -1,13 +1,11 @@
 import { styled } from '~/stitches'
 
 export const P = styled('p', {
-  lineHeight: '$8',
-
-  mt: '$2',
-  mb: '$2',
+  my: '$3',
   fontSize: '$0',
-  '@tablet': { mb: '$3', fontSize: '$1' },
-  '@desktop': { mb: '$4', fontSize: '$2' },
+  lineHeight: '$7',
+  '@tablet': { my: '$4', fontSize: '$1', lineHeight: '$8' },
+  '@desktop': { my: '$5', fontSize: '$2', lineHeight: '$9' },
 
   variants: {
     lang: {
