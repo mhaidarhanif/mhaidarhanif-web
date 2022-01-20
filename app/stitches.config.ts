@@ -118,8 +118,8 @@ const colorsTokens = {
 
   brand: '#05a2c2',
   heading: '$brand11',
-  text: '$slate12',
-  textInvert: '$slate1',
+  text: '$brand12',
+  textInvert: '$brand1',
 
   buttonText: '$brand11',
   buttonNormal: '$brand4',
@@ -153,9 +153,9 @@ const colorsTokensLightTheme = {
   anchor: '$brand9',
   anchorHover: '$brand10',
   focusOutline: '$cyanA10',
-  background: '$background10',
-  backgroundSection: '$background9',
-  backgroundInvert: '$background1',
+  background: '$brand3',
+  backgroundInvert: '$brand11',
+  backgroundSection: '$brand4',
 }
 
 const colorsTokensDarkTheme = {
@@ -163,9 +163,9 @@ const colorsTokensDarkTheme = {
   anchor: '$brand10',
   anchorHover: '$brand11',
   focusOutline: '$cyanA10',
-  background: '$background12',
-  backgroundSection: '$background11',
-  backgroundInvert: '$background1',
+  background: '$brand1',
+  backgroundInvert: '$brand12',
+  backgroundSection: '$brand2',
 }
 
 const spaceTokens = {
