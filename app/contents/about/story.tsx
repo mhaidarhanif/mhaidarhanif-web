@@ -176,7 +176,7 @@ export const AboutStory: FunctionComponent = () => (
         Since jumping into the web development industry, I mostly prefer work
         with these tools and technologies:
       </P>
-      <P>{textToolTech}</P>
+      <P>{textToolTech}.</P>
       <P>The industry that I prefer to work with also varies:</P>
       <P>
         Education, Tech, Engineering, Management, Communication, Software, Web,
@@ -249,9 +249,13 @@ export const AboutStory: FunctionComponent = () => (
         <AnchorIcon name="github" href="https://a.mhaidarhanif.com/github">
           GitHub
         </AnchorIcon>
-        , and{' '}
+        ,{' '}
         <AnchorIcon name="linkedin" href="https://a.mhaidarhanif.com/linkedin">
           LinkedIn
+        </AnchorIcon>
+        , and{' '}
+        <AnchorIcon name="youtube" href="https://a.mhaidarhanif.com/youtube">
+          YouTube
         </AnchorIcon>
         .
       </P>
