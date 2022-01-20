@@ -12,9 +12,10 @@ import { getDayName, getYear } from '~/utils'
 const FooterStyled = styled('footer', {
   display: 'flex',
   justifyContent: 'space-between',
+  background: '$background',
   pt: '$32',
   pb: '$10',
-  background: '$background',
+  '@desktop': { px: '$2' },
 })
 
 const FooterGroup = styled('div', {
@@ -47,7 +48,8 @@ const FooterSubGroup = styled('div', {
   display: 'flex',
   flexWrap: 'wrap',
   alignItems: 'center',
-  gap: '$5',
+  gap: '$3',
+  '@tablet': { gap: '$5' },
 })
 
 /**
@@ -55,7 +57,7 @@ const FooterSubGroup = styled('div', {
  */
 export const Footer = ({ id }: { id: string }) => (
   <FooterStyled id={id}>
-    <Container size="full">
+    <Container size="full" css={{ gap: '$2' }}>
       <FooterGroup align="left">
         <P>
           Happy{' '}
@@ -69,7 +71,10 @@ export const Footer = ({ id }: { id: string }) => (
 
       <FooterGroup align="right">
         <FooterSubGroup>
-          <SocialMediaLinks size="small" />
+          <SocialMediaLinks
+            size="small"
+            enabledLinks={['Twitter', 'GitHub', 'LinkedIn', 'YouTube']}
+          />
           <P lang="ja">
             <Tooltip content="🌏 World 🌍 Wide 🌎 Web">
               🌏 ワールド 🌍 ワイド 🌎 ウェブ

@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'remix'
 
-import { Logo, ButtonToggleTheme } from '~/components'
+import { Logo, ButtonToggleTheme, Container } from '~/components'
 import { navigationLinks } from '~/data'
 import { styled } from '~/stitches'
 
@@ -8,12 +8,12 @@ const HeaderStyled = styled('header', {
   zIndex: '$banner',
   userSelect: 'none',
   background: '$background',
-  pd: '$4',
-  '@tablet': { pd: '$6' },
-  '@desktop': { pd: '$8' },
+  py: '$4',
+  '@desktop': { py: '$8', px: '$2' },
 })
 
 const Navigation = styled('nav', {
+  width: '100%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-start',
@@ -95,30 +95,32 @@ export const Header = ({ id }: { id: string }) => {
 
   return (
     <HeaderStyled id={id}>
-      <Navigation>
-        <NavigationGroupLogo>
-          <NavigationLogo>
-            <Link to="/" title="M Haidar Hanif" prefetch="intent">
-              <Logo />
-            </Link>
-          </NavigationLogo>
+      <Container size="full">
+        <Navigation>
+          <NavigationGroupLogo>
+            <NavigationLogo>
+              <Link to="/" title="M Haidar Hanif" prefetch="intent">
+                <Logo />
+              </Link>
+            </NavigationLogo>
 
-          <ButtonToggleTheme />
-        </NavigationGroupLogo>
+            <ButtonToggleTheme />
+          </NavigationGroupLogo>
 
-        <NavigationGroupLinks>
-          {navigationLinks.map((link) => (
-            <NavigationLink
-              key={link.name}
-              to={link.to}
-              variant={location.pathname === link.to ? 'active' : 'normal'}
-              prefetch="intent"
-            >
-              {link.name}
-            </NavigationLink>
-          ))}
-        </NavigationGroupLinks>
-      </Navigation>
+          <NavigationGroupLinks>
+            {navigationLinks.map((link) => (
+              <NavigationLink
+                key={link.name}
+                to={link.to}
+                variant={location.pathname === link.to ? 'active' : 'normal'}
+                prefetch="intent"
+              >
+                {link.name}
+              </NavigationLink>
+            ))}
+          </NavigationGroupLinks>
+        </Navigation>
+      </Container>
     </HeaderStyled>
   )
 }

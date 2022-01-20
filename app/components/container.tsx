@@ -5,6 +5,7 @@ import { styled } from '~/stitches'
 interface ContainerProps {
   layout?: 'center-horizontal' | 'center-vertical' | undefined
   size?: 'full' | 'adaptive' | undefined
+  css?: any
   children: React.ReactNode
 }
 
@@ -72,9 +73,10 @@ const ContainerBoundaryStyled = styled('div', {
 export const Container: FunctionComponent<ContainerProps> = ({
   layout,
   size,
+  css,
   children,
 }) => (
-  <ContainerStyled className="container" layout={layout} size={size}>
+  <ContainerStyled className="container" layout={layout} size={size} css={css}>
     {children}
   </ContainerStyled>
 )
