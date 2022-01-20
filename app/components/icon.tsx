@@ -12,14 +12,15 @@ import {
   FaSun as DarkIcon,
   FaMoon as LightIcon,
   // Social media
+  FaDev as DevToIcon,
   FaFacebook as FacebookIcon,
   FaGithub as GitHubIcon,
-  FaDev as DevToIcon,
+  FaStopCircle as HashnodeIcon,
   FaInstagram as InstagramIcon,
   FaLinkedin as LinkedInIcon,
+  FaTh as PolyworkIcon,
   FaTwitter as TwitterIcon,
   FaYoutube as YouTubeIcon,
-  FaTh as PolyworkIcon,
   // Misc
   FaFileAlt as CVIcon,
   FaBolt as BoltIcon,
@@ -63,8 +64,9 @@ export const iconMaps = {
   // Social media
   twitter: <TwitterIcon />,
   github: <GitHubIcon />,
-  devto: <DevToIcon />,
   linkedin: <LinkedInIcon />,
+  devto: <DevToIcon />,
+  hashnode: <HashnodeIcon />,
   instagram: <InstagramIcon />,
   facebook: <FacebookIcon />,
   youtube: <YouTubeIcon />,
