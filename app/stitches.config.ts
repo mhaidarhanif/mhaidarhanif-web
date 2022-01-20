@@ -119,6 +119,7 @@ const colorsTokens = {
   brand: '#05a2c2',
   heading: '$brand11',
   text: '$brand12',
+  textHover: '$brand11',
   textInvert: '$brand1',
 
   buttonText: '$brand11',

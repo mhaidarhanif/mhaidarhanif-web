@@ -27,7 +27,7 @@ const AnchorStyled = styled('a', {
   '&:hover': { color: '$anchorHover' },
   variants: {
     color: {
-      normal: { color: '$text', '&:hover': { color: '$text' } },
+      normal: { color: '$text', '&:hover': { color: '$textHover' } },
       brand: { color: '$brand10', '&:hover': { color: '$brand11' } },
       blue: { color: '$blue10', '&:hover': { color: '$blue11' } },
       green: { color: '$green10', '&:hover': { color: '$green11' } },

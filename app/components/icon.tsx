@@ -14,6 +14,7 @@ import {
   // Social media
   FaFacebook as FacebookIcon,
   FaGithub as GitHubIcon,
+  FaDev as DevToIcon,
   FaInstagram as InstagramIcon,
   FaLinkedin as LinkedInIcon,
   FaTwitter as TwitterIcon,
@@ -62,6 +63,7 @@ export const iconMaps = {
   // Social media
   twitter: <TwitterIcon />,
   github: <GitHubIcon />,
+  devto: <DevToIcon />,
   linkedin: <LinkedInIcon />,
   instagram: <InstagramIcon />,
   facebook: <FacebookIcon />,
