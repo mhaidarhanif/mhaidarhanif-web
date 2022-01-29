@@ -45,7 +45,8 @@ export const HomeIntro: FunctionComponent = () => (
             <IconSpan color="blue" name="cloud" /> Doing education, mentoring,
             training, business, management, design, user interface (UI), user
             experience (UX), developer experience (DX), web design, web
-            development, software engineering, and more.
+            development, software engineering, asynchronous work, remote work,
+            nomad life, and more.
           </P>
 
           <P>

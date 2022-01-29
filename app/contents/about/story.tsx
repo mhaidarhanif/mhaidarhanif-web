@@ -283,6 +283,13 @@ export const AboutStory: FunctionComponent = () => (
         <Span> I like Japanese stuffs </Span>
         <Span lang="ja"> =＾● ⋏ ●＾= </Span>
       </P>
+      <P>
+        I used to learn, use, and work with many different programming languages
+        such as BASIC, Visual Basic, Pascal, Delphi, C, C++, C#, Objective-C,
+        Java, Python, Ruby, PHP, Matlab, R, Julia, Lua, Elm, Groovy,
+        CoffeeScript, and including Assembly! But I also have interest in Rust
+        and Golang.
+      </P>
     </ArticleSection>
   </Article>
 )

@@ -6,7 +6,10 @@ export const HomeWorks: FunctionComponent = () => (
   <Container>
     <Box>
       <H as="h2">Works</H>
-      <P>Some featured works</P>
+      <P>
+        Some featured works will be added here. You know the reasons:
+        prioritizing some other works first. 🙂
+      </P>
       <img
         src="/illustrations/character-earth-chikyu.png"
         alt="Character Earth Chikyu"
