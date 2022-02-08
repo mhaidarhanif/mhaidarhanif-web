@@ -1,8 +1,8 @@
-import { json, useLoaderData } from 'remix'
+import { json } from 'remix'
 
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { Container, Content, Hero, HeroImage } from '~/components'
-import { BlogArticles, BlogIntro } from '~/contents'
+import { BlogIntro } from '~/contents'
 import type { BlogArticle } from '~/types'
 import { createMeta, getEnvServer } from '~/utils'
 
@@ -24,7 +24,7 @@ export const loader: LoaderFunction = async () => {
 }
 
 export default function Blog() {
-  const data = useLoaderData()
+  // const data = useLoaderData()
   const frontmatter = {
     heroName: 'Book with Words',
     heroImage:
@@ -43,7 +43,7 @@ export default function Blog() {
           <BlogIntro />
         </Container>
 
-        <BlogArticles articles={data.articles} />
+        {/* <BlogArticles articles={data.articles} /> */}
       </Content>
     </>
   )
