@@ -17,7 +17,7 @@ export const meta: MetaFunction = ({ data }) => {
   }
   return createMeta({
     route: data.slug,
-    title: data.article.title,
+    title: `${data.article.title} - Blog Article - M Haidar Hanif`,
     description: data.article.description,
   })
 }
