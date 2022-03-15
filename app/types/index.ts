@@ -17,10 +17,13 @@ export type Color =
   | undefined
   | any
 
-export type BlogArticle = {
-  _id?: string
+export type TBlogArticle = {
+  id?: string
+  slug?: string
   title?: string
   description?: string
+  date?: string
+  excerpt?: string
   content?: string
   publishedAt?: string
   createdAt?: string
