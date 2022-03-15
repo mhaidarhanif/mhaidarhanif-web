@@ -1,10 +1,13 @@
+import { useLoaderData } from '@remix-run/react'
+import { gql } from '@urql/core'
 import { json } from 'remix'
 
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { Container, Content, Hero, HeroImage } from '~/components'
-import { BlogIntro } from '~/contents'
-import type { BlogArticle } from '~/types'
-import { createMeta, getEnvServer } from '~/utils'
+import { BlogArticles, BlogIntro } from '~/contents'
+import { graphcmsClient } from '~/lib'
+import type { TBlogArticle } from '~/types'
+import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
   createMeta({
@@ -14,17 +17,32 @@ export const meta: MetaFunction = () =>
       'Collection of ideas, stories, thoughts, learnings, and various sharings. Usually around life, career, tech, software engineering, web development, and multiple topics.',
   })
 
-export type BlogLoaderData = BlogArticle[]
+export type BlogLoaderData = TBlogArticle[]
 
 export const loader: LoaderFunction = async () => {
-  const apiUrl = getEnvServer('KONTENBASE_API_URL')
-  const response = await fetch(`${apiUrl}/posts`)
-  const articles = await response.json()
-  return json({ articles })
+  const queryAllArticles = gql`
+    query AllArticles {
+      articles {
+        id
+        slug
+        title
+        date
+        excerpt
+      }
+    }
+  `
+
+  const response = await graphcmsClient.query(queryAllArticles).toPromise()
+  const { articles } = response.data
+
+  return json({
+    articles,
+  })
 }
 
 export default function Blog() {
-  // const data = useLoaderData()
+  const data = useLoaderData<TBlogArticle[]>()
+
   const frontmatter = {
     heroName: 'Book with Words',
     heroImage:
@@ -43,7 +61,7 @@ export default function Blog() {
           <BlogIntro />
         </Container>
 
-        {/* <BlogArticles articles={data.articles} /> */}
+        <BlogArticles articles={data.articles} />
       </Content>
     </>
   )
