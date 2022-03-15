@@ -1,27 +1,79 @@
-import { json, LoaderFunction, MetaFunction } from 'remix'
+import { gql } from '@urql/core'
+import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
-import { Article, H, Hero } from '~/components'
+import { Container, Content, Hero, HeroImage } from '~/components'
+import { BlogArticle } from '~/contents'
+import { graphcmsClient } from '~/lib'
+import { TBlogArticle } from '~/types'
 import { createMeta } from '~/utils'
 
-export const meta: MetaFunction = () =>
-  createMeta({
-    route: 'slug name',
-    title: 'Blog article title',
-    description: 'Blog article description',
-  })
-
-export const loader: LoaderFunction = async () => {
-  throw json({
-    message: '',
+export const meta: MetaFunction = ({ data }) => {
+  if (!data) {
+    return createMeta({
+      route: data.slug,
+      title: 'No blog article found',
+      description: 'No blog article found',
+    })
+  }
+  return createMeta({
+    route: data.slug,
+    title: data.article.title,
+    description: data.article.description,
   })
 }
 
-export default function BlogSlug() {
+export const loader: LoaderFunction = async ({ params }) => {
+  const { slug } = params
+
+  const queryOneArticleBySlug = gql`
+    query OneArticle($slug: String!) {
+      article(where: { slug: $slug }) {
+        id
+        slug
+        title
+        date
+        content {
+          markdown
+        }
+      }
+    }
+  `
+  const response = await graphcmsClient
+    .query(queryOneArticleBySlug, { slug })
+    .toPromise()
+
+  const { article } = response.data
+
+  return json({
+    slug,
+    article,
+  })
+}
+
+export default function BlogArticleSlug() {
+  const data = useLoaderData<{
+    slug: string
+    article: TBlogArticle
+  }>()
+
+  const frontmatter = {
+    heroName: 'Book with Words',
+    heroImage:
+      'https://images.unsplash.com/photo-1581855339095-0c282d58527b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1773&q=80',
+    heroImageAlign: 'center',
+  }
+
   return (
-    <Hero>
-      <Article>
-        <H as="h1">Blog article title</H>
-      </Article>
-    </Hero>
+    <>
+      <Hero>
+        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+      </Hero>
+
+      <Content>
+        <Container>
+          <BlogArticle article={data.article} />
+        </Container>
+      </Content>
+    </>
   )
 }
