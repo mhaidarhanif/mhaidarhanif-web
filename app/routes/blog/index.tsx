@@ -41,7 +41,9 @@ export const loader: LoaderFunction = async () => {
 }
 
 export default function Blog() {
-  const data = useLoaderData<TBlogArticle[]>()
+  const data = useLoaderData<{
+    articles: TBlogArticle[]
+  }>()
 
   const frontmatter = {
     heroName: 'Book with Words',
