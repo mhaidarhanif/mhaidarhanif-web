@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react'
-import { Link } from 'remix'
 
-import { ArticleCard, Container, H, P, Stack } from '~/components'
+import { ArticleCard, Container, H, Link, P, Stack } from '~/components'
 import type { TBlogArticle } from '~/types'
 
 interface BlogArticleProps {
@@ -17,7 +16,7 @@ export const BlogArticles: FunctionComponent<BlogArticleProps> = ({
         <Link key={article.id} to={`/blog/${article.slug}`}>
           <ArticleCard>
             <H as="h4">{article.title}</H>
-            <P css={{ opacity: '0.5' }}>{article.excerpt}</P>
+            <P css={{ mb: 0, opacity: '0.5' }}>{article.excerpt}</P>
           </ArticleCard>
         </Link>
       ))}

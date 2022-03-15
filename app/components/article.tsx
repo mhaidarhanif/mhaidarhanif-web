@@ -16,7 +16,6 @@ export const ArticleSection = styled('section', {
 
 export const ArticleCard = styled('div', {
   pl: '$5',
-  '@desktop': { pl: '$10' },
   borderLeft: '5px solid $text',
   '&:hover': {
     borderLeft: '5px solid $brand10',

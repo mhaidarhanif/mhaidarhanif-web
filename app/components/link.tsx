@@ -4,10 +4,10 @@ import { Link as RemixLink } from 'remix'
 import { styled } from '~/stitches'
 
 interface LinkProps {
-  css?: any
   to: string
-  prefetch: any
+  prefetch?: any
   children: React.ReactNode
+  css?: any
 }
 
 const LinkStyled = styled(RemixLink, {
@@ -22,7 +22,7 @@ const LinkStyled = styled(RemixLink, {
 export const Link: FunctionComponent<LinkProps> = ({
   css,
   to,
-  prefetch,
+  prefetch = true,
   children,
 }) => (
   <LinkStyled css={css} to={to} prefetch={prefetch}>
