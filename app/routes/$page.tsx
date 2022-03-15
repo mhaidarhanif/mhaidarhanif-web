@@ -11,7 +11,7 @@ import {
   ContainerBoundary,
   H,
   Hero,
-  Link,
+  LinkButton,
   P,
   Tooltip,
 } from '~/components'
@@ -21,7 +21,7 @@ export const meta: MetaFunction = () =>
   createMeta({
     route: '/',
     title: 'Error / Not Found',
-    description: 'Error or not found page.',
+    description: 'Sorry, something went wrong or page is not found.',
   })
 
 export const loader: LoaderFunction = async () => {
@@ -100,14 +100,12 @@ export function CatchBoundary() {
 
   return (
     <ContainerBoundary>
-      <H as="h3">
+      <H as="h3" font="normal">
         {caught.status}: {caught.statusText}
       </H>
       {message}
       <P>
-        <Link to="/" prefetch="intent">
-          Let's go back to homepage
-        </Link>
+        <LinkButton to="/">Let's go back to homepage</LinkButton>
       </P>
     </ContainerBoundary>
   )

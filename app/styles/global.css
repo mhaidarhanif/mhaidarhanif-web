@@ -39,9 +39,9 @@ body {
 }
 
 a {
-  color: black;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
@@ -53,6 +53,10 @@ hr {
   background-color: var(--color-border);
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+button {
+  background: none;
 }
 
 input:where([type='text']),

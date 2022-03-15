@@ -22,7 +22,7 @@ const LinkStyled = styled(RemixLink, {
 export const Link: FunctionComponent<LinkProps> = ({
   css,
   to,
-  prefetch = true,
+  prefetch = 'intent',
   children,
 }) => (
   <LinkStyled css={css} to={to} prefetch={prefetch}>

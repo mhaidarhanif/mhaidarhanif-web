@@ -22,7 +22,7 @@ import type {
   LoaderFunction,
   MetaFunction,
 } from 'remix'
-import { H, Layout, LayoutBoundary, P, Link } from '~/components'
+import { H, Layout, LayoutBoundary, P, Link, LinkButton } from '~/components'
 import { metaDefault } from '~/data'
 import { lightTheme, darkTheme } from '~/stitches'
 import { createMeta, getEnv } from '~/utils'
@@ -274,9 +274,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
           <P>Sorry, there is an error. Please try again or refresh the page.</P>
           <P lang="ja">何？ ごめんなさい〜</P>
           <P>
-            <Link to="/" prefetch="intent">
-              Let's go back to homepage
-            </Link>
+            <LinkButton to="/">Let's go back to homepage</LinkButton>
           </P>
         </div>
       </LayoutBoundary>
@@ -323,7 +321,7 @@ export function CatchBoundary() {
   return (
     <DocumentBoundary title={`${caught.status} ${caught.statusText}`}>
       <LayoutBoundary>
-        <H as="h3">
+        <H as="h3" font="normal">
           {caught.status}: {caught.statusText}
         </H>
         {message}

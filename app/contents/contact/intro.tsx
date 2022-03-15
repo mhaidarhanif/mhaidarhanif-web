@@ -13,7 +13,7 @@ import {
 export const ContactIntro: FunctionComponent = () => (
   <Article>
     <ArticleHeader>
-      <H as="h1">Contact</H>
+      <H as="h1">Contact Me</H>
       <H as="ja">
         <Tooltip content="Renraku">連絡</Tooltip>
       </H>

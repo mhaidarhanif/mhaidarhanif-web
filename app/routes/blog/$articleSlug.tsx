@@ -1,30 +1,31 @@
+/* eslint-disable no-console */
 import { gql } from '@urql/core'
 import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { Container, Content, Hero, HeroImage } from '~/components'
-import { BlogArticle, BlogArticleNotFound } from '~/contents'
+import { BlogArticle, BlogArticleError } from '~/contents'
 import { graphcmsClient } from '~/lib'
 import { TBlogArticle } from '~/types'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = ({ data }) => {
-  if (!data.article) {
+  if (!data?.article) {
     return createMeta({
-      route: data.slug,
+      route: data?.slug,
       title: 'No blog article found — M Haidar Hanif',
       description:
         'Sorry, no blog article found. Please check the URL again. Thanks!',
     })
   }
   return createMeta({
-    route: data.slug,
+    route: data?.article?.slug,
     title: `${data?.article?.title} — Blog Article — M Haidar Hanif`,
     description: data?.article?.description,
   })
 }
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const { slug } = params
+  const { articleSlug } = params
 
   const queryOneArticleBySlug = gql`
     query OneArticle($slug: String!) {
@@ -40,13 +41,19 @@ export const loader: LoaderFunction = async ({ params }) => {
     }
   `
   const response = await graphcmsClient
-    .query(queryOneArticleBySlug, { slug })
+    .query(queryOneArticleBySlug, { slug: articleSlug })
     .toPromise()
 
   const { article } = response.data
 
+  if (!article) {
+    // throw json('Not Found', { status: 404 })
+    throw new Response('Not Found', {
+      status: 404,
+    })
+  }
   return json({
-    slug,
+    slug: articleSlug,
     article,
   })
 }
@@ -79,14 +86,23 @@ export default function BlogArticleSlug() {
   )
 }
 
+export function CatchBoundary() {
+  return (
+    <Content>
+      <Container>
+        <BlogArticleError />
+      </Container>
+    </Content>
+  )
+}
+
 export function ErrorBoundary({ error }: { error: Error }) {
-  // eslint-disable-next-line no-console
-  console.error(error)
+  console.error('ErrorBoundary', { error })
 
   return (
     <Content>
       <Container>
-        <BlogArticleNotFound />
+        <BlogArticleError />
       </Container>
     </Content>
   )

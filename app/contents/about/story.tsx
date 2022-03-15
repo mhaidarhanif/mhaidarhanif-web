@@ -106,6 +106,10 @@ export const AboutStory: FunctionComponent = () => (
         provides free and paid learning materials, private mentorship, as well
         as business/software development and consultancy service.
       </P>
+      <P>
+        If you want to get mentored by me directly and personally,{' '}
+        <Link to="/contact">just reach me out</Link>.
+      </P>
     </ArticleSection>
 
     <ArticleSection>

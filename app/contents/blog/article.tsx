@@ -8,6 +8,7 @@ import {
   LinkButton,
   Markdown,
   P,
+  Stack,
 } from '~/components'
 import type { TBlogArticle } from '~/types'
 import { getCompleteDate } from '~/utils'
@@ -39,16 +40,16 @@ export const BlogArticle: FunctionComponent<BlogArticleProps> = ({
 
 interface BlogArticleNotFoundProps {}
 
-export const BlogArticleNotFound: FunctionComponent<
+export const BlogArticleError: FunctionComponent<
   BlogArticleNotFoundProps
-> = () => (
+> = ({}) => (
   <Article>
     <ArticleHeader>
       <H as="h1" font="normal">
         Blog article not found
       </H>
       <P>
-        Hey, looks like you've found something that used to exist, or you
+        Hey, looks like you've found a blog article that used to exist, or you
         spelled something wrong. Please check the URL again. Thanks!
       </P>
       <LinkButton to="/blog">Back to blog articles list</LinkButton>
