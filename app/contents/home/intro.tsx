@@ -77,6 +77,17 @@ export const HomeIntro: FunctionComponent = () => (
             </span>
             <span> • </span>
             <span>
+              Product Engineer of{' '}
+              <AnchorIcon
+                color="blue"
+                name="poinswap"
+                href="https://poinswap.com"
+              >
+                Poinswap
+              </AnchorIcon>
+            </span>
+            <span> • </span>
+            <span>
               Content Creator at{' '}
               <AnchorIcon
                 color="blue"

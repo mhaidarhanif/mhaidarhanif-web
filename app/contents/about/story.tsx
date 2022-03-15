@@ -155,7 +155,8 @@ export const AboutStory: FunctionComponent = () => (
         >
           Super Duper Gallery
         </AnchorIcon>
-        , an <Tooltip content="In Real Life">IRL</Tooltip> unique art gallery.
+        , a physical <Tooltip content="In Real Life">IRL</Tooltip> unique art
+        gallery.
       </P>
       <P>
         Community Lead of{' '}
@@ -167,20 +168,6 @@ export const AboutStory: FunctionComponent = () => (
           High Skill Masters
         </AnchorIcon>
         , a gathering of highly skilled professionals.
-      </P>
-    </ArticleSection>
-
-    <ArticleSection>
-      <H as="h4">How I do things</H>
-      <P>
-        Since jumping into the web development industry, I mostly prefer work
-        with these tools and technologies:
-      </P>
-      <P>{textToolTech}.</P>
-      <P>The industry that I prefer to work with also varies:</P>
-      <P>
-        Education, Tech, Engineering, Management, Communication, Software, Web,
-        Hardware, Crypto, Games, and as long as it is a legit business.
       </P>
     </ArticleSection>
 
@@ -227,6 +214,20 @@ export const AboutStory: FunctionComponent = () => (
         , a startup incubator.
       </P>
       <P>And working as freelancer in several places.</P>
+    </ArticleSection>
+
+    <ArticleSection>
+      <H as="h4">How I do things</H>
+      <P>
+        Since jumping into the web development industry, I mostly prefer work
+        with these tools and technologies:
+      </P>
+      <P>{textToolTech}.</P>
+      <P>The industry that I prefer to work with also varies:</P>
+      <P>
+        Education, Tech, Engineering, Management, Communication, Software, Web,
+        Hardware, Crypto, Games, and as long as it is a legit business.
+      </P>
     </ArticleSection>
 
     <ArticleSection>
