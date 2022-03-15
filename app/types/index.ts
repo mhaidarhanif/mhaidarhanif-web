@@ -24,7 +24,12 @@ export type TBlogArticle = {
   description?: string
   date?: string
   excerpt?: string
-  content?: string
+  content?: {
+    html?: string
+    markdown?: string
+    raw?: string
+    text?: string
+  }
   publishedAt?: string
   createdAt?: string
   updatedAt?: string
