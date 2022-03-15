@@ -6,7 +6,7 @@ import { createMeta } from '~/utils'
 export const meta: MetaFunction = () =>
   createMeta({
     route: 'now',
-    title: 'What Haidar is doing now?',
+    title: 'What am I doing now? — M Haidar Hanif',
     description: `Sometimes I know, sometimes I don't know what I'm doing.`,
   })
 

@@ -21,8 +21,9 @@ export const DashboardIntro: FunctionComponent = () => (
     <ArticleSection>
       <P>
         Personal dashboard that contains statistics and links. From different
-        platforms such as Splitbee (web analytics), Twitter, GitHub, YouTube,
-        Spotify, subscribers, revenue, and so on.
+        platforms such as Twitter, GitHub, YouTube, Spotify, Splitbee (web
+        analytics), Posthog (product analytics), visitors, subscribers, revenue,
+        and so on.
       </P>
     </ArticleSection>
     <ArticleSection>

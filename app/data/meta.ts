@@ -1,6 +1,6 @@
 export const metaDefault = {
   name: 'M Haidar Hanif',
-  title: 'M Haidar Hanif',
+  title: 'M Haidar Hanif — Educator, Web Developer, Software Engineer',
   description:
     'Personal website of M Haidar Hanif. Educator / Mentor / Software Engineer / Full Stack Web Developer.',
   url: 'https://mhaidarhanif.com/',

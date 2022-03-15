@@ -6,7 +6,8 @@ import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = () =>
   createMeta({
-    title: 'About M Haidar Hanif',
+    title:
+      'About M Haidar Hanif — The jack of all trades, master of education and web',
     description:
       'Get to know Haidar. The story and summary of life and career.',
     route: 'about',
