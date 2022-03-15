@@ -8,7 +8,6 @@ import {
   LinkButton,
   Markdown,
   P,
-  Stack,
 } from '~/components'
 import type { TBlogArticle } from '~/types'
 import { getCompleteDate } from '~/utils'
@@ -25,7 +24,7 @@ export const BlogArticle: FunctionComponent<BlogArticleProps> = ({
   return (
     <Article>
       <ArticleHeader>
-        <H as="h1" font="normal">
+        <H as="h2" font="normal">
           {article.title}
         </H>
         <P>{getCompleteDate(article.date)}</P>
@@ -38,21 +37,34 @@ export const BlogArticle: FunctionComponent<BlogArticleProps> = ({
   )
 }
 
-interface BlogArticleNotFoundProps {}
+interface BlogArticleNotFoundProps {
+  data: any
+}
 
-export const BlogArticleError: FunctionComponent<
-  BlogArticleNotFoundProps
-> = ({}) => (
+export const BlogArticleError: FunctionComponent<BlogArticleNotFoundProps> = ({
+  data,
+}) => (
   <Article>
-    <ArticleHeader>
-      <H as="h1" font="normal">
-        Blog article not found
-      </H>
-      <P>
-        Hey, looks like you've found a blog article that used to exist, or you
-        spelled something wrong. Please check the URL again. Thanks!
-      </P>
-      <LinkButton to="/blog">Back to blog articles list</LinkButton>
-    </ArticleHeader>
+    {data.caught.status === 404 && (
+      <ArticleHeader>
+        <H as="h1" font="normal">
+          Blog article not found
+        </H>
+        <P>
+          Hey, looks like you've found a blog article that used to exist, or you
+          spelled something wrong. Please check the URL again. Thanks!
+        </P>
+        <LinkButton to="/blog">Back to blog articles list</LinkButton>
+
+        <hr />
+
+        <P>
+          The location path: <code>{data.location.pathname}</code>
+        </P>
+        <P>
+          The article slug: <code>{data.params.articleSlug}</code>
+        </P>
+      </ArticleHeader>
+    )}
   </Article>
 )

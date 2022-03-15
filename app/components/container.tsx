@@ -59,6 +59,7 @@ const ContainerStyled = styled('div', {
 const ContainerBoundaryStyled = styled('div', {
   width: '760px',
   pt: '$20',
+  pb: '$20',
   marginRight: 'auto',
   marginLeft: 'auto',
   maxWidth: 'calc(100% - 1rem * 2)',

@@ -1,6 +1,14 @@
 /* eslint-disable no-console */
 import { gql } from '@urql/core'
-import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
+import {
+  json,
+  LoaderFunction,
+  MetaFunction,
+  useCatch,
+  useLoaderData,
+  useLocation,
+  useParams,
+} from 'remix'
 
 import { Container, Content, Hero, HeroImage } from '~/components'
 import { BlogArticle, BlogArticleError } from '~/contents'
@@ -47,10 +55,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   const { article } = response.data
 
   if (!article) {
-    // throw json('Not Found', { status: 404 })
-    throw new Response('Not Found', {
-      status: 404,
-    })
+    throw json('Not Found', { status: 404 })
   }
   return json({
     slug: articleSlug,
@@ -87,22 +92,14 @@ export default function BlogArticleSlug() {
 }
 
 export function CatchBoundary() {
-  return (
-    <Content>
-      <Container>
-        <BlogArticleError />
-      </Container>
-    </Content>
-  )
-}
-
-export function ErrorBoundary({ error }: { error: Error }) {
-  console.error('ErrorBoundary', { error })
+  const caught = useCatch()
+  const params = useParams()
+  const location = useLocation()
 
   return (
     <Content>
       <Container>
-        <BlogArticleError />
+        <BlogArticleError data={{ caught, params, location }} />
       </Container>
     </Content>
   )

@@ -267,15 +267,21 @@ export function ErrorBoundary({ error }: { error: Error }) {
     <DocumentBoundary title="Error!">
       <LayoutBoundary>
         <div>
-          <H as="h3">What? There was an error</H>
-          <P>{error.message}</P>
-          <hr />
-          <P>${location.pathname} is currently not working.</P>
+          <H as="h3" font="normal">
+            What the flip?
+          </H>
           <P>Sorry, there is an error. Please try again or refresh the page.</P>
-          <P lang="ja">何？ ごめんなさい〜</P>
           <P>
-            <LinkButton to="/">Let's go back to homepage</LinkButton>
+            <LinkButton to="/">Back to homepage</LinkButton>
           </P>
+
+          <hr />
+
+          <P>
+            <code>{location.pathname}</code> is currently not working.
+          </P>
+          <P>This is the error message:</P>
+          <code>{error.message}</code>
         </div>
       </LayoutBoundary>
     </DocumentBoundary>
