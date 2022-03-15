@@ -26,7 +26,6 @@ export const BlogIntro: FunctionComponent = () => (
           sharings. Usually around life, career, tech, software engineering, web
           development, and multiple topics.
         </P>
-        <P>The articles are being rewritten and migrated again...</P>
       </ArticleSection>
     </Article>
   </Hero>

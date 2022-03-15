@@ -1,23 +1,26 @@
 import { FunctionComponent } from 'react'
+import { Link } from 'remix'
 
-import { Container, H, P } from '~/components'
-import type { BlogArticle } from '~/types'
+import { ArticleCard, Container, H, P, Stack } from '~/components'
+import type { TBlogArticle } from '~/types'
 
 interface BlogArticleProps {
-  articles: BlogArticle[]
+  articles: TBlogArticle[]
 }
 
 export const BlogArticles: FunctionComponent<BlogArticleProps> = ({
   articles,
 }) => (
   <Container>
-    <div>
+    <Stack>
       {articles.map((article) => (
-        <div key={article._id}>
-          <H as="h4">{article.title}</H>
-          <P>{article.content}</P>
-        </div>
+        <Link key={article.id} to={`/blog/${article.slug}`}>
+          <ArticleCard>
+            <H as="h4">{article.title}</H>
+            <P css={{ opacity: '0.5' }}>{article.excerpt}</P>
+          </ArticleCard>
+        </Link>
       ))}
-    </div>
+    </Stack>
   </Container>
 )
