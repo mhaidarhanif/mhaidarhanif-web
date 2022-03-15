@@ -4,12 +4,12 @@ interface HeadingProps {
   as?: string
   css?: any
   color?: 'brand' | 'solid' | undefined
+  font?: 'display' | 'normal'
   children: React.ReactNode | any
 }
 
-const headingGradient = {
+const headingStyle = {
   width: '100%',
-  fontFamily: '$fontHeading',
   color: '$heading',
   backgroundColor: '$heading',
   backgroundImage: 'linear-gradient(to right, $brand10, $brand11)',
@@ -20,27 +20,41 @@ const headingGradient = {
   MozBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   MozTextFillColor: 'transparent',
+
+  variants: {
+    font: {
+      display: {
+        fontFamily: '$fontHeading',
+      },
+      normal: {
+        fontFamily: '$fontText',
+      },
+    },
+  },
+  defaultVariants: {
+    font: 'display',
+  },
 }
 
 const H1 = styled('h1', {
-  ...headingGradient,
   fontSize: '2.5rem',
   '@tablet': { fontSize: '3rem' },
   '@desktop': { fontSize: '4rem' },
+  ...headingStyle,
 })
 
 const H2 = styled('h2', {
-  ...headingGradient,
   fontSize: '2rem',
   '@tablet': { fontSize: '2.5rem' },
   '@desktop': { fontSize: '3rem' },
+  ...headingStyle,
 })
 
 const H3 = styled('h3', {
-  ...headingGradient,
   fontSize: '1.75rem',
   '@tablet': { fontSize: '2.25rem' },
   '@desktop': { fontSize: '2.5rem' },
+  ...headingStyle,
 })
 
 const H4 = styled('h4', {
@@ -72,24 +86,25 @@ export const H: React.FunctionComponent<HeadingProps> = ({
   as,
   color,
   css,
+  font,
   children,
 }) => {
   switch (as) {
     case 'h1':
       return (
-        <H1 as={as} color={color} css={css}>
+        <H1 as={as} color={color} css={css} font={font}>
           {children}
         </H1>
       )
     case 'h2':
       return (
-        <H2 as={as} color={color} css={css}>
+        <H2 as={as} color={color} css={css} font={font}>
           {children}
         </H2>
       )
     case 'h3':
       return (
-        <H3 as={as} color={color} css={css}>
+        <H3 as={as} color={color} css={css} font={font}>
           {children}
         </H3>
       )
