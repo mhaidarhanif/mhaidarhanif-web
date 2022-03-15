@@ -1,16 +1,8 @@
 import { gql } from '@urql/core'
 import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
-import {
-  ArticleHeader,
-  Container,
-  Content,
-  H,
-  Hero,
-  HeroImage,
-  P,
-} from '~/components'
-import { BlogArticle } from '~/contents'
+import { Container, Content, Hero, HeroImage } from '~/components'
+import { BlogArticle, BlogArticleNotFound } from '~/contents'
 import { graphcmsClient } from '~/lib'
 import { TBlogArticle } from '~/types'
 import { createMeta } from '~/utils'
@@ -94,15 +86,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Content>
       <Container>
-        <ArticleHeader>
-          <H as="h1" font="normal">
-            Blog article not found
-          </H>
-          <P>
-            Hey, looks like you've found something that used to exist, or you
-            spelled something wrong. Please check the URL again. Thanks!
-          </P>
-        </ArticleHeader>
+        <BlogArticleNotFound />
       </Container>
     </Content>
   )

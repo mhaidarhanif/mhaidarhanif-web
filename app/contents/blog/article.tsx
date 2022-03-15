@@ -5,6 +5,7 @@ import {
   ArticleHeader,
   ArticleSection,
   H,
+  LinkButton,
   Markdown,
   P,
 } from '~/components'
@@ -35,3 +36,22 @@ export const BlogArticle: FunctionComponent<BlogArticleProps> = ({
     </Article>
   )
 }
+
+interface BlogArticleNotFoundProps {}
+
+export const BlogArticleNotFound: FunctionComponent<
+  BlogArticleNotFoundProps
+> = () => (
+  <Article>
+    <ArticleHeader>
+      <H as="h1" font="normal">
+        Blog article not found
+      </H>
+      <P>
+        Hey, looks like you've found something that used to exist, or you
+        spelled something wrong. Please check the URL again. Thanks!
+      </P>
+      <LinkButton to="/blog">Back to blog articles list</LinkButton>
+    </ArticleHeader>
+  </Article>
+)
