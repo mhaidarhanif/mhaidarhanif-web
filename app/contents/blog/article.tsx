@@ -1,6 +1,13 @@
 import { FunctionComponent } from 'react'
 
-import { Article, ArticleHeader, ArticleSection, H } from '~/components'
+import {
+  Article,
+  ArticleHeader,
+  ArticleSection,
+  H,
+  Markdown,
+  P,
+} from '~/components'
 import type { TBlogArticle } from '~/types'
 
 interface BlogArticleProps {
@@ -9,16 +16,21 @@ interface BlogArticleProps {
 
 export const BlogArticle: FunctionComponent<BlogArticleProps> = ({
   article,
-}) => (
-  <Article>
-    <ArticleHeader>
-      <H as="h3" font="normal">
-        {article.title}
-      </H>
-    </ArticleHeader>
+}) => {
+  const contentMarkdown = String(article?.content?.markdown)
 
-    <ArticleSection>
-      {JSON.stringify(article?.content?.markdown)}
-    </ArticleSection>
-  </Article>
-)
+  return (
+    <Article>
+      <ArticleHeader>
+        <H as="h1" font="normal">
+          {article.title}
+        </H>
+        <P>{article.date}</P>
+      </ArticleHeader>
+
+      <ArticleSection>
+        <Markdown>{contentMarkdown}</Markdown>
+      </ArticleSection>
+    </Article>
+  )
+}

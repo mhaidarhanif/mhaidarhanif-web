@@ -6,7 +6,7 @@ import { createMeta } from '~/utils'
 export const meta: MetaFunction = () =>
   createMeta({
     route: 'hello',
-    title: 'Hello from visitors and friends - M Haidar Hanif',
+    title: 'Hello from visitors and friends — M Haidar Hanif',
     description:
       'Some kind of a guestbook which you can say anything. Hello. Halo. こんにちは. Bonjour. 안녕하세요. Kamusta. 你好. สวัสดี. مرحبا',
   })

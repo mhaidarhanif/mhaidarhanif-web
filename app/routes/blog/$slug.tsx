@@ -1,24 +1,33 @@
 import { gql } from '@urql/core'
 import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
-import { Container, Content, Hero, HeroImage } from '~/components'
+import {
+  ArticleHeader,
+  Container,
+  Content,
+  H,
+  Hero,
+  HeroImage,
+  P,
+} from '~/components'
 import { BlogArticle } from '~/contents'
 import { graphcmsClient } from '~/lib'
 import { TBlogArticle } from '~/types'
 import { createMeta } from '~/utils'
 
 export const meta: MetaFunction = ({ data }) => {
-  if (!data) {
+  if (!data.article) {
     return createMeta({
       route: data.slug,
-      title: 'No blog article found',
-      description: 'No blog article found',
+      title: 'No blog article found — M Haidar Hanif',
+      description:
+        'Sorry, no blog article found. Please check the URL again. Thanks!',
     })
   }
   return createMeta({
     route: data.slug,
-    title: `${data.article.title} - Blog Article - M Haidar Hanif`,
-    description: data.article.description,
+    title: `${data?.article?.title} — Blog Article — M Haidar Hanif`,
+    description: data?.article?.description,
   })
 }
 
@@ -75,5 +84,26 @@ export default function BlogArticleSlug() {
         </Container>
       </Content>
     </>
+  )
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  // eslint-disable-next-line no-console
+  console.error(error)
+
+  return (
+    <Content>
+      <Container>
+        <ArticleHeader>
+          <H as="h1" font="normal">
+            Blog article not found
+          </H>
+          <P>
+            Hey, looks like you've found something that used to exist, or you
+            spelled something wrong. Please check the URL again. Thanks!
+          </P>
+        </ArticleHeader>
+      </Container>
+    </Content>
   )
 }
