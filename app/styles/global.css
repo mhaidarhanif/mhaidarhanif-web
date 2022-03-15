@@ -1,0 +1,71 @@
+:root {
+  --color-foreground: hsl(0, 0%, 7%);
+  --color-background: hsl(0, 0%, 100%);
+  --color-core: #05a2c2;
+  --color-links: hsl(191, 91.2%, 36.8%);
+  --color-links-hover: hsl(192, 85%, 31%);
+  --color-border: hsl(0, 0%, 82%);
+  --font-body: sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+:focus {
+  outline: var(--color-links) solid 2px;
+  outline-offset: 2px;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  background-color: var(--color-border);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+input:where([type='text']),
+input:where([type='email']),
+input:where([type='search']) {
+  display: block;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  font: inherit;
+  line-height: 1;
+  height: calc(1ch + 1.5em);
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}

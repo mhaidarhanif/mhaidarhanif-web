@@ -21,6 +21,9 @@ export const ContactIntro: FunctionComponent = () => (
 
     <ArticleSection>
       <P>There will be a contact form here for convenience.</P>
+      <form action="/">
+        <input type="email" placeholder="email@domain.com" />
+      </form>
     </ArticleSection>
 
     <ArticleSection>

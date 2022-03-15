@@ -34,7 +34,8 @@ import {
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
 
-import nProgressStyles from '~/styles/nprogress.css'
+import globalStylesUrl from '~/styles/global.css'
+import nProgressStylesUrl from '~/styles/nprogress.css'
 
 /**
  * Headers
@@ -95,7 +96,11 @@ export const links: LinksFunction = () => [
   },
   {
     rel: 'stylesheet',
-    href: nProgressStyles,
+    href: globalStylesUrl,
+  },
+  {
+    rel: 'stylesheet',
+    href: nProgressStylesUrl,
   },
 ]
 
