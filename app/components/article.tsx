@@ -4,7 +4,7 @@ export const Article = styled('article', {
   width: '100%',
 })
 
-export const ArticleHeader = styled('section', {
+export const ArticleHeader = styled('header', {
   mb: '$12',
   '@tablet': { mb: '$16' },
   '@desktop': { mb: '$20' },

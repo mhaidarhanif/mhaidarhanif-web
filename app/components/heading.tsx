@@ -8,6 +8,12 @@ interface HeadingProps {
   children: React.ReactNode | any
 }
 
+interface HeadingLinkProps {
+  id: string
+  as: string
+  children: React.ReactNode | any
+}
+
 const headingStyle = {
   width: '100%',
   color: '$heading',
@@ -58,13 +64,13 @@ const H3 = styled('h3', {
 })
 
 const H4 = styled('h4', {
-  mt: '0',
+  mt: 0,
   mb: '$4',
   fontSize: '1.5rem',
 })
 
 const H5 = styled('h5', {
-  mt: '0',
+  mt: 0,
   mb: '$3',
   fontSize: '1.25rem',
 })
@@ -74,14 +80,18 @@ const H6 = styled('h6', {
   fontSize: '1rem',
 })
 
-const HJA = styled('h2', {
+const H2JA = styled('h2', {
   color: '$pink10',
-  mt: '$0',
+  mt: 0,
   fontSize: '2rem',
   '@tablet': { fontSize: '2.5rem' },
   '@desktop': { fontSize: '3rem' },
 })
 
+/**
+ * H: Heading
+ * To be used anywhere
+ */
 export const H: React.FunctionComponent<HeadingProps> = ({
   as,
   color,
@@ -127,7 +137,58 @@ export const H: React.FunctionComponent<HeadingProps> = ({
         </H6>
       )
     case 'ja':
-      return <HJA css={css}>{children}</HJA>
+      return <H2JA css={css}>{children}</H2JA>
+    default:
+      return children
+  }
+}
+
+/**
+ * HLink: Heading with Link
+ * To be used within a content
+ */
+export const HLink: React.FunctionComponent<HeadingLinkProps> = ({
+  id,
+  as,
+  children,
+}) => {
+  switch (as) {
+    case 'h1':
+      return (
+        <h1 id={id}>
+          <a href={`#${id}`}>{children}</a>
+        </h1>
+      )
+    case 'h2':
+      return (
+        <h2 id={id}>
+          <a href={`#${id}`}>{children}</a>
+        </h2>
+      )
+    case 'h3':
+      return (
+        <h3 id={id}>
+          <a href={`#${id}`}>{children}</a>
+        </h3>
+      )
+    case 'h4':
+      return (
+        <h4 id={id}>
+          <a href={`#${id}`}>{children}</a>
+        </h4>
+      )
+    case 'h5':
+      return (
+        <h5 id={id}>
+          <a href={`#${id}`}>{children}</a>
+        </h5>
+      )
+    case 'h6':
+      return (
+        <h6 id={id}>
+          <a href={`#${id}`}>{children}</a>
+        </h6>
+      )
     default:
       return children
   }
