@@ -44,6 +44,7 @@ const headingStyle = {
 
 const H1 = styled('h1', {
   fontSize: '2.5rem',
+  lineHeight: '$normal',
   '@tablet': { fontSize: '3rem' },
   '@desktop': { fontSize: '4rem' },
   ...headingStyle,
