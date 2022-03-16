@@ -43,7 +43,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       <TooltipProvider delayDuration={200} skipDelayDuration={500}>
         <LayoutContent id="layout-content">
           <LayoutMain id="layout-main">
-            <Navigation id="layout-navigation" />
+            <Navigation />
             {children}
           </LayoutMain>
           <Footer id="layout-footer" />
