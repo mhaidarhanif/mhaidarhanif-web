@@ -1,5 +1,5 @@
 import {
-  Header,
+  Navigation,
   Footer,
   TooltipProvider,
   ContainerBoundary,
@@ -43,7 +43,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       <TooltipProvider delayDuration={200} skipDelayDuration={500}>
         <LayoutContent id="layout-content">
           <LayoutMain id="layout-main">
-            <Header id="layout-header" />
+            <Navigation id="layout-navigation" />
             {children}
           </LayoutMain>
           <Footer id="layout-footer" />
