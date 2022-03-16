@@ -130,11 +130,7 @@ export const AboutStory: FunctionComponent = () => (
       </P>
       <P>
         Product Engineer of{' '}
-        <AnchorIcon
-          color="blue"
-          name="poinswap"
-          href="https://github.com/poinswap"
-        >
+        <AnchorIcon color="blue" name="poinswap" href="https://poinswap.com">
           Poinswap
         </AnchorIcon>
         , a decentralized exchange for cryptocurrencies and tokens.
