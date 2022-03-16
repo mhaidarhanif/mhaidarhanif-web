@@ -30,6 +30,9 @@ export type TBlogArticle = {
     raw?: string
     text?: string
   }
+  coverImage?: {
+    url?: string
+  }
   publishedAt?: string
   createdAt?: string
   updatedAt?: string

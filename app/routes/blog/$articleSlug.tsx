@@ -45,6 +45,9 @@ export const loader: LoaderFunction = async ({ params }) => {
         content {
           markdown
         }
+        coverImage {
+          url(transformation: { image: { resize: { width: 2000 } } })
+        }
       }
     }
   `
@@ -69,17 +72,23 @@ export default function BlogArticleSlug() {
     article: TBlogArticle
   }>()
 
+  const defaultHeroImageUrl =
+    'https://images.unsplash.com/photo-1581855339095-0c282d58527b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1773&q=80'
+  
   const frontmatter = {
     heroName: 'Book with Words',
-    heroImage:
-      'https://images.unsplash.com/photo-1581855339095-0c282d58527b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1773&q=80',
+    heroImage: data.article?.coverImage?.url || defaultHeroImageUrl,
     heroImageAlign: 'center',
   }
 
   return (
     <>
       <Hero>
-        <HeroImage alt={frontmatter.heroName} src={frontmatter.heroImage} />
+        <HeroImage
+          src={frontmatter.heroImage}
+          alt={frontmatter.heroName}
+          height="tall"
+        />
       </Hero>
 
       <Content>

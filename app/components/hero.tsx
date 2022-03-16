@@ -12,8 +12,7 @@ interface HeroImageProps {
   src: string
   alt: string
   align?: string | 'top' | 'center' | 'bottom' | undefined
-  // eslint-disable-next-line react/no-unused-prop-types
-  blurhash?: string
+  height?: 'compact' | 'tall'
 }
 
 const HeroStyled = styled('div', {
@@ -23,17 +22,10 @@ const HeroStyled = styled('div', {
   },
 })
 
-export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
-  <HeroStyled id="hero">{children}</HeroStyled>
-)
-
 const HeroImageContainer = styled('div', {
   background: '$backgroundSection',
   display: 'flex',
   overflow: 'hidden',
-  height: '260px',
-  '@tablet': { height: '300px' },
-  '@desktop': { height: '390px' },
 
   variants: {
     align: {
@@ -41,9 +33,23 @@ const HeroImageContainer = styled('div', {
       center: { alignItems: 'center' },
       bottom: { alignItems: 'flex-end' },
     },
+    height: {
+      compact: {
+        height: '260px',
+        '@tablet': { height: '300px' },
+        '@desktop': { height: '380px' },
+      },
+      tall: {
+        height: '260px',
+        '@tablet': { height: '300px' },
+        '@desktop': { height: '520px' },
+      },
+    },
   },
+
   defaultVariants: {
     align: 'center',
+    height: 'compact',
   },
 })
 
@@ -53,12 +59,17 @@ const HeroImageStyled = styled('img', {
   width: '100%',
 })
 
+export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
+  <HeroStyled id="hero">{children}</HeroStyled>
+)
+
 export const HeroImage: FunctionComponent<HeroImageProps> = ({
   src,
   alt,
   align,
+  height,
 }) => (
-  <HeroImageContainer align={align as Align}>
+  <HeroImageContainer align={align as Align} height={height}>
     <HeroImageStyled src={src} alt={alt} />
   </HeroImageContainer>
 )
