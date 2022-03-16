@@ -40,10 +40,12 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--color-links);
 }
 
 a:hover {
   text-decoration: none;
+  color: var(--color-links-hover);
 }
 
 hr {
